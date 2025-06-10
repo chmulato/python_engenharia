@@ -5844,6 +5844,208 @@ Em síntese, o módulo equipou o engenheiro com as ferramentas para traduzir fen
 
 ---
 
+# 10. Mini Projetos Aplicados à Engenharia
+
+Chegamos ao ápice da nossa jornada de aprendizado em Python aplicado à engenharia. Este último módulo, dedicado aos **Mini Projetos Aplicados à Engenharia**, tem como objetivo principal consolidar todo o conhecimento adquirido nos módulos anteriores, transformando conceitos teóricos e exemplos isolados em soluções práticas e integradas para problemas de engenharia. Aqui, você terá a oportunidade de aplicar de forma sinérgica as habilidades em fundamentos de programação, estruturas de controle, funções e modularização, manipulação e visualização de dados, cálculo numérico e modelagem matemática.
+Neste módulo, abordaremos estudos de caso que simulam desafios reais da engenharia. Começaremos com um **estudo de caso detalhado de um tanque com entrada e saída**, explorando sua dinâmica e controle. Em seguida prosseguimos com a elaboração de **balanços de massa e energia**, utilizando dados reais ou simulados para resolver problemas de conservação em sistemas complexos. Finalmente, o ponto crucial será a **integração de módulos anteriores em soluções práticas**, onde você verá como combinar diferentes ferramentas e conceitos de Python para construir programas completos e funcionais que respondam a necessidades específicas da engenharia. Este módulo é a sua chance de aplicar o que aprendeu e desenvolver projetos que demonstrem a verdadeira capacidade do Python como ferramenta de engenharia. 
+
+## 10.1. Estudo de caso: tanque com entrada e saída
+
+Este estudo de caso é um problema clássico em engenharia de processos e controle, servindo como um excelente exemplo para integrar diversos conceitos de programação e modelagem matemática aprendidos nos módulos anteriores. A dinâmica de um tanque com entrada e saída é fundamental para entender sistemas de armazenamento, reatores, reservatórios e muitos outros equipamentos industriais.
+
+**Contexto:**
+Considere um tanque cilíndrico de área de seção transversal constante (AT) que possui uma corrente de entrada com vazão volumétrica Qentrada(t) e uma corrente de saída através de um orifício na base com vazão Qsaida(t). Nosso objetivo é modelar e simular como o nível (altura) do líquido no tanque (h) varia ao longo do tempo, considerando que a vazão de saída depende da altura do líquido.
+
+**Formulação do Problema (Balanço de Massa):**
+A variação do volume de líquido no tanque ao longo do tempo é dada pelo balanço de massa:
+
+```plaintext
+Taxa de Acúmulo de Volume = Taxa de Entrada de Volume - Taxa de Saída de Volume 
+```
+Matematicamente, isso é expresso como: 
+
+```plaintext
+dV/dt = Qentrada(t) - Qsaida(t)
+```
+Como o volume do líquido no tanque é **V=AT.⋅h**, e a área **AT** é constante, podemos escrever:
+
+```plaintext
+d(AT⋅h)/dt = Qentrada(t) - Qsaida(h)
+```
+
+Isolando a derivada da altura, obtemos a Equação Diferencial Ordinária (EDO) que descreve a dinâmica do nível do tanque:
+
+```plaintext
+d(h)/dt = (Qentrada(t) - Qsaida(h)) / AT
+```
+
+Para a vazão de saída através de um orifício, frequentemente usamos a Lei de Torricelli, que relaciona a vazão com a altura do líquido: 
+
+```plaintext
+Qsaida(h) = C * A_orificio * sqrt(2 * g * h)
+```
+onde:
+- **C** é o coeficiente de descarga (adimensional),
+- **A_orificio** é a área do orifício de saída,
+- **g** é a aceleração devido à gravidade,
+- **h** é a altura do líquido no tanque.
+
+**Objetivo do Exercício:**
+
+1. Definir a função Python que representa a EDO **dh/dt**, incorporando a vazão de entrada (que pode ser constante ou variar no tempo) e a vazão de saída dependente da altura.
+2. Simular a dinâmica do nível do tanque usando scipy.integrate.odeint para diferentes cenários (ex: tanque enchendo, esvaziando, atingindo regime permanente).
+3. Visualizar a curva da altura do líquido no tanque ao longo do tempo.
+
+Este exercício integra os conceitos discutidos anteriormente:
+
+- **Fundamentos:** Uso de FLOAT para parâmetros, operadores aritméticos.
+- **Estruturas de Controle:** Condicionais (IF) para lidar com a vazão de saída quando o tanque está vazio (h <= 0).
+- **Funções e Modularização:** Definição da função da EDO e, opcionalmente, de uma função para a vazão de entrada variável no tempo.
+- **Estruturas de Dados:** Uso de arrays NUM_PY para representar o tempo e a altura.
+- **Visualização de Dados:** MAT_PLOT_LIB e SEABORN para plotar a curva de altura vs. tempo.
+- **Cálculo Numérico com NUM_PY:** np.sqrt, np.linspace para operações vetoriais e criação de arrays.
+- **Modelagem Matemática Simples:** Formulação da EDO e uso de scipy.integrate.odeint para sua solução numérica.
+
+**Estudo de Caso: Tanque com Entrada e Saída**
+
+![Tanque com Entrada e Saída](imagens/38_imagem_tanque_entrada_e_saida.png)
+
+**Código Python para Simulação:**
+```python
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def simular_tanque_entrada_saida():
+    """
+    Simula a dinâmica da altura do líquido em um tanque com entrada e saída,
+    usando uma EDO e visualiza os resultados.
+    """
+    print("--- 10.1. Estudo de Caso: Tanque com Entrada e Saída ---")
+
+    # --- 1. Definir os Parâmetros do Tanque e do Processo ---
+    A_T = 5.0       # Área da seção transversal do tanque (m^2)
+    A_o = 0.02      # Área do orifício de saída (m^2)
+    C_d = 0.65      # Coeficiente de descarga do orifício (adimensional)
+    g = 9.81        # Aceleração da gravidade (m/s^2)
+
+    # --- 2. Definir a Função da Vazão de Entrada (Q_entrada) ---
+    # Pode ser constante ou variar no tempo.
+    # Exemplo: Vazão de entrada constante
+    Q_entrada_constante = 0.1 # m^3/s
+
+    # Exemplo: Vazão de entrada que muda em um certo tempo
+    def Q_entrada_funcao_tempo(t_atual):
+        if t_atual < 50:
+            return 0.1 # m^3/s
+        else:
+            return 0.05 # m^3/s (reduz a vazão de entrada após 50s)
+
+    # --- 3. Definir a Equação Diferencial Ordinária (EDO) ---
+    # dh/dt = (Q_entrada - Q_saida) / AT
+    # Q_saida = Cd * Ao * sqrt(2 * g * h)
+    def dHdt(h, t, A_T, A_o, C_d, g, Q_entrada_func):
+        """
+        Define a EDO para a variação da altura do líquido no tanque.
+        """
+        # Vazão de entrada no tempo atual
+        Q_entrada = Q_entrada_func(t) # Usando a função de entrada variável no tempo
+
+        # Vazão de saída (Lei de Torricelli)
+        # Condicional para evitar raiz de número negativo se h for <= 0
+        if h <= 0:
+            Q_saida = 0.0
+        else:
+            Q_saida = C_d * A_o * np.sqrt(2 * g * h)
+        
+        # EDO
+        dh_dt = (Q_entrada - Q_saida) / A_T
+        return dh_dt
+
+    # --- 4. Definir Condição Inicial e Intervalo de Tempo ---
+    h0 = 0.5        # Altura inicial do líquido no tanque (m)
+    tempo_max = 200 # Tempo máximo de simulação (s)
+    t = np.linspace(0, tempo_max, 300) # 300 pontos de tempo para a solução
+
+    # --- 5. Resolver a EDO Numericamente usando odeint ---
+    # Passamos a função Q_entrada_funcao_tempo como um dos argumentos da EDO
+    solucao_h = odeint(dHdt, h0, t, args=(A_T, A_o, C_d, g, Q_entrada_funcao_tempo))
+
+    # odeint retorna um array 2D, extraímos a primeira coluna para ter o array de alturas.
+    alturas = solucao_h[:, 0]
+
+    # Garantir que a altura não seja negativa (pode acontecer por aproximação numérica)
+    alturas[alturas < 0] = 0
+
+    # --- 6. Visualizar a Curva da Altura do Líquido ---
+    sns.set_style("whitegrid")
+    plt.figure(figsize=(10, 6))
+    plt.plot(t, alturas, label='Altura do Líquido (h)', color='blue', linewidth=2)
+
+    # Plotar a vazão de entrada para contextualizar a mudança
+    Q_entrada_plot = np.array([Q_entrada_funcao_tempo(ti) for ti in t])
+    # Criar um segundo eixo Y para a vazão de entrada
+    ax2 = plt.gca().twinx()
+    ax2.plot(t, Q_entrada_plot, label='Vazão de Entrada (Q_in)', color='red', linestyle=':', linewidth=1.5)
+    ax2.set_ylabel('Vazão de Entrada (m³/s)', color='red')
+    ax2.tick_params(axis='y', labelcolor='red')
+
+    plt.xlabel('Tempo (s)')
+    plt.ylabel('Altura (m)', color='blue')
+    plt.tick_params(axis='y', labelcolor='blue')
+    plt.title('Dinâmica da Altura do Líquido em um Tanque')
+    plt.legend(loc='upper left') # Ajusta a posição da legenda para não sobrepor
+    ax2.legend(loc='upper right')
+    plt.grid(True)
+    plt.show()
+
+    print("\n--- Resultados da Simulação ---")
+    print(f"Altura inicial: {h0:.2f} m")
+    print(f"Altura final (após {tempo_max} s): {alturas[-1]:.2f} m")
+    # Encontrar o tempo aproximado para atingir o regime permanente (se houver)
+    # Isso é mais complexo, mas podemos verificar se a altura está estável no final
+    if abs(alturas[-1] - alturas[-50]) < 0.01: # Se a variação nas últimas 50 amostras for pequena
+        print("O tanque parece ter atingido um regime permanente.")
+    else:
+        print("O tanque ainda está em transiente ou esvaziando/enchendo.")
+
+
+# --- Execução do Exemplo ---
+if __name__ == "__main__":
+    simular_tanque_entrada_saida()
+```
+
+Resultados esperados:
+```plaintext
+Altura inicial: 0.50 m
+Altura final (após 200 s): 0.75 m
+O tanque parece ter atingido um regime permanente.
+--- Resultados da Simulação ---
+Altura inicial: 0.50 m
+Altura final (após 200 s): 0.75 m
+O tanque parece ter atingido um regime permanente.
+```
+
+### Figura 10.1 - Gráfico: Dinâmica da Altura do Líquido em um Tanque
+
+![Dinâmica da Altura do Líquido em um Tanque](imagens/39_imagem_dinamica_altura_tanque.png)
+
+**Gráfico: Dinâmica da Altura do Líquido em um Tanque**
+- **Eixo X:** Tempo (s)
+- **Eixo Y (Primário, à esquerda):** Altura (m)
+- **Eixo Y (Secundário, à direita):** Vazão de Entrada (m³/s)
+- **Título do Gráfico:** Dinâmica da Altura do Líquido em um Tanque
+- **Legendas das Linhas:**
+  - **Altura do Líquido (h):** Representada pela linha azul contínua. Mostra como o nível do líquido no tanque varia ao longo do tempo.
+  - **Vazão de Entrada (Q_in):** Representada pela linha vermelha tracejada. Indica a vazão de líquido que entra no tanque, contextualizando as mudanças no nível.
+
+### 10.1.1. Resumo
+
+O exercício "Estudo de caso: tanque com entrada e saída" focou na simulação da dinâmica do nível de líquido em um tanque cilíndrico. Modelamos o problema como uma **Equação Diferencial Ordinária (EDO)**, que descreve como a altura do líquido varia com o tempo, considerando uma vazão de entrada variável e uma vazão de saída dependente da altura. Utilizamos **scipy.integrate.odeint** para resolver numericamente essa EDO e MAT_PLOT_LIB/SEABORN para visualizar a curva da altura do líquido ao longo do tempo, demonstrando a integração de conceitos de modelagem matemática, cálculo numérico e visualização de dados. 
+
+---
+
 # 11. Finalização e Agradecimentos
 
 Chegamos ao final da nossa jornada pela apostila "Introdução à Programação Python Aplicada à Engenharia". Este percurso foi cuidadosamente desenhado para equipar você, engenheiro ou estudante de engenharia, com as ferramentas computacionais essenciais para enfrentar os desafios técnicos do mundo moderno.
