@@ -1,12 +1,12 @@
----
+***
 
 ![CAPA](imagens/01_capa.png)
 
----
+***
 
 ![SOBRECAPA](imagens/02_capa.png)
 
----
+***
 
 ### Título: Introdução à Programação Python Aplicada à Engenharia
 ### Autor: Christian Vladimir Uhdre Mulato
@@ -79,7 +79,7 @@
 
 13. [Referências Bibliográficas](#13-referências-bibliográficas)
 
----
+***
 
 # 1. Apresentação
 
@@ -102,7 +102,7 @@ Boa leitura e bons estudos!
 
 Campo Largo – PR
 
----
+***
 
 # 2. Fundamentos da Programação em Python
 
@@ -116,7 +116,7 @@ Finalmente, introduziremos os conceitos de entrada e saída de dados, ensinando 
 
 Ao concluir estes módulos, você estará apto a escrever programas Python simples, mas poderosos, que podem realizar cálculos, manipular dados e interagir com o mundo exterior, lançando as bases para sua jornada na programação aplicada à engenharia.
 
----
+***
 
 ## 2.1. Tipos de Dados em Python
 
@@ -265,7 +265,7 @@ Tensão (V, inteiro): 20
 
 Este exemplo prático mostra como os tipos de dados fundamentais são aplicados em um problema simples de engenharia, combinando cálculo, lógica e representação de informações do mundo real.
 
----
+***
 
 ### 2.1.6. Exemplo: Simulação da Trajetória de um Projétil
 
@@ -362,7 +362,7 @@ Este exemplo é mais complexo e demonstra como os tipos de dados são usados em 
 
 ![PROJETIL](imagens/03_imagem_projetil.png)
 
----
+***
 
 ## 2.2. Operadores Aritméticos e Lógicos em Python
 
@@ -487,7 +487,7 @@ Força resultante: 49.0 N
 
 Este texto fornece uma base sólida sobre operadores aritméticos e lógicos, juntamente com exemplos práticos de como eles são usados em contextos de engenharia.
 
----
+***
 
 ### 2.2.4. Exercício Proposto: Cálculo de Área e Perímetro de um Terreno e Verificação de Viabilidade
 
@@ -563,7 +563,7 @@ Terreno viável para construção: Sim
 
 Este exercício combina o uso de tipos de dados, operadores aritméticos e lógicos em um contexto prático de engenharia civil, proporcionando uma aplicação mais completa dos conceitos aprendidos.
 
----
+***
 
 ### 2.2.5. Exercício Proposto: Análise da Deformação de uma Viga
 
@@ -699,7 +699,7 @@ Gráfico da deflexão salvo como deflexao_viga.png
 
 ![Gráfico da Deflexão da Viga](imagens/06_imagem_grafico_deflexao.png)
 
----
+***
 
 Este exercício é mais completo e envolve:
 - Entrada de dados variados (comprimento, propriedades do material, tipo e intensidade de carregamento).
@@ -710,7 +710,7 @@ Este exercício é mais completo e envolve:
 
 Este tipo de problema é representativo de análises comuns em engenharia mecânica e demonstra a utilidade da programação para resolver problemas complexos e visualizar resultados.
 
----
+***
 
 ### 2.2.6. Curiosidade – Mecânica dos Sólidos
 
@@ -763,7 +763,7 @@ Essas fórmulas e a teoria da flexão de vigas são fundamentais na engenharia e
 
 Compreender a teoria por trás das fórmulas é crucial para aplicar corretamente os resultados dos cálculos e garantir a segurança e a eficiência dos projetos de engenharia.
 
----
+***
 
 ## 2.3. Entrada e Saída de Dados em Python
 
@@ -852,7 +852,7 @@ print(f"Pressão: {pressao} kPa")
 
 A habilidade de obter dados do usuário e apresentar resultados de forma clara é fundamental para criar programas interativos e úteis em engenharia.
 
----
+***
 
 ### 2.3.4. Exercício Proposto: Cálculo de Conversão em um Reator
 
@@ -928,7 +928,7 @@ print(f"Tempo de reação: {tempo_reacao:.2f} minutos")
 - Lembre-se de converter as entradas numéricas de `input()` para `float`.
 - Use f-strings para formatar a saída, especialmente a conversão (:.2f%).
 
----
+***
 
 #### Figura 2.3.1 – Esquema Técnico
 
@@ -1017,7 +1017,7 @@ Tempo de Reação: 30.00 minutos
 ```
 Este exercício aborda um problema prático de engenharia química e reforça o uso de entrada e saída de dados com formatação.
 
----
+***
 
 ## 2.4. Primeiros Cálculos Aplicados à Engenharia
 
@@ -1139,7 +1139,7 @@ Digite o volume da solução (m³): 2
 A concentração do poluente é: 0.25 kg/m³
 ```
 
----
+***
 
 ### 2.5. Conclusão
 
@@ -1150,7 +1150,7 @@ Eles reforçam a importância de:
 - Interagir com o usuário para obter os dados necessários e apresentar os resultados de forma clara.
 Nos próximos módulos, exploraremos conceitos mais avançados de Python para resolver problemas de engenharia mais complexos.
 
----
+***
 
 # 3. Estrutura de Controle
 
@@ -1161,7 +1161,7 @@ Em seguida, exploraremos os laços de repetição (FOR, WHILE). Os laços de rep
 Finalmente, demonstraremos aplicações práticas em verificação de condições operacionais. Através de exemplos relevantes para a engenharia, mostraremos como as estruturas de controle podem ser usadas para monitorar processos, garantir a segurança de sistemas e automatizar a tomada de decisões em tempo real.
 Ao concluir este módulo, você estará apto a desenvolver programas Python que não apenas realizam cálculos, mas também tomam decisões lógicas e executam ações repetitivas, abrindo caminho para a criação de soluções de engenharia mais robustas e inteligentes.
 
----
+***
 
 ## 3.1. Condicionais: if, elif, else
 
@@ -1206,7 +1206,7 @@ Digite o índice de poluição do ar: 75
 Qualidade do ar: Moderada
 ```
 
----
+***
 
 
 ### 3.1.2. A estrutura if-else
@@ -1249,7 +1249,7 @@ else:
 Digite a tensão aplicada (N/m²): 75
 Material resistente.
 ```
----
+***
 
 ### 3.1.3. A estrutura if-elif-else
 
@@ -1377,7 +1377,7 @@ A tabela de classificação apresentada no exercício é uma simplificação, ma
 
 Dominar as estruturas condicionais **IF, ELIF e ELSE** é um marco importante na jornada de programação. Elas fornecem a base para criar programas que não apenas executam cálculos, mas também respondem dinamicamente a diferentes entradas e condições. Nos próximos itens e módulos, veremos como essa habilidade será aplicada em contextos mais complexos, como laços de repetição, funções e projetos de engenharia.
 
----
+***
 
 ## 3.2. Laços de Repetição: for, while
 
@@ -1425,7 +1425,7 @@ print(f"Média de temperatura: {media_temperatura:.2f} °C")
 ```plaintext
 Média de temperatura: 21.16 °C
 ```
----
+***
 
 ### 3.2.2. O laço while
 
@@ -1499,7 +1499,7 @@ Temperatura segura alcançada.
 
 Os laços de repetição são ferramentas poderosas para automatizar tarefas, processar grandes conjuntos de dados e implementar algoritmos iterativos em diversas aplicações de engenharia. Eles permitem que os engenheiros desenvolvam soluções eficientes e escaláveis para problemas complexos, economizando tempo e esforço no desenvolvimento de software.
 
----
+***
 
 ### 3.2.3. Exercício Proposto: Simulação de um Reator Batelada Isotérmico
 
@@ -1588,7 +1588,7 @@ Este exercício simula um processo fundamental em engenharia química (reação 
 - Use um laço `for` para iterar sobre o número de pontos no tempo e calcular a concentração de A em cada ponto.
 - Use f-strings para formatar a saída com duas casas decimais.
 
----
+***
 
 ### 3.2.4. Curiosidade – Engenharia Química
 
@@ -1601,7 +1601,7 @@ A simulação de reatores é essencial para o design e operação de processos q
 Os laços de repetição `for` e `while` são ferramentas poderosas na programação, permitindo a execução de blocos de código múltiplas vezes com base em condições específicas. Eles são amplamente utilizados em problemas de engenharia para automatizar tarefas, processar dados e simular comportamentos dinâmicos.
 Compreender como usar esses laços é essencial para desenvolver programas eficientes e eficazes. Nos próximos módulos, veremos como combinar laços de repetição com outras estruturas de controle, como condicionais e funções, para criar soluções mais complexas e robustas em Python.
 
----
+***
 
 ## 3.3. Aplicações Práticas em Verificação de Condições Operacionais
 
@@ -1739,7 +1739,7 @@ Alerta: Valor anormal detectado no ciclo 6: 0.4
 ```
 Estes exemplos demonstram a versatilidade das estruturas de controle na verificação de condições operacionais em diversos campos da engenharia. Ao utilizar IF, ELIF, ELSE, FOR e WHILE, os engenheiros podem criar programas que monitoram sistemas, detectam anomalias, acionam alarmes e automatizam ações de controle, contribuindo para a segurança, eficiência e confiabilidade dos processos e equipamentos.
 
----
+***
 
 ## 3.4. Conclusão
 
@@ -1747,7 +1747,7 @@ Neste módulo, exploramos as estruturas de controle em Python, incluindo condici
 Através de exemplos práticos, vimos como aplicar essas estruturas para monitorar condições operacionais, controlar processos e automatizar tarefas. A compreensão e aplicação correta dessas estruturas são essenciais para desenvolver programas eficientes e eficazes em diversas áreas da engenharia.
 Nos próximos módulos, continuaremos a explorar conceitos mais avançados de Python, como funções, manipulação de dados e bibliotecas específicas para engenharia, que nos permitirão criar soluções ainda mais robustas e complexas. A prática contínua com estruturas de controle fortalecerá suas habilidades de programação e sua capacidade de resolver problemas reais de engenharia.
 
----
+***
 
 # 4. Funções e Modularizações
 
@@ -1757,7 +1757,7 @@ Em seguida, discutiremos parâmetros e retorno. Veremos como as funções podem 
 Finalmente, exploraremos a organização de código em módulos reutilizáveis. A modularização envolve a divisão de um programa em arquivos separados chamados módulos. Cada módulo pode conter funções, variáveis e outras definições relacionadas a uma funcionalidade específica. Aprenderemos a criar e importar módulos, o que nos permitirá estruturar projetos maiores de forma eficiente e reutilizar código entre diferentes programas.
 Ao concluir este módulo, você estará apto a criar funções para organizar seu código, usar parâmetros e retorno para torná-las flexíveis e estruturar projetos em módulos para promover a reutilização e a manutenção eficiente do código, habilidades cruciais para o desenvolvimento de soluções de engenharia robustas e escaláveis.
 
----
+***
 
 ## 4.1. Definição de Funções
 
@@ -1888,7 +1888,7 @@ Parâmetros e retorno oferecem vários benefícios importantes na programação,
 - Testabilidade: Funções com parâmetros e retorno são mais fáceis de testar, pois você pode verificar se a função produz os resultados esperados para diferentes entradas.
 Esses benefícios são essenciais para o desenvolvimento de software de engenharia, onde a clareza, a reutilização e a eficiência do código são fundamentais para resolver problemas complexos e garantir a qualidade das soluções.
 
----
+***
 
 ## 4.3. Organização de Código em Módulos Reutilizáveis
 
@@ -2014,7 +2014,7 @@ Perímetro do retângulo: 14 m
 ```
 Neste exemplo, criamos um módulo `geometria.py` que contém funções para calcular a área e o perímetro de um círculo e um retângulo. Em seguida, importamos esse módulo no arquivo `main.py` e utilizamos suas funções para realizar os cálculos necessários. Isso demonstra como a modularização pode tornar o código mais organizado e reutilizável.
 
----
+***
 
 ### 4.3.5 Exercício Proposto: Gestão de Inventário Florestal
 
@@ -2027,7 +2027,7 @@ Um engenheiro florestal precisa desenvolver um sistema para gerenciar o inventá
 
 ![EXERCICIO_PROPOSTO](imagens/09_imagem_exercicio_proposto.png)
 
----
+***
 
 #### Código do Módulo (`calculos_florestais.py`):
 
@@ -2059,7 +2059,7 @@ def gerar_relatorio(parcela, dados_arvores):
     return relatorio
 ```
 
----
+***
 
 #### Programa Principal (`main.py`):
 
@@ -2077,7 +2077,7 @@ if __name__ == "__main__":
     print(relatorio_parcela)
 ```
 
----
+***
 
 **Saída Esperada:**
 ```plaintext
@@ -2093,19 +2093,19 @@ Relatório da Parcela: Parcela A1
 
 Este exercício simula um sistema de gestão de inventário florestal, onde o engenheiro florestal pode calcular o volume de madeira, a idade de corte e gerar relatórios sumarizados para diferentes parcelas florestais. A modularização do código permite que as funções sejam reutilizadas em diferentes contextos, promovendo a eficiência e a clareza no desenvolvimento de software de engenharia.
 
----
+***
 
 ## 4.4. Conclusão
 
 Neste módulo, mergulhamos nos conceitos de funções e modularização em Python, aprendendo a criar funções para encapsular a lógica de tarefas específicas, a utilizar parâmetros para torná-las flexíveis e a retornar valores para comunicar resultados. Demonstramos como a modularização permite organizar o código em módulos reutilizáveis, facilitando a manutenção, a colaboração e a escalabilidade de projetos. O exemplo prático de gestão de inventário florestal ilustrou a aplicação desses conceitos em um problema real de engenharia, evidenciando como funções e módulos contribuem para o desenvolvimento de soluções mais estruturadas, eficientes e fáceis de manter. O domínio desses conceitos é um passo fundamental para o desenvolvimento de software de alta qualidade em engenharia.
 
----
+***
 
 # 5. Estruturas de Dados
 
 Este módulo apresenta as estruturas de dados fundamentais em Python: listas, tuplas e dicionários. Listas são sequências mutáveis de elementos, úteis para armazenar coleções de itens que podem ser modificados. Tuplas são sequências imutáveis, ideais para representar conjuntos de dados fixos. Dicionários são coleções de pares chave-valor, que permitem acessar dados de forma eficiente através de uma chave. Neste módulo, aprenderemos a criar, acessar, modificar e manipular essas estruturas, bem como a iterar sobre seus elementos para realizar operações diversas. As aplicações em vetores de parâmetros de processo ilustrarão como essas estruturas podem ser usadas para organizar e analisar dados em sistemas de engenharia, como medições de temperatura, pressão e vazão.
 
----
+***
 
 ## 5.1. Listas, Tuplas e Dicionários
 
@@ -2163,7 +2163,7 @@ for item in minha_lista:
 **Aplicação em Engenharia:**  
 Listas são muito úteis para armazenar conjuntos de medições, resultados de experimentos, parâmetros de processos, entre outros dados que precisam ser manipulados e analisados em sequência.
 
----
+***
 
 ### 5.1.2. Tuplas
 
@@ -2215,7 +2215,7 @@ Erro: 'tuple' object does not support item assignment
 Tuplas são úteis para representar conjuntos de dados que não devem ser alterados, como coordenadas de um ponto, parâmetros fixos de um experimento ou registros imutáveis de configuração.
 
 
----
+***
 
 ### 5.1.3. Dicionários
 
@@ -2276,7 +2276,7 @@ profissao: Engenheiro
 **Aplicação em Engenharia:**  
 Dicionários são ideais para armazenar dados associados a identificadores únicos, como medições de sensores (por exemplo, {'sensor1': 220.5, 'sensor2': 221.0}), propriedades de materiais, parâmetros de equipamentos ou resultados de experimentos, permitindo acesso rápido e organizado às informações.
 
----
+***
 
 ### 5.1.4. Escolha da Estrutura de Dados
 
@@ -2323,7 +2323,7 @@ Ao desenvolver um programa, a escolha da estrutura de dados adequada é fundamen
 
 Escolher a estrutura de dados correta pode melhorar significativamente a eficiência, a clareza e a robustez do seu código em aplicações de engenharia.
 
----
+***
 
 ### 5.1.5. Exercício Proposto: Análise de Dados de Sensores de Tensão em um Sistema de Distribuição de Energia
 
@@ -2440,7 +2440,7 @@ Nenhuma anomalia detectada.
 **Aplicação em Engenharia:**  
 Este exercício demonstra como listas, tuplas e dicionários podem ser usados em conjunto para organizar, analisar e monitorar dados de sensores em sistemas de engenharia elétrica, permitindo a identificação rápida de anomalias e a tomada de decisões baseada em dados.
 
----
+***
 
 ### 5.1.6. Destaque dos Conceitos
 
@@ -2465,12 +2465,12 @@ Neste exercício, utilizamos de forma integrada as três principais estruturas d
 - A função `verificar_anomalias()` recebe a tupla como argumento para comparar as leituras de tensão com os limites.
 - O acesso aos elementos da tupla é feito por **índice** (por exemplo, `faixa_aceitavel[0]` para acessar a tensão mínima).
 
----
+***
 
 **Resumo:**  
 Este exercício demonstra como **dicionários**, **listas** e **tuplas** podem ser usados em conjunto para resolver um problema prático de engenharia elétrica, organizando, armazenando e manipulando dados de sensores de forma eficiente e estruturada.
 
----
+***
 
 ## 5.2. Iteração e Manipulação de Dados
 
@@ -2609,7 +2609,7 @@ for quadrado in gerador:
 **Resumo:**  
 Dominar as técnicas de iteração é fundamental para trabalhar efetivamente com estruturas de dados em Python, permitindo que você processe e analise dados de maneira eficiente em aplicações de engenharia.
 
----
+***
 
 ### 5.2.2. Exercício Proposto: Análise de Dados de Teste de Tração
 
@@ -2740,7 +2740,7 @@ Tensão de Escoamento (0.2%): 25.00 MPa
 **Aplicação em Engenharia:**  
 Este exercício mostra como Python pode ser utilizado para analisar dados experimentais de materiais, calcular propriedades mecânicas e apoiar a tomada de decisão em projetos de engenharia mecânica.
 
----
+***
 
 ## 5.3. Aplicações em Vetores de Parâmetros de Processo
 
@@ -2788,7 +2788,7 @@ Em engenharia, é comum lidar com conjuntos de parâmetros que representam o est
 **Aplicação em Engenharia:**  
 A escolha correta da estrutura de dados permite organizar, acessar e manipular eficientemente os parâmetros de processo, facilitando análises, simulações e tomadas de decisão em projetos de engenharia.
 
----
+***
 
 ### 5.3.2. Exercício Proposto: Análise do Desempenho de um Reator Químico Batch
 
@@ -2816,7 +2816,7 @@ Um engenheiro químico está analisando o desempenho de um reator químico batch
      - Constante de velocidade (k)
      - Representações textuais dos gráficos
 
----
+***
 
 ### 5.3.3. Conceitos Aplicados no Código
 
@@ -2847,12 +2847,12 @@ Neste exercício, diversos conceitos fundamentais de programação e engenharia 
    - O uso de funções específicas para cada tarefa (cálculo de constante, geração de gráfico, etc.) torna o código modular, reutilizável e fácil de manter.
    - Essa prática é essencial para projetos maiores e para a colaboração entre engenheiros.
 
----
+***
 
 **Resumo:**  
 O exercício integra conceitos de vetores de parâmetros, análise cinética, visualização de dados e modularização de código, mostrando como Python pode ser uma ferramenta poderosa para a análise e otimização de processos em engenharia química.
 
----
+***
 
 ## 5.3.4. Exercício Proposto: Resolução
 
@@ -2981,7 +2981,7 @@ print(grafico_temperatura)
 **Aplicação em Engenharia:**  
 Este exercício demonstra como Python pode ser utilizado para analisar dados experimentais de reatores químicos, calcular propriedades cinéticas e gerar visualizações textuais dos resultados. A manipulação eficiente de vetores de parâmetros de processo é essencial para otimizar o desempenho e a segurança em processos químicos industriais.
 
----
+***
 
 ## 5.4. Conclusão
 
@@ -2995,7 +2995,7 @@ Também praticamos técnicas de iteração, manipulação e análise de dados, a
 
 O domínio dessas ferramentas é fundamental para qualquer engenheiro ou cientista que deseje automatizar tarefas, analisar grandes volumes de dados e desenvolver soluções computacionais robustas. Ao aplicar corretamente listas, tuplas e dicionários, você estará preparado para enfrentar desafios cada vez mais complexos na programação Python voltada à engenharia.
 
----
+***
 
 # 6. Manipulação de Arquivos e Dados
 
@@ -3024,7 +3024,7 @@ A manipulação de arquivos é fundamental para armazenar, recuperar e compartil
 - **Tratamento de erros:**  
   O uso de blocos `try-except-finally` é recomendado para evitar falhas ao manipular arquivos inexistentes ou corrompidos.
 
----
+***
 
 ### 6.1.2. Exemplos
 
@@ -3066,7 +3066,7 @@ if media_temperatura is not None:
 Média de Temperaturas: 25.50 °C
 ```
 
----
+***
 
 #### 2. Escrever uma lista de resultados de simulação em um arquivo .txt
 
@@ -3089,7 +3089,7 @@ escrever_resultados_simulacao('resultados.txt', resultados)
 Arquivo `resultados.txt` criado com os valores:
 ```
 
----
+***
 
 #### 3. Ler e escrever arquivos CSV com o módulo csv
 
@@ -3122,12 +3122,12 @@ with open('resultados.csv', 'w', newline='') as csvfile:
 ['20', '27.2']
 ```
 
----
+***
 
 **Resumo:**  
 A leitura e escrita de arquivos .txt e .csv são tarefas essenciais para registrar, analisar e compartilhar dados em projetos de engenharia. Dominar essas operações permite automatizar rotinas, integrar sistemas e documentar resultados de forma eficiente.
 
----
+***
 
 ### 6.1.3. Exercício Proposto: Análise de Dados de Vazão em ETE
 
@@ -3184,7 +3184,7 @@ Timestamp,Vazao_m3h
      Vazão Mínima: Z m³/h (Timestamp: AAAA-MM-DD HH:MM:SS)
      ```
 
----
+***
 
 **Código Python de Exemplo:**
 ```python
@@ -3243,13 +3243,13 @@ else:
     print("Nenhum dado disponível para análise.")
 ```
 
----
+***
 
 #### Resumo:
 
 Este exercício integra leitura de arquivos CSV, manipulação de datas, análise estatística simples e geração de relatórios automatizados, mostrando como Python pode ser aplicado para monitorar e documentar o desempenho de sistemas de engenharia ambiental.
 
----
+***
 
 ### 6.1.4. Considerações Adicionais:
 
@@ -3261,7 +3261,7 @@ Este exercício integra leitura de arquivos CSV, manipulação de datas, anális
   - **Controle:** Este exercício pode ser estendido para simular um sistema de controle, onde a vazão é ajustada com base em um valor de referência.
 Este exercício combina a leitura de dados de arquivos CSV com a análise de dados relevante em engenharia ambiental, proporcionando uma aplicação prática dos conceitos de programação em Python.
 
----
+***
 
 ### 6.1.5. Análise e Visualização de Dados da Vazão em ETE
 
@@ -3362,18 +3362,18 @@ Vazão Mínima: 100.00 m³/h (em 2023-01-01 00:00:00)
 - **Tratamento de Erros:** Implementação de tratamento de exceções para garantir robustez.
 - **Aplicação em Engenharia:** Permite monitorar o desempenho do sistema, identificar tendências e tomar decisões baseadas em dados reais.
 
----
+***
 
 **Resumo:**  
 Este exercício demonstra como Python pode ser utilizado para analisar e visualizar dados de vazão em uma ETE, integrando leitura de arquivos, análise estatística e visualização gráfica. Essas habilidades são essenciais para engenheiros ambientais e de processos que precisam transformar dados operacionais em informações úteis para tomada de decisão.
 
----
+***
 
 ### 6.1.6. Resumo
 
 Os dois últimos exercícios demonstraram uma clara progressão na capacidade de manipulação e análise de dados em Python. Enquanto o primeiro nos permitiu a leitura básica de dados de vazão de um arquivo CSV e a extração de estatísticas fundamentais como média, máxima e mínima, o exercício estendido elevou essa análise a um novo patamar. Ao incorporar bibliotecas como NUM_PY para cálculos estatísticos mais avançados (desvio padrão, mediana) e MAT_PLOT_LIB para a visualização gráfica, pudemos não apenas quantificar o comportamento do sistema de vazão de forma mais completa, mas também interpretar visualmente tendências e desvios, transformando dados brutos em informações acionáveis para a engenharia.
 
----
+***
 
 ## 6.2. Introdução à Biblioteca PANDAS
 
@@ -3402,7 +3402,7 @@ A biblioteca **PANDAS** é uma das ferramentas mais poderosas e populares para a
 - **Visualização de Dados:**  
   Embora PANDAS não seja uma biblioteca de visualização, ela se integra facilmente com bibliotecas como Matplotlib e Seaborn, permitindo criar gráficos diretamente a partir de DataFrames.
 
----
+***
 
 ### 6.2.2. Exemplos Práticos
 
@@ -3486,7 +3486,7 @@ Dados salvos em 'dados_saida.csv'
 **Resumo:**  
 PANDAS é uma biblioteca essencial para análise de dados em Python, permitindo importar, organizar, manipular e exportar grandes volumes de dados de forma eficiente. Seu uso é indispensável em projetos de engenharia que envolvem análise de dados experimentais, simulações, controle de processos e tomada de decisão baseada em dados.
 
----
+***
 
 ### 6.2.3. Exercício Proposto: Análise de Dados de Tensão e Corrente em um Sistema Elétrico
 
@@ -3639,14 +3639,14 @@ Dados ordenados por corrente:
 **Resumo:**  
 Este exercício mostra como utilizar o Pandas para análise de dados elétricos, aplicando leitura de arquivos, estatísticas, agrupamento, filtragem e ordenação. Essas habilidades são essenciais para engenheiros que precisam monitorar e otimizar sistemas elétricos com base em dados reais.
 
----
+***
 
 ### 6.2.4. Resumo
 
 Neste módulo, exploramos a biblioteca PANDAS, uma ferramenta essencial para análise de dados em Python. Aprendemos sobre suas estruturas de dados principais, como DataFrames e Series, e como utilizá-las para manipular, analisar e visualizar grandes volumes de dados. Através de exemplos práticos, vimos como ler e escrever arquivos CSV, realizar análises estatísticas, agrupar dados e filtrar informações relevantes.
 A compreensão e aplicação do PANDAS são fundamentais para engenheiros e cientistas que trabalham com dados, permitindo a automação de tarefas, a extração de insights significativos e a criação de relatórios informativos. Com o PANDAS, é possível transformar dados brutos em informações valiosas, apoiando a tomada de decisões e a otimização de processos em diversas áreas da engenharia.
 
----
+***
 
 ## 6.3. Análise de Dados Experimentais e Simulações Computacionais
 
@@ -3665,7 +3665,7 @@ A análise de dados experimentais e simulações computacionais é uma parte cru
 - **Visualização de Dados:**
     A representação gráfica dos dados é essencial para identificar padrões, tendências e anomalias. Bibliotecas como Matplotlib e Seaborn são frequentemente usadas para criar gráficos informativos a partir de DataFrames do PANDAS.
 
----
+***
 ### 6.3.2. Exemplo Proposto: Calibração de um Sensor de Pressão
 
 **Contexto:**  
@@ -3764,7 +3764,7 @@ E um gráfico mostrando os pontos experimentais e a curva ajustada.
 
 ![CALIBRACAO](imagens/17_imagem_calibracao_do_sensor.png)
 
----
+***
 
 **Explicação dos Conceitos Utilizados:**
 - **Leitura de Dados:** Uso do Pandas para importar dados do CSV.
@@ -3778,7 +3778,7 @@ E um gráfico mostrando os pontos experimentais e a curva ajustada.
 Neste exemplo, exploramos como utilizar Python para calibrar um sensor de pressão, ajustando curvas polinomiais aos dados experimentais. Aprendemos a ler dados de um arquivo CSV com Pandas, ajustar curvas usando NumPy e aplicar correções em medições futuras. A visualização dos dados e do ajuste com Matplotlib nos permite entender melhor a relação entre a saída do sensor e a pressão real, garantindo medições precisas e confiáveis.
 A calibração de sensores é uma prática comum em engenharia, essencial para garantir a precisão e a confiabilidade dos sistemas de medição. Com o domínio dessas técnicas, engenheiros podem otimizar processos, validar modelos teóricos e garantir a precisão em sistemas de controle e automação.
 
----
+***
 
 ## 6.4. Conclusão
 
@@ -3786,7 +3786,7 @@ A análise de dados experimentais e simulações computacionais é uma habilidad
 A compreensão e aplicação dessas técnicas são fundamentais para otimizar processos, validar modelos teóricos e garantir a precisão em sistemas de controle e automação. Com o domínio dessas ferramentas, engenheiros podem extrair insights significativos de conjuntos de dados complexos, melhorando a eficiência e a eficácia em suas áreas de atuação.
 
 
----
+***
 
 # 7. Visualização de Dados
 
@@ -3896,7 +3896,7 @@ Em muitos casos, MAT_PLOT_LIB e SEABORN são usados em conjunto. MAT_PLOT_LIB fo
 
 Este item fornece uma base sólida para entender as ferramentas essenciais de visualização de dados em Python, preparando o terreno para os tópicos subsequentes sobre tipos específicos de gráficos e suas aplicações.
 
----
+***
 
 ### 7.1.5 Exercício Proposto: Análise de Trajetória de um Míssil Balístico
 
@@ -4149,7 +4149,7 @@ plt.show()
 
 ![Histograma](imagens/24_imagem_grafico_histograma.png)
 
----
+***
 
 ### 7.2.5. Exercício Proposto: Análise de Dados de Qualidade da Água em Campo Largo
 
@@ -4277,7 +4277,7 @@ Gráfico de dispersão analisando a relação entre turbidez e temperatura da á
 
 Os gráficos gerados fornecem uma visão abrangente da qualidade da água em diferentes pontos de amostragem ao longo do tempo. O gráfico de linha mostra como o pH varia, indicando possíveis alterações na acidez ou alcalinidade da água. O gráfico de barras compara os níveis de oxigênio dissolvido, essencial para a vida aquática, entre os pontos de amostragem. Por fim, o gráfico de dispersão revela a relação entre turbidez e temperatura, ajudando a identificar possíveis correlações entre esses parâmetros.
 
----
+***
 
 ## 7.3. Visualização de Curvas e Resultado de Processos
 
@@ -4308,7 +4308,7 @@ A visualização de curvas é amplamente aplicada em diversas áreas da engenhar
 
 Para a visualização de curvas em Python, as bibliotecas MAT_PLOT_LIB e SEABORN são amplamente utilizadas. Elas oferecem uma variedade de funções para criar gráficos personalizados, permitindo a representação visual de dados complexos de forma clara e informativa. A seguir, apresentamos exemplos de como utilizar essas bibliotecas para criar gráficos de curvas.
 
----
+***
 
 ### 7.3.5. Exercício Proposto: Análise do Desempenho de um Sistema de Controle de Temperatura
 
@@ -4378,14 +4378,14 @@ A partir do gráfico, podemos analisar o desempenho do sistema de controle:
 
 Resumindo, a visualização dessas curvas permite identificar rapidamente o desempenho do sistema de controle, facilitando ajustes e otimizações necessárias para melhorar a resposta do sistema.
 
----
+***
 
 ## 7.4. Conclusão
 
 A visualização de dados é uma habilidade essencial para engenheiros e cientistas, permitindo a interpretação clara e eficaz de informações complexas. Neste módulo, exploramos os principais tipos de gráficos utilizados na visualização de dados, como gráficos de linha, barras, dispersão e histogramas, e discutimos suas aplicações práticas em engenharia.
 Através de exemplos práticos, aprendemos a utilizar as bibliotecas MAT_PLOT_LIB e SEABORN para criar gráficos informativos e visualmente atraentes. A capacidade de visualizar dados de forma eficaz é crucial para a análise de desempenho de sistemas, identificação de tendências e comunicação de resultados.
 
----
+***
 
 # 8. Cálculo Numérico com NUM_PY
 
@@ -4598,7 +4598,7 @@ A análise das forças aerodinâmicas é crucial para o projeto de aeronaves, po
 - **Arrays NUM_PY:** Utilizados para representar os parâmetros aerodinâmicos e as velocidades do ar, permitindo operações vetorizadas eficientes.
 - **Operações Vetoriais:** Cálculos das forças de sustentação e arrasto foram realizados de forma vetorizada, evitando loops explícitos e melhorando a performance.
 
----
+***
 
 ## 8.2. Matrizes e Álgebra Linear
 
@@ -4815,7 +4815,7 @@ As proporções de tempo de verde calculadas indicam que, para o ciclo semafóri
 
 Este exercício demonstra como um problema prático de engenharia de tráfego pode ser modelado e resolvido de forma elegante e eficiente usando os recursos de álgebra linear do **NUM_PY**.
 
----
+***
 
 ## 8.3. Aplicações em Balanços e Sistemas Lineares
 
@@ -4946,7 +4946,7 @@ As vazões mássicas calculadas indicam que, para produzir uma Corrente 3 com um
 - **Arrays NUM_PY:** Utilizados para representar a matriz de coeficientes e o vetor de termos independentes, permitindo operações matemáticas eficientes.
 - **Álgebra Linear:** A resolução do sistema de equações lineares foi realizada utilizando a função np.linalg.solve(), que é otimizada para resolver sistemas de equações de forma rápida e eficiente.
 
----
+***
 
 ## 8.4 Conclusão
 
@@ -4954,7 +4954,7 @@ Neste capítulo, exploramos o conceito de balanço de massa em um misturador qu�
 
 Os conceitos abordados aqui são fundamentais para a compreensão de processos químicos e de engenharia, e a habilidade de aplicar programação e ferramentas computacionais para resolver problemas práticos é uma competência valiosa no campo da engenharia.
 
----
+***
 
 # 9. Modelagem Matemática Simples
 
@@ -4968,7 +4968,7 @@ Para recordar e adicionar uma nova perspectiva, podemos reafirmar que a essênci
 Uma novidade interessante e de vasta aplicação na engenharia que se baseia diretamente na resolução de sistemas lineares é o ajuste de dados pelo método dos mínimos quadrados (Least Squares). Em muitos cenários, coletamos dados experimentais que não seguem uma relação linear perfeita, mas podemos aproximá-los por uma linha reta ou um polinômio. O método dos mínimos quadrados busca a "melhor" linha (ou curva) que se ajusta a esses pontos, minimizando a soma dos quadrados das diferenças entre os valores observados e os valores previstos pelo modelo. Embora o problema de mínimos quadrados possa ser resolvido de várias maneiras, uma das abordagens mais robustas e eficientes para problemas lineares é transformá-lo em um sistema de equações lineares (as "equações normais") e resolvê-lo com **NUM_PY**. Isso é fundamental para a calibração de sensores, modelagem de processos, análise de tendências de dados de desempenho e validação de modelos em todas as disciplinas da engenharia.
 Portanto, a capacidade de modelar e resolver esses sistemas lineares de forma computacional com Python e **NUM_PY** não é apenas uma ferramenta para balanços, mas uma base para a análise de dados, otimização e inferência em praticamente todas as áreas da engenharia.
 
----
+***
 
 ### 9.1.1. Exercício Proposto: Determinação da Constante de Velocidade de Reação por Mínimos Quadrados
 
@@ -5188,13 +5188,13 @@ Os resultados mostram que a constante de velocidade da reação foi calculada co
 - **Funções Numéricas:** np.polyfit() para ajustar uma linha reta aos dados linearizados, e np.log() para calcular o logaritmo natural das concentrações.
 - **Visualização de Dados:** Utilização do Matplotlib e Seaborn para criar gráficos que ilustram os dados experimentais, a curva teórica e a reta ajustada, facilitando a interpretação dos resultados.
 
----
+***
 
 ### 9.1.2. Resumo
 
 Recapitulando, exploramos como problemas que envolvem a determinação de parâmetros a partir de dados experimentais, que muitas vezes não se encaixam perfeitamente em um modelo, podem ser linearizados e resolvidos como um sistema linear. Propusemos um exercício prático em Engenharia Química onde simulamos dados de cinética de reação de primeira ordem. Através da linearização da equação de velocidade integrada (aplicando o logaritmo natural), transformamos a relação exponencial em uma reta. Em seguida, utilizamos a função numpy.polyfit() para ajustar essa reta aos dados linearizados, obtendo os coeficientes que nos permitiram calcular a constante de velocidade da reação e a concentração inicial. Este processo demonstrou o poder de NUM_PY não apenas para resolver sistemas lineares diretos, mas também para inferir parâmetros de modelos a partir de dados com ruído, uma aplicação crucial para a validação e otimização de processos.
 
----
+***
 
 ## 9.2. Equações diferenciais ordinárias (EDOs)
 
@@ -5218,7 +5218,7 @@ O Python, através da biblioteca **SCI_PY** (Scientific Python), oferece ferrame
 - **Condições Iniciais:** Especificar o valor da variável de estado no tempo inicial.
 - **Intervalo de Tempo:** Definir o período de tempo para o qual queremos simular a EDO.
 
----
+***
 
 ### 9.2.1. Exemplo Proposto: Descarga de um Tanque Cilíndrico
 
@@ -5344,7 +5344,7 @@ Tempo aproximado para esvaziamento: 200 s
 - **Título do Gráfico:** Descarga de um Tanque Cilíndrico
 - **Legenda da Linha:** Altura do Líquido (h)
 
----
+***
 
 ### 9.2.2. Resumo
 
@@ -5352,7 +5352,7 @@ Sobre as **Equações Diferenciais Ordinárias (EDOs)**, mergulhamos na linguage
 Destacamos que, embora algumas EDOs tenham soluções analíticas, a maioria dos problemas de engenharia exige **soluções numéricas**. Para isso, aprendemos a utilizar a poderosa biblioteca SCI_PY em Python, especificamente a função **scipy.integrate.odeint**. Vimos que, para aplicar essa ferramenta, é necessário definir a EDO como uma função Python (que retorna a derivada da variável de estado), especificar as condições iniciais e o intervalo de tempo da simulação.
 Como exemplo prático, simulamos a **descarga de um tanque cilíndrico**, modelando a variação da altura do líquido ao longo do tempo através de uma EDO de primeira ordem. O exercício demonstrou como definir essa EDO, resolvê-la numericamente com **odeint** e, em seguida, visualizar a curva da altura versus tempo usando **MAT_PLOT_LIB**, ilustrando a capacidade de Python para analisar o comportamento dinâmico de sistemas de engenharia.
 
----
+***
 
 ## 9.3. Simulações de Tanques, Reatores e Processos Dinâmicos
 
@@ -5521,7 +5521,7 @@ Concentração de regime permanente esperada (após mudança): 4.76 mol/L
   - **Concentração de A no Reator:** Representada pela linha azul contínua. Mostra como a concentração do reagente A, dentro do reator varia ao longo do tempo.
   - **Concentração de A na Entrada:** Representada pela linha vermelha tracejada. Exibe a concentração do reagente A na corrente que entra no reator ao longo do tempo, ilustrando a mudança que ocorre em t=20 minutos.
 
----
+***
 
 ### 9.3.2. Resumo
 
@@ -5529,7 +5529,7 @@ Neste assunto. Simulações de Tanques, Reatores e Processos Dinâmicos, explora
 A base para essas simulações reside frequentemente em **sistemas de Equações Diferenciais Ordinárias (EDOs)** acopladas. Para ilustrar isso, desenvolvemos um exemplo prático de um Reator Tanque Agitado Contínuo (CSTR) com uma reação de primeira ordem.
 No exercício, formulamos a EDO que descreve a variação da concentração de um reagente A, dentro de um reator CSTR. Em seguida, utilizamos a função **scipy.integrate.odeint** para simular numericamente a resposta do reator a uma mudança na concentração do reagente na corrente de entrada ao longo do tempo. Finalmente, visualizamos a evolução da concentração dentro do reator e a concentração de entrada utilizando **MATPLOTLIB**, demonstrando como Python pode ser usado para entender a dinâmica de processos químicos e outros sistemas de engenharia. A capacidade de definir funções de entrada variáveis no tempo também foi destacada como um aspecto importante para simulações mais realistas. 
 
----
+***
 
 ## 9.4. Otimização de Funções com scipy.optimize
 
@@ -5681,7 +5681,7 @@ Custo total mínimo correspondente: $1000.00 / ano
   - **Custo Total (C(A)):** Representa a curva da função de custo total em relação à área.
   - **Mínimo em A = X.XX m^2:** Representa o ponto específico no gráfico onde o custo total é minimizado, com o valor numérico da área ótima (X.XX) incluído.
 
----
+***
 
 ### 9.4.2. Exercício Proposto II: Localização de Dispositivo Móvel por Triangulação (ToA) e Otimização
 
@@ -5822,7 +5822,7 @@ Posição Estimada do Dispositivo: [60.12, 39.87]
 - **Elementos Adicionais no Gráfico (sem legenda explícita, mas visualmente presentes):**
   - Círculos Cinzas Tracejados: Representam as distâncias medidas a partir de cada antena. Devido ao ruído, eles não se intersectam perfeitamente em um único ponto. 
 
----
+***
 
 ### 9.4.3. Resumo
 
@@ -5834,7 +5834,7 @@ O ponto alto deste módulo foi a exploração da Otimização de funções com *
 
 Em suma, este módulo equipou você com as ferramentas para modelar sistemas estáticos e dinâmicos, analisar seu comportamento e, crucialmente, otimizar seus parâmetros para alcançar objetivos específicos. A capacidade de formular e resolver esses problemas computacionalmente é um diferencial fundamental para o engenheiro moderno.
 
----
+***
 
 ## 9.5. Conclusão
 
@@ -5842,7 +5842,7 @@ Este módulo consolidou nossa jornada pela Modelagem Matemática, revelando-a co
 O ponto culminante do módulo foi a exploração da Otimização de funções com **scipy.optimize**. Aprendemos a formular problemas de engenharia onde o objetivo é encontrar as condições ideais para maximizar desempenho ou minimizar custos. Dois exemplos práticos ilustraram a versatilidade dessa abordagem: otimizamos a área de um trocador de calor para alcançar o menor custo total, demonstrando a aplicação da otimização em decisões de projeto e economia. Em um desafio de telecomunicações, utilizamos a otimização para estimar a localização de um dispositivo móvel por triangulação, superando as imprecisões inerentes às medições do mundo real e evidenciando a capacidade de Python para resolver problemas complexos e ruidosos.
 Em síntese, o módulo equipou o engenheiro com as ferramentas para traduzir fenômenos físicos em modelos computacionais, simular sua evolução e, fundamentalmente, otimizar seus parâmetros. Essa proficiência em modelagem e otimização computacional é um pilar para a inovação e a resolução eficaz de problemas em todas as disciplinas da engenharia.
 
----
+***
 
 # 10. Mini Projetos Aplicados à Engenharia
 
@@ -6044,7 +6044,7 @@ O tanque parece ter atingido um regime permanente.
 
 O exercício "Estudo de caso: tanque com entrada e saída" focou na simulação da dinâmica do nível de líquido em um tanque cilíndrico. Modelamos o problema como uma **Equação Diferencial Ordinária (EDO)**, que descreve como a altura do líquido varia com o tempo, considerando uma vazão de entrada variável e uma vazão de saída dependente da altura. Utilizamos **scipy.integrate.odeint** para resolver numericamente essa EDO e MAT_PLOT_LIB/SEABORN para visualizar a curva da altura do líquido ao longo do tempo, demonstrando a integração de conceitos de modelagem matemática, cálculo numérico e visualização de dados. 
 
----
+***
 
 ## 10.2. Balanço de massa e energia com dados reais ou simulados 
 
@@ -6264,7 +6264,7 @@ Este exercício é um excelente exemplo de integração, utilizando conceitos de
 
 Este mini projeto demonstra a aplicação prática e integrada de diversas ferramentas e conceitos de Python para resolver um problema fundamental em engenharia de processos. 
 
----
+***
 
 ## 10.3. Integração de módulos anteriores em soluções prática
 
@@ -7132,7 +7132,7 @@ Nesta tarefa, implementamos a simulação completa do reator químico, incluindo
 - **Organização dos Resultados:** Os resultados da simulação foram organizados em um DataFrame do Pandas, facilitando a análise e a plotagem.
 - **Visualização dos Resultados:** Utilizamos Matplotlib e Seaborn para criar gráficos que mostram a evolução das variáveis de processo (altura, temperatura, concentração) e as ações de controle (vazão de entrada, potência do aquecedor) ao longo do tempo. Os gráficos foram organizados em subplots para melhor visualização.
 
----
+***
 
 ## 10.4. Conclusão
 
@@ -7141,7 +7141,7 @@ Ao longo deste módulo, tivemos a oportunidade de aplicar sinergicamente as habi
 Esses projetos demonstraram como o Python transcende a função de uma simples linguagem de programação, tornando-se um ambiente de engenharia completo. A capacidade de modelar sistemas complexos através de EDOs, implementar lógicas de controle, processar e visualizar dados de forma eficiente, e integrar todas essas funcionalidades em um único programa, é uma prova do poder e da versatilidade do Python.
 Em suma, este módulo final capacitou você a transformar problemas de engenharia em soluções computacionais robustas e funcionais, validando a premissa de que o domínio do Python é uma ferramenta indispensável para o engenheiro moderno.
 
----
+***
 
 # 11. Finalização e Agradecimentos
 
@@ -7169,7 +7169,7 @@ Gostaríamos de expressar nossa profunda gratidão a todos que contribuíram par
 
 Esperamos que esta apostila sirva como um guia valioso em sua jornada contínua de aprendizado e aplicação da programação em Python no campo da engenharia. Que você continue explorando, experimentando e desenvolvendo soluções inovadoras para os desafios que encontrar. O futuro da engenharia é digital, e você está agora equipado para liderar essa transformação!
 
----
+***
 
 # 12. Configuração do Ambiente Python e VS Code
 
@@ -7250,7 +7250,7 @@ Se o gráfico aparecer e a mensagem for exibida, sua configuração está pronta
    - Digite "Python: Select Interpreter"
    - Selecione o interpretador Python instalado
 
----
+***
 
 # 13. Referências Bibliográficas
 
