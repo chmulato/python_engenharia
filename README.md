@@ -31,59 +31,59 @@ O objetivo deste material é fornecer uma introdução prática à programação
 >
 > **Sumário**
 >
-> 1. Apresentação  
-> 2. Fundamentos da Programação em Python  
->    - 2.1. Tipos de Dados em Python  
->    - 2.2. Operadores Aritméticos e Lógicos  
->    - 2.3. Entrada e Saída de Dados  
->    - 2.4. Primeiros Cálculos Aplicados à Engenharia  
->    - 2.5. Conclusão  
-> 3. Estruturas de Controle  
->    - 3.1. Condicionais: IF, ELIF, ELSE  
->    - 3.2. Laços de Repetição: FOR, WHILE  
->    - 3.3. Aplicações Práticas em Verificação de Condições Operacionais  
->    - 3.4. Conclusão  
-> 4. Funções e Modularização  
->    - 4.1. Definição de Funções  
->    - 4.2. Parâmetros e Retorno  
->    - 4.3. Organização de Código em Módulos Reutilizáveis  
->    - 4.4. Conclusão  
-> 5. Estruturas de Dados  
->    - 5.1. Listas, Tuplas e Dicionários  
->    - 5.2. Iteração e Manipulação de Dados  
->    - 5.3. Aplicações em Vetores de Parâmetros de Processo  
->    - 5.4. Conclusão  
-> 6. Manipulação de Arquivos e Dados  
->    - 6.1. Leitura e Escrita de Arquivos .txt e .csv  
->    - 6.2. Introdução ao Pandas  
->    - 6.3. Análise de Dados Experimentais e de Simulações  
->    - 6.4. Conclusão  
-> 7. Visualização de Dados  
->    - 7.1. Matplotlib e Seaborn  
->    - 7.2. Gráficos de Linha, Barras, Dispersão e Histogramas  
->    - 7.3. Visualização de Curvas e Resultados de Processos  
->    - 7.4. Conclusão  
-> 8. Cálculo Numérico com Numpy  
->    - 8.1. Arrays e Operações Vetoriais  
->    - 8.2. Matrizes e Álgebra Linear  
->    - 8.3. Aplicações em Balanços e Sistemas Lineares  
->    - 8.4. Conclusão  
-> 9. Modelagem Matemática Simples  
->    - 9.1. Equações Algébricas e Sistemas Lineares  
->    - 9.2. Equações Diferenciais Ordinárias (EDOs)  
->    - 9.3. Simulações de Tanques, Reatores e Processos Dinâmicos  
->    - 9.4. Otimização de Funções com scipy.optimize  
->    - 9.5. Conclusão  
-> 10. Mini Projetos Aplicados à Engenharia  
->    - 10.1. Projeto 1: Simulação de um Tanque de Mistura  
->    - 10.2. Projeto 2: Análise de Dados Experimentais de Reações Químicas  
->    - 10.3. Projeto 3: Visualização de Curvas de Processo  
->    - 10.4. Conclusão  
-> 11. Finalização e Agradecimentos  
-> 12. Configuração do Ambiente Python e VS Code  
->    - 12.1. Python  
->    - 12.2. Visual Studio Code (VS Code)  
-> 13. Referências Bibliográficas  
+> 1. [Apresentação](python_engenharia.md#1-apresentação)  
+> 2. [Fundamentos da Programação em Python](python_engenharia.md#2-fundamentos-da-programação-em-python)  
+>    - [2.1. Tipos de Dados em Python](python_engenharia.md#21-tipos-de-dados-em-python)  
+>    - [2.2. Operadores Aritméticos e Lógicos](python_engenharia.md#22-operadores-aritméticos-e-lógicos-em-python)  
+>    - [2.3. Entrada e Saída de Dados](python_engenharia.md#23-entrada-e-saída-de-dados-em-python)  
+>    - [2.4. Primeiros Cálculos Aplicados à Engenharia](python_engenharia.md#24-primeiros-cálculos-aplicados-à-engenharia)  
+>    - [2.5. Conclusão](python_engenharia.md#25-conclusão)  
+> 3. [Estruturas de Controle](python_engenharia.md#3-estruturas-de-controle)  
+>    - [3.1. Condicionais: IF, ELIF, ELSE](python_engenharia.md#31-condicionais-if-elif-else)  
+>    - [3.2. Laços de Repetição: FOR, WHILE](python_engenharia.md#32-laços-de-repetição-for-while)  
+>    - [3.3. Aplicações Práticas em Verificação de Condições Operacionais](python_engenharia.md#33-aplicações-práticas-em-verificação-de-condições-operacionais)  
+>    - [3.4. Conclusão](python_engenharia.md#34-conclusão)  
+> 4. [Funções e Modularização](python_engenharia.md#4-funções-e-modularização)  
+>    - [4.1. Definição de Funções](python_engenharia.md#41-definição-de-funções)  
+>    - [4.2. Parâmetros e Retorno](python_engenharia.md#42-parâmetros-e-retorno)  
+>    - [4.3. Organização de Código em Módulos Reutilizáveis](python_engenharia.md#43-organização-de-código-em-módulos-reutilizáveis)  
+>    - [4.4. Conclusão](python_engenharia.md#44-conclusão)  
+> 5. [Estruturas de Dados](python_engenharia.md#5-estruturas-de-dados)  
+>    - [5.1. Listas, Tuplas e Dicionários](python_engenharia.md#51-listas-tuplas-e-dicionários)  
+>    - [5.2. Iteração e Manipulação de Dados](python_engenharia.md#52-iteração-e-manipulação-de-dados)  
+>    - [5.3. Aplicações em Vetores de Parâmetros de Processo](python_engenharia.md#53-aplicações-em-vetores-de-parâmetros-de-processo)  
+>    - [5.4. Conclusão](python_engenharia.md#54-conclusão)  
+> 6. [Manipulação de Arquivos e Dados](python_engenharia.md#6-manipulação-de-arquivos-e-dados)  
+>    - [6.1. Leitura e Escrita de Arquivos .txt e .csv](python_engenharia.md#61-leitura-e-escrita-de-arquivos-txt-e-csv)  
+>    - [6.2. Introdução ao Pandas](python_engenharia.md#62-introdução-à-biblioteca-pandas)  
+>    - [6.3. Análise de Dados Experimentais e de Simulações](python_engenharia.md#63-análise-de-dados-experimentais-e-simulações-computacionais)  
+>    - [6.4. Conclusão](python_engenharia.md#64-conclusão)  
+> 7. [Visualização de Dados](python_engenharia.md#7-visualização-de-dados)  
+>    - [7.1. Matplotlib e Seaborn](python_engenharia.md#71-mat_plot_lib-e-seaborn-ferramentas-essenciais-para-visualização-de-dados-em-python)  
+>    - [7.2. Gráficos de Linha, Barras, Dispersão e Histogramas](python_engenharia.md#72-tipos-de-gráficos-escolhendo-a-representação-visual-adequada)  
+>    - [7.3. Visualização de Curvas e Resultados de Processos](python_engenharia.md#73-visualização-de-curvas-e-resultado-de-processos)  
+>    - [7.4. Conclusão](python_engenharia.md#74-conclusão)  
+> 8. [Cálculo Numérico com Numpy](python_engenharia.md#8-cálculo-numérico-com-numpy)  
+>    - [8.1. Arrays e Operações Vetoriais](python_engenharia.md#81-arrays-e-operações-vetoriais)  
+>    - [8.2. Matrizes e Álgebra Linear](python_engenharia.md#82-matrizes-e-álgebra-linear)  
+>    - [8.3. Aplicações em Balanços e Sistemas Lineares](python_engenharia.md#83-aplicações-em-balanços-e-sistemas-lineares)  
+>    - [8.4. Conclusão](python_engenharia.md#84-conclusão)  
+> 9. [Modelagem Matemática Simples](python_engenharia.md#9-modelagem-matemática-simples)  
+>    - [9.1. Equações Algébricas e Sistemas Lineares](python_engenharia.md#91-equações-algébricas-e-sistemas-lineares)  
+>    - [9.2. Equações Diferenciais Ordinárias (EDOs)](python_engenharia.md#92-equações-diferenciais-ordinárias-edos)  
+>    - [9.3. Simulações de Tanques, Reatores e Processos Dinâmicos](python_engenharia.md#93-simulações-de-tanques-reatores-e-processos-dinâmicos)  
+>    - [9.4. Otimização de Funções com scipy.optimize](python_engenharia.md#94-otimização-de-funções-com-scipyoptimize)  
+>    - [9.5. Conclusão](python_engenharia.md#95-conclusão)  
+> 10. [Mini Projetos Aplicados à Engenharia](python_engenharia.md#10-mini-projetos-aplicados-à-engenharia)  
+>    - [10.1. Projeto 1: Simulação de um Tanque de Mistura](python_engenharia.md#101-estudo-de-caso-tanque-com-entrada-e-saída)  
+>    - [10.2. Projeto 2: Análise de Dados Experimentais de Reações Químicas](python_engenharia.md#102-balanço-de-massa-e-energia-com-dados-reais-ou-simulados)  
+>    - [10.3. Projeto 3: Visualização de Curvas de Processo](python_engenharia.md#103-integração-de-módulos-anteriores-em-soluções-práticas)  
+>    - [10.4. Conclusão](python_engenharia.md#104-conclusão)  
+> 11. [Finalização e Agradecimentos](python_engenharia.md#11-finalização-e-agradecimentos)  
+> 12. [Configuração do Ambiente Python e VS Code](python_engenharia.md#12-configuração-do-ambiente-python-e-vs-code)  
+>    - [12.1. Python](python_engenharia.md#121-python)  
+>    - [12.2. Visual Studio Code (VS Code)](python_engenharia.md#122-visual-studio-code-vs-code)  
+> 13. [Referências Bibliográficas](python_engenharia.md#13-referências-bibliográficas)  
 
 ---
 
