@@ -28,4 +28,4 @@ Campo Largo – PR, junho de 2025
 
 **Christian Vladimir Uhdre Mulato**  
 Engenheiro Químico e Desenvolvedor de Sistemas  
-Apoio: Develcode – Consultoria em Tecnologia e Engenharia
+Apoio: Develcode – Consultoria em Tecnologia
