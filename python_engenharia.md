@@ -6046,6 +6046,226 @@ O exercício "Estudo de caso: tanque com entrada e saída" focou na simulação 
 
 ---
 
+## 10.2. Balanço de massa e energia com dados reais ou simulados 
+
+A aplicação dos princípios de conservação de massa e energia é a base de qualquer análise e projeto em engenharia de processos. Em sistemas industriais, como reatores, misturadores, trocadores de calor e colunas de destilação, a quantificação das entradas e saídas de massa e energia é fundamental para:
+- **Compreender o Processo:** Determinar as vazões, composições e temperaturas em diferentes pontos do sistema.
+- **Diagnosticar Problemas:** Identificar desvios operacionais ou perdas.
+- **Otimizar o Desempenho:** Ajustar condições para maximizar a produção ou minimizar o consumo de recursos.
+- **Projetar Equipamentos:** Dimensionar equipamentos com base nas necessidades de massa e energia.
+
+Muitos problemas de balanço de massa e energia em estado estacionário (sem acúmulo) podem ser formulados como sistemas de equações lineares. A capacidade de resolver esses sistemas de forma eficiente, utilizando dados reais (coletados em campo) ou simulados (gerados por modelos), é uma habilidade crucial para o engenheiro.
+
+### 10.2.1. Exemplo Proposto: Balanço de Massa em uma Rede de Processos (Misturador e Separador)
+
+**Contexto:**
+Um engenheiro de processos está analisando uma pequena rede de unidades em uma planta química, composta por um misturador seguido por um separador. Duas correntes de entrada (Corrente 1 e Corrente 2) alimentam o misturador. A corrente de saída do misturador (Corrente 3) então alimenta um separador, que produz duas correntes de saída (Corrente 4 e Corrente 5). Todas as correntes contêm dois componentes, A e B. O processo opera em regime permanente (estado estacionário).
+O engenheiro possui alguns dados medidos (simulados para este exercício) e precisa determinar as vazões mássicas e composições desconhecidas em pontos chave da rede, utilizando balanços de massa globais e por componente.
+
+**Objetivo:**
+1.	Calcular as vazões e composições da corrente intermediária (Corrente 3) a partir dos dados de entrada do misturador.
+2.	Formular um sistema de equações lineares para o separador, com base nos balanços de massa.
+3.	Utilizar NUM_PY para resolver o sistema de equações e determinar as vazões das correntes de saída do separador (Corrente 4 e Corrente 5).
+4.	Apresentar todos os resultados de forma clara.
+
+**Formulação das Equações de Balanço de Massa:**
+
+**Unidade 1:**		Misturador
+**Balanço de Massa Total:**
+```plaintext
+m1 + m2 = m3
+```
+**Balanço de Massa para Componente A:**
+```plaintext
+m1 . xA1 + m2 . xA2 = m3 . xA3
+```
+
+**Unidade 2:**		Separador
+**Balanço de Massa Total:**
+```plaintext
+m3 + m4 = m5
+```
+**Balanço de Massa para Componente A:**
+```plaintext
+m3 . xA3 + m4 . xA4 = m5 . xA5
+```
+
+**Dados de Entrada (Simulados):**
+- **Corrente 1:**
+  - Vazão mássica (m1): 100 kg/h
+  - Fração mássica de A (xA1): 0.7
+- **Corrente 2:**
+  - Vazão mássica (m2): 50 kg/h
+  - Fração mássica de A (xA2): 0.2
+- **Corrente 4 (Saída do Separador):**
+  - Fração mássica de A (xA4): 0.95
+- **Corrente 5 (Saída do Separador):**
+  - Fração mássica de A (xA5): 0.1
+
+**Variáveis Desconhecidas a serem Encontradas:**
+- **Corrente 3:** m3, xA3
+- **Corrente 4:** m4
+- **Corrente 5:** m5
+
+### Balanço de Massa em Rede de Processos
+
+![Balanço de Massa em Rede de Processos](imagens/40_imagem_balanco_massa_rede_processos.png)
+
+**Código Python para Resolução do Balanço de Massa:**
+```python
+import numpy as np
+import pandas as pd # Para apresentação tabular dos resultados
+
+def analisar_rede_processos():
+    """
+    Realiza balanços de massa em uma rede de processos (misturador e separador)
+    para determinar vazões e composições desconhecidas.
+    """
+    print("--- 10.3. Balanço de Massa e Energia com Dados Reais ou Simulados ---")
+    print("\n--- Exemplo: Balanço de Massa em uma Rede de Processos ---")
+
+    # --- 1. Dados de Entrada (Simulados) ---
+    # Corrente 1
+    m1 = 100.0  # kg/h
+    xA1 = 0.7   # fração mássica de A
+
+    # Corrente 2
+    m2 = 50.0   # kg/h
+    xA2 = 0.2   # fração mássica de A
+
+    # Corrente 4 (saída do separador)
+    xA4 = 0.95  # fração mássica de A
+
+    # Corrente 5 (saída do separador)
+    xA5 = 0.1   # fração mássica de A
+
+    print("\n--- Dados de Entrada ---")
+    print(f"Corrente 1: m={m1} kg/h, xA={xA1}")
+    print(f"Corrente 2: m={m2} kg/h, xA={xA2}")
+    print(f"Corrente 4 (saída separador): xA={xA4}")
+    print(f"Corrente 5 (saída separador): xA={xA5}")
+
+    # --- 2. Balanços para o Misturador (Unidade 1) ---
+    print("\n--- Balanços para o Misturador ---")
+    # Balanço de Massa Total no Misturador
+    m3 = m1 + m2
+    print(f"Vazão da Corrente 3 (saída do misturador): m3 = {m3:.2f} kg/h")
+
+    # Balanço de Massa para Componente A no Misturador
+    # m1*xA1 + m2*xA2 = m3*xA3
+    xA3 = (m1 * xA1 + m2 * xA2) / m3
+    print(f"Fração mássica de A na Corrente 3: xA3 = {xA3:.4f}")
+
+    # --- 3. Balanços para o Separador (Unidade 2) ---
+    print("\n--- Balanços para o Separador ---")
+    # Agora, m3 e xA3 são as entradas conhecidas para o separador.
+    # As incógnitas são m4 e m5.
+
+    # Equação 1: Balanço de Massa Total no Separador
+    # m3 = m4 + m5  =>  1*m4 + 1*m5 = m3
+    
+    # Equação 2: Balanço de Massa para Componente A no Separador
+    # m3*xA3 = m4*xA4 + m5*xA5  =>  xA4*m4 + xA5*m5 = m3*xA3
+
+    # Definir a matriz de coeficientes (A) para o sistema linear [m4, m5]
+    matriz_A = np.array([
+        [1, 1],          # Coeficientes para m4 e m5 na Eq. 1
+        [xA4, xA5]       # Coeficientes para m4 e m5 na Eq. 2
+    ])
+
+    # Definir o vetor de termos independentes (B)
+    vetor_B = np.array([m3, m3 * xA3])
+
+    print("\nMatriz A (coeficientes para m4, m5):")
+    print(matriz_A)
+    print("\nVetor B (termos independentes):")
+    print(vetor_B)
+
+    # Resolver o sistema de equações lineares Ax = B
+    try:
+        solucao_m4_m5 = np.linalg.solve(matriz_A, vetor_B)
+
+        m4 = solucao_m4_m5[0]
+        m5 = solucao_m4_m5[1]
+
+        print("\n--- Resultados Calculados para o Separador ---")
+        print(f"Vazão da Corrente 4: m4 = {m4:.2f} kg/h")
+        print(f"Vazão da Corrente 5: m5 = {m5:.2f} kg/h")
+
+        # --- Verificação dos Balanços (Opcional) ---
+        print("\n--- Verificação dos Balanços ---")
+        print(f"Verificação Total: m4 + m5 = {m4 + m5:.2f} (Esperado: {m3:.2f})")
+        print(f"Verificação Componente A: m4*xA4 + m5*xA5 = {m4*xA4 + m5*xA5:.2f} (Esperado: {m3*xA3:.2f})")
+
+    except np.linalg.LinAlgError:
+        print("\nErro: A matriz de coeficientes é singular. O sistema não tem solução única.")
+        m4 = m5 = np.nan
+    except Exception as e:
+        print(f"\nOcorreu um erro inesperado: {e}")
+        m4 = m5 = np.nan
+
+    # --- Apresentação Final dos Resultados (usando Pandas) ---
+    print("\n--- Resumo das Vazões e Composições ---")
+    dados_resumo = {
+        'Corrente': ['1', '2', '3', '4', '5'],
+        'Vazão Mássica (kg/h)': [m1, m2, m3, m4, m5],
+        'Fração Mássica A': [xA1, xA2, xA3, xA4, xA5]
+    }
+    df_resumo = pd.DataFrame(dados_resumo)
+    print(df_resumo.round(4).to_string(index=False)) #.to_string(index=False) para não mostrar o índice do DataFrame
+
+# --- Execução do Exemplo ---
+if __name__ == "__main__":
+    analisar_rede_processos()
+```
+
+**Resultados esperados:**
+```plaintext
+--- 10.3. Balanço de Massa e Energia com Dados Reais ou Simulados ---
+--- Exemplo: Balanço de Massa em uma Rede de Processos ---
+--- Dados de Entrada ---
+Corrente 1: m=100.0 kg/h, xA=0.7
+Corrente 2: m=50.0 kg/h, xA=0.2
+Corrente 4 (saída separador): xA=0.95
+Corrente 5 (saída separador): xA=0.1
+--- Balanços para o Misturador ---
+Vazão da Corrente 3 (saída do misturador): m3 = 150.00 kg/h
+Fração mássica de A na Corrente 3: xA3 = 0.5667
+--- Balanços para o Separador ---
+Matriz A (coeficientes para m4, m5):
+[[1.   1.  ]
+ [0.95 0.1 ]]
+Vetor B (termos independentes):
+[150.         85.00555556]
+--- Resultados Calculados para o Separador ---
+Vazão da Corrente 4: m4 = 142.50 kg/h
+Vazão da Corrente 5: m5 = 7.50 kg/h
+--- Verificação dos Balanços ---
+Verificação Total: m4 + m5 = 150.00 (Esperado: 150.00)
+Verificação Componente A: m4*xA4 + m5*xA5 = 85.00 (Esperado: 85.00)
+--- Resumo das Vazões e Composições ---
+ Corrente  Vazão Mássica (kg/h)  Fração Mássica A
+       1                  100.0              0.7000
+       2                   50.0              0.2000
+       3                  150.0              0.5667
+       4                  142.5              0.9500
+       5                    7.5              0.1000
+```
+
+### Integração de Módulos Anteriores:
+
+Este exercício é um excelente exemplo de integração, utilizando conceitos de:
+
+- **Fundamentos:** Tipos de dados (FLOAT), operadores aritméticos.
+- **Funções e Modularização:** O problema é encapsulado em uma função (analisar_rede_processos).
+- **Estruturas de Dados:** Uso de listas e dicionários para organizar os dados de entrada e os resultados, e PANDAS DataFrame para a apresentação final.
+- **Cálculo Numérico com NUM_PY:** A base do problema, com a criação de arrays (np.array) para a matriz de coeficientes e o vetor de termos independentes, e a resolução do sistema linear com np.linalg.solve().
+- **Modelagem Matemática Simples:** A formulação dos balanços de massa como equações algébricas e sua tradução para um sistema linear.
+
+Este mini projeto demonstra a aplicação prática e integrada de diversas ferramentas e conceitos de Python para resolver um problema fundamental em engenharia de processos. 
+
+---
+
 # 11. Finalização e Agradecimentos
 
 Chegamos ao final da nossa jornada pela apostila "Introdução à Programação Python Aplicada à Engenharia". Este percurso foi cuidadosamente desenhado para equipar você, engenheiro ou estudante de engenharia, com as ferramentas computacionais essenciais para enfrentar os desafios técnicos do mundo moderno.

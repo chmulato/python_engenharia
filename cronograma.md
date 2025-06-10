@@ -81,7 +81,7 @@
 
 - [X] Capítulo 10 – Mini Projetos Aplicados à Engenharia
   - [X] 10.1 Estudo de caso: tanque com entrada e saída
-  - [ ] 10.2 Balanço de massa e energia com dados reais ou simulados
+  - [X] 10.2 Balanço de massa e energia com dados reais ou simulados
   - [ ] 10.3 Integração de módulos anteriores em soluções práticas
   - [ ] 10.4 Conclusão
 
