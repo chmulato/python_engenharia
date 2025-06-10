@@ -7091,7 +7091,7 @@ Simulação concluída em 150 minutos.
 
 ### Figura 10.2 – Desempenho Dinâmico e Controle de Nível, Temperatura e Concentração em Reator Químico
 
-![imagens/41_imagem_desempenho_dinamico_e_controle.png]
+![imagens/41_imagem_desempenho_dinamico_e_controle.png](imagens/41_imagem_desempenho_dinamico_e_controle.png)
 
 **1. Figura Geral: Desempenho do Reator Químico**
 
