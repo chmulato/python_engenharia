@@ -32,7 +32,7 @@ O objetivo deste material é fornecer uma introdução prática à programação
 > **Sumário**
 >
 > 1. Apresentação  
-> 2. Fundamentos da Programação em Python  
+> 2. Fundamentos da Programação em Python
 >    - 2.1. Tipos de Dados em Python  
 >    - 2.2. Operadores Aritméticos e Lógicos  
 >    - 2.3. Entrada e Saída de Dados  
