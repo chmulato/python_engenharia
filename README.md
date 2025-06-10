@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="imagens/01_capa.png" alt="Capa do Livro" width="210"/>
+  <img src="imagens/01_capa.png" alt="Capa do Livro" width="510"/>
 </p>
 
 # Introdução à Programação Python Aplicada à Engenharia
