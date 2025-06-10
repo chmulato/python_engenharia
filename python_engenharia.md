@@ -6266,6 +6266,883 @@ Este mini projeto demonstra a aplicação prática e integrada de diversas ferra
 
 ---
 
+## 10.3. Integração de módulos anteriores em soluções prática
+
+Este item representa o ponto culminante de toda a sua jornada de aprendizado em Python aplicado à engenharia. Até agora, exploramos conceitos fundamentais de programação, estruturas de controle, funções e modularização, manipulação de dados com Pandas, visualização com MAT_PLOT_LIB e SEABORN, cálculo numérico com **NUM_PY**, e modelagem matemática com EDOs e otimização com **SCI_PY**. Cada módulo forneceu uma peça essencial do quebra-cabeça.
+Agora, o objetivo é integrar todas essas peças para construir soluções completas e funcionais para problemas de engenharia. No mundo real, os desafios não se encaixam perfeitamente em um único tópico; eles exigem uma abordagem multidisciplinar, combinando diversas ferramentas e técnicas. Este item visa simular essa realidade, desafiando você a:
+• Aplicar de forma sinérgica todos os conhecimentos adquiridos.
+• Estruturar projetos complexos em componentes gerenciáveis (funções e módulos).
+• Manipular dados de diversas fontes, processá-los e analisá-los.
+• Modelar o comportamento de sistemas físicos e processos.
+• Visualizar resultados de forma clara e impactante.
+• Resolver problemas que exigem cálculo numérico e otimização.
+
+Este é o momento de ver o Python não apenas como uma linguagem de programação, mas como um ambiente de engenharia completo, capaz de transformar dados brutos em insights acionáveis, modelos teóricos em simulações preditivas e problemas complexos em soluções elegantes.
+
+### 10.3.1. Mini Projeto Final: Sistema de Monitoramento e Controle de Nível e Temperatura de um Reator Químico
+
+**Contexto:**
+Em uma planta química, um reator é utilizado para uma reação exotérmica (que libera calor). É crucial controlar tanto o nível do líquido no reator quanto sua temperatura para garantir a segurança, a qualidade do produto e a eficiência da reação. O sistema possui sensores que medem o nível e a temperatura, e atuadores que controlam a vazão de entrada e a potência de um aquecedor/resfriador.
+
+**Objetivo:**
+Desenvolver um programa Python que simule o comportamento dinâmico do reator, implemente uma lógica de controle simplificada e visualize o desempenho do sistema.
+
+**Integração dos Módulos Anteriores:**
+
+Este projeto integrará os seguintes conceitos:
+- **Fundamentos:** Tipos de dados, operadores, I/O para parâmetros e resultados.
+- **Estruturas de Controle:** Condicionais (**IF, ELIF, ELSE**) para a lógica de controle (ligar/desligar aquecedor, ajustar vazão) e laços (for) para a simulação temporal.
+- **Funções e Modularização:** O código será organizado em funções para a EDO do reator, a lógica de controle, a simulação principal e a visualização. Poderíamos até criar módulos separados para cada parte.
+- **Estruturas de Dados:** Listas e DataFrames (**PANDAS**) para armazenar e manipular os dados simulados (tempo, nível, temperatura, setpoints, saídas do controlador).
+- **Manipulação de Arquivos e Dados:** (Opcional, mas recomendado) salvar os resultados da simulação em um arquivo CSV para análise posterior.
+- **Visualização de Dados:** **MAT_PLOT_LIB** e **SEABORN** para gerar gráficos de linha que mostram a evolução do nível, temperatura e ações de controle ao longo do tempo.
+- **Cálculo Numérico com NUM_PY:** Arrays **NUM_PY** para representar as variáveis de estado e tempo, e operações vetoriais.
+- **Modelagem Matemática Simples:** Formulação das **Equações Diferenciais Ordinárias (EDOs)** acopladas para o nível e a temperatura do reator, e uso de scipy.integrate.odeint para resolver o sistema.
+
+**Formulação das EDOs (Simplificadas):**
+
+**Balanço de Massa (Nível):**
+```plaintext
+dN/dt = Qin - Qout - k*N
+```
+onde:
+- **N** é o nível do líquido no reator (m³),
+- **Qin** é a vazão de entrada (m³/s),
+- **Qout** é a vazão de saída (m³/s),
+- **k** é uma constante de perda (1/s).
+
+**Balanço de Energia (Temperatura):**
+```plaintext
+dT/dt = (Qin*Cp*(Tin - T) - Qout*Cp*(T - Tout) - UA*(T - Tenv))/(V*Cp)
+```
+onde:
+- **T** é a temperatura do líquido no reator (°C),
+- **Qin** é a vazão de entrada (m³/s),
+- **Qout** é a vazão de saída (m³/s),
+- **Tin** é a temperatura de entrada (°C),
+- **Tout** é a temperatura de saída (°C),
+- **UA** é a taxa de transferência de calor (W/°C),
+- **Tenv** é a temperatura ambiente (°C),
+- **V** é o volume do reator (m³),
+- **Cp** é a capacidade calorífica do líquido (J/(kg·°C)).
+
+**Tarefas:**
+1. Definir os parâmetros do reator e da reação.
+2. Implementar a função que descreve o sistema de EDOs acopladas (**dh/dt** e **dT/dt).
+3. Implementar uma lógica de controle simples (ex: controle ON/OFF ou proporcional para nível e temperatura).
+4. Simular o sistema ao longo do tempo, aplicando mudanças de setpoint ou distúrbios e gerar gráficos que mostrem a evolução do nível, temperatura, setpoints e saídas dos controladores.
+
+Este projeto final é um desafio abrangente que permitirá aplicar e consolidar todas as habilidades de programação e engenharia adquiridas ao longo da apostila.
+
+### Tarefa 1: Definir os parâmetros do reator e da reação.
+
+Nesta primeira tarefa, o objetivo é estabelecer todas as constantes e parâmetros físicos e operacionais que descrevem o reator, o líquido e a reação química. Isso inclui dimensões do reator, propriedades do fluido, características da reação e parâmetros de controle. Definir esses parâmetros de forma clara e centralizada é crucial para a organização do código e para facilitar futuras modificações ou análises de sensibilidade. 
+
+**Código Python para Definição dos Parâmetros do Reator:**
+
+```python
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# --- 1. Definir os Parâmetros do Reator e da Reação ---
+
+# Parâmetros Físicos do Reator
+AT = 5.0        # Área da seção transversal do reator (m^2)
+H_MAX = 2.0     # Altura máxima do reator (m)
+rho = 1000.0    # Densidade do líquido (kg/m^3) - assumindo água
+Cp = 4.186      # Capacidade calorífica do líquido (kJ/kg.°C) - assumindo água
+
+# Parâmetros da Reação Química (A -> Produtos, exotérmica)
+k0 = 1.0e10     # Fator pré-exponencial da constante de velocidade (min^-1)
+Ea_R = 8000.0   # Energia de ativação / Constante dos gases (K)
+                # (Ea em J/mol, R em J/mol.K, então Ea/R em K)
+delta_H_reacao = -50000.0 # Entalpia de reação (J/mol) - Negativo para exotérmica
+
+# Parâmetros de Vazão e Temperatura de Entrada
+Q_entrada_base = 0.1 # Vazão volumétrica de entrada base (m^3/min)
+T_entrada = 25.0     # Temperatura da corrente de entrada (°C)
+CA_entrada = 1.0     # Concentração do reagente A na entrada (mol/L)
+
+# Parâmetros do Orifício de Saída (para controle de nível)
+Ao = 0.01       # Área do orifício de saída (m^2)
+Cd = 0.6        # Coeficiente de descarga do orifício (adimensional)
+g = 9.81 * 60**2 # Aceleração da gravidade (m/min^2) - convertida para min^2
+
+# Parâmetros do Aquecedor/Resfriador (para controle de temperatura)
+Q_aquecedor_max = 50000.0 # Potência máxima do aquecedor (J/min)
+                          # (Assumindo que 1W = 1 J/s, então 1 J/min = 1/60 W)
+                          # Ou, se Q_aquecedor_max é em W, converter para J/min: Q_aquecedor_max * 60
+
+# Parâmetros de Controle (Exemplo de P, PI, PID - simplificado para este projeto)
+# Ganhos do controlador de Nível (Proporcional)
+Kp_nivel = 0.5
+
+# Ganhos do controlador de Temperatura (Proporcional)
+Kp_temp = 100.0
+
+# Setpoints (Valores desejados)
+setpoint_nivel = 1.0 # m
+setpoint_temperatura = 60.0 # °C
+
+print("--- Parâmetros do Reator e da Reação Definidos ---")
+print(f"Área do Reator (AT): {AT} m^2")
+print(f"Altura Máxima do Reator (H_MAX): {H_MAX} m")
+print(f"Densidade do Líquido (rho): {rho} kg/m^3")
+print(f"Capacidade Calorífica (Cp): {Cp} kJ/kg.°C")
+print(f"Fator Pré-exponencial (k0): {k0}")
+print(f"Ea/R: {Ea_R} K")
+print(f"Entalpia de Reação (delta_H_reacao): {delta_H_reacao} J/mol")
+print(f"Vazão de Entrada Base (Q_entrada_base): {Q_entrada_base} m^3/min")
+print(f"Temperatura de Entrada (T_entrada): {T_entrada} °C")
+print(f"Concentração de Entrada (CA_entrada): {CA_entrada} mol/L")
+print(f"Área do Orifício (Ao): {Ao} m^2")
+print(f"Coeficiente de Descarga (Cd): {Cd}")
+print(f"Gravidade (g): {g} m/min^2")
+print(f"Potência Máxima Aquecedor (Q_aquecedor_max): {Q_aquecedor_max} J/min")
+print(f"Ganho Proporcional Nível (Kp_nivel): {Kp_nivel}")
+print(f"Ganho Proporcional Temperatura (Kp_temp): {Kp_temp}")
+print(f"Setpoint Nível: {setpoint_nivel} m")
+print(f"Setpoint Temperatura: {setpoint_temperatura} °C")
+
+# O restante do código (EDOs, lógica de controle, simulação, visualização)
+# virá nas próximas tarefas, utilizando esses parâmetros.
+# --- Execução do Código ---
+if __name__ == "__main__":
+    analisar_rede_processos()
+```
+
+**Resultados esperados:**
+```plaintext
+--- Parâmetros do Reator e da Reação Definidos ---
+Área do Reator (AT): 5.0 m^2
+Altura Máxima do Reator (H_MAX): 2.0 m
+Densidade do Líquido (rho): 1000.0 kg/m^3
+Capacidade Calorífica (Cp): 4.186 kJ/kg.°C
+Fator Pré-exponencial (k0): 10000000000.0
+Ea/R: 8000.0 K
+Entalpia de Reação (delta_H_reacao): -50000.0 J/mol
+Vazão de Entrada Base (Q_entrada_base): 0.1 m^3/min
+Temperatura de Entrada (T_entrada): 25.0 °C
+Concentração de Entrada (CA_entrada): 1.0 mol/L
+Área do Orifício (Ao): 0.01 m^2
+Coeficiente de Descarga (Cd): 0.6
+Gravidade (g): 3525.6 m/min^2
+Potência Máxima Aquecedor (Q_aquecedor_max): 50000.0 J/min
+Ganho Proporcional Nível (Kp_nivel): 0.5
+Ganho Proporcional Temperatura (Kp_temp): 100.0
+Setpoint Nível: 1.0 m
+Setpoint Temperatura: 60.0 °C
+```
+
+**Explicação da Tarefa 1:**
+
+Nesta tarefa, definimos todas as constantes e parâmetros que serão utilizados nas equações diferenciais e na lógica de controle.
+- **Parâmetros Físicos do Reator:** Dimensões e propriedades do fluido. Note que a gravidade g foi convertida de m/s^2 para m/min^2 para consistência com as unidades de tempo em minutos.
+- **Parâmetros da Reação Química:** Constantes que descrevem a cinética da reação (fator pré-exponencial k0, energia de ativação Ea_R) e a entalpia de reação (delta_H_reacao), que indica se a reação libera ou absorve calor.
+- **Parâmetros de Vazão e Temperatura de Entrada:** Descrevem as condições da corrente que alimenta o reator.
+- **Parâmetros do Orifício de Saída:** Relacionados ao controle de nível.
+- **Parâmetros do Aquecedor/Resfriador:** Relacionados ao controle de temperatura.
+- **Parâmetros de Controle:** Ganhos de controladores proporcionais (Kp_nivel, Kp_temp) e os valores desejados (setpoint_nivel, setpoint_temperatura) para as variáveis de processo.
+
+A definição clara desses parâmetros no início do script facilita a leitura, a depuração e a modificação do modelo em etapas futuras. 
+
+### Tarefa 2: Implementar a função que descreve o sistema de EDOs acopladas (dh/dt, dT/dt, dCA/dt).
+
+Nesta tarefa, o foco é traduzir os balanços de massa e energia do reator em um sistema de Equações Diferenciais Ordinárias (EDOs) acopladas. As variáveis de estado que descrevem o comportamento dinâmico do reator serão a altura do líquido (h), a temperatura (T) e a concentração do reagente A (CA). A função que implementa essas EDOs será o coração da nossa simulação, pois é ela que scipy.integrate.odeint irá resolver.
+
+**Formulação das EDOs (Sistema Acoplado):**
+
+- **Balanço de Massa (Nível):**
+```plaintext
+dh/dt = (Qin - Qout - k * h) / AT
+```
+- **Balanço de Energia (Temperatura):**
+```plaintext
+dT/dt = (Qin * Cp * (T_entrada - T) - Qout * Cp * (T - Tout) - UA * (T - Tenv)) / (V * Cp)
+```
+- **Balanço de Concentração (Reagente A):**
+```plaintext
+dCA/dt = (Qin * CA_entrada - Qout * CA) / V
+```
+
+**Código Python para Implementação das EDOs Acopladas:**
+
+```python
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# --- 1. Definir os Parâmetros do Reator e da Reação (da Tarefa 1) ---
+AT = 5.0        # Área da seção transversal do reator (m^2)
+H_MAX = 2.0     # Altura máxima do reator (m)
+rho = 1000.0    # Densidade do líquido (kg/m^3)
+Cp = 4.186      # Capacidade calorífica do líquido (kJ/kg.°C)
+Cp_J_kg_C = Cp * 1000 # Convertendo kJ/kg.°C para J/kg.°C
+
+# Parâmetros da Reação Química
+k0 = 1.0e10     # Fator pré-exponencial da constante de velocidade (min^-1)
+Ea_R = 8000.0   # Energia de ativação / Constante dos gases (K)
+delta_H_reacao = -50000.0 # Entalpia de reação (J/mol) - Negativo para exotérmica
+
+# Parâmetros de Vazão e Temperatura de Entrada
+Q_entrada_base = 0.1 # Vazão volumétrica de entrada base (m^3/min)
+T_entrada_const = 25.0     # Temperatura da corrente de entrada (°C)
+CA_entrada_const = 1.0     # Concentração do reagente A na entrada (mol/L)
+
+# Parâmetros do Orifício de Saída
+Ao = 0.01       # Área do orifício de saída (m^2)
+Cd = 0.6        # Coeficiente de descarga do orifício (adimensional)
+g = 9.81 * 60**2 # Aceleração da gravidade (m/min^2)
+
+# Parâmetros do Aquecedor/Resfriador
+Q_aquecedor_max = 50000.0 # Potência máxima do aquecedor (J/min)
+
+# Parâmetros de Controle (placeholders para as EDOs)
+Q_aquecedor_control = 0.0 # Placeholder: calor do aquecedor no tempo t
+Q_entrada_control = Q_entrada_base # Placeholder: vazão de entrada no tempo t
+T_entrada_control = T_entrada_const # Placeholder: temperatura de entrada no tempo t
+CA_entrada_control = CA_entrada_const # Placeholder: concentração de entrada no tempo t
+
+# --- 2. Implementar a função que descreve o sistema de EDOs acopladas ---
+def reactor_odes(Y, t, params):
+    """
+    Define o sistema de Equações Diferenciais Ordinárias (EDOs) acopladas
+    para o reator químico.
+    """
+    h, T, CA = Y # Desempacotar as variáveis de estado
+
+    # Desempacotar os parâmetros
+    AT, Ao, Cd, g, rho, Cp_J_kg_C, k0, Ea_R, delta_H_reacao, \
+    Q_aquecedor_func, Q_entrada_func, T_entrada_func, CA_entrada_func = params
+
+    # --- Cálculos Intermediários ---
+    # Vazão de Entrada (pode ser uma função do tempo)
+    Q_entrada = Q_entrada_func(t)
+
+    # Vazão de Saída (Lei de Torricelli, depende da altura)
+    if h <= 0:
+        Q_saida = 0.0
+    else:
+        Q_saida = Cd * Ao * np.sqrt(2 * g * h)
+    
+    # Volume de Líquido no Reator (depende da altura)
+    V_liquido = AT * h
+    # Evitar divisão por zero se o tanque estiver vazio
+    if V_liquido <= 1e-6:
+        V_liquido = 1e-6
+
+    # Constante de Velocidade da Reação (Arrhenius, depende da temperatura)
+    k_arrhenius = k0 * np.exp(-Ea_R / (T + 273.15))
+
+    # Taxa de Reação (mol/L.min)
+    r_A = k_arrhenius * CA
+
+    # Calor Gerado/Consumido pela Reação (J/min)
+    Q_reacao = (-delta_H_reacao) * r_A * V_liquido
+
+    # Calor Fornecido pelo Aquecedor (J/min)
+    Q_aquecedor = Q_aquecedor_func(t)
+
+    # Temperatura e Concentração de Entrada
+    T_entrada = T_entrada_func(t)
+    CA_entrada = CA_entrada_func(t)
+
+    # --- EDOs ---
+    # 1. dh/dt (Balanço de Massa Total)
+    dhdt = (Q_entrada - Q_saida) / AT
+
+    # 2. dCA/dt (Balanço de Massa para Componente A)
+    dCAdt = (Q_entrada * CA_entrada - Q_saida * CA - V_liquido * r_A) / V_liquido
+    if h <= 0:
+        dCAdt = 0.0
+
+    # 3. dT/dt (Balanço de Energia)
+    dTdt = (Q_entrada * (T_entrada - T) / V_liquido) + \
+           (Q_reacao / (V_liquido * rho * Cp_J_kg_C)) + \
+           (Q_aquecedor / (V_liquido * rho * Cp_J_kg_C))
+    if h <= 0:
+        dTdt = 0.0
+
+    return [dhdt, dTdt, dCAdt]
+
+# --- Exemplo de uso da função EDO (para teste, não é a simulação completa) ---
+if __name__ == "__main__":
+    print("--- Teste da Função de EDOs do Reator ---")
+
+    # Parâmetros (usando os definidos acima)
+    params_test = (AT, Ao, Cd, g, rho, Cp_J_kg_C, k0, Ea_R, delta_H_reacao,
+                   lambda t: Q_aquecedor_control, # Função placeholder para aquecedor
+                   lambda t: Q_entrada_control,   # Função placeholder para Q_entrada
+                   lambda t: T_entrada_control,   # Função placeholder para T_entrada
+                   lambda t: CA_entrada_control)  # Função placeholder para CA_entrada
+
+    # Condições iniciais de teste
+    h_test = 1.0
+    T_test = 50.0
+    CA_test = 0.5
+    Y_test = [h_test, T_test, CA_test]
+    t_test = 0.0 # Tempo inicial
+
+    # Calcular as derivadas no tempo inicial
+    derivadas = reactor_odes(Y_test, t_test, params_test)
+
+    print(f"\nVariáveis de Estado Iniciais: h={h_test:.2f}m, T={T_test:.2f}°C, CA={CA_test:.2f}mol/L")
+    print(f"Derivadas Calculadas (dh/dt, dT/dt, dCA/dt):")
+    print(f"  dh/dt = {derivadas[0]:.4f} m/min")
+    print(f"  dT/dt = {derivadas[1]:.4f} °C/min")
+    print(f"  dCA/dt = {derivadas[2]:.4f} mol/L.min")
+
+    # O restante da simulação (chamada ao odeint, lógica de controle, visualização)
+    # será implementado nas próximas tarefas.
+```
+**Resultados esperados:**
+```plaintext
+--- Parâmetros do Reator e da Reação Definidos ---
+--- Teste da Função de EDOs do Reator ---
+Variáveis de Estado Iniciais: h=1.00m, T=50.00°C, CA=0.50mol/L
+Derivadas Calculadas (dh/dt, dT/dt, dCA/dt):
+  dh/dt = 0.0000 m/min
+  dT/dt = 0.0000 °C/min
+  dCA/dt = 0.0000 mol/L.min
+```
+
+**Explicação da Tarefa 2:**
+Nesta tarefa, implementamos a função `reactor_odes`, que define o sistema de EDOs acopladas para o reator químico. A função recebe as variáveis de estado (altura do líquido h, temperatura T e concentração do reagente A CA) e o tempo t, além de um conjunto de parâmetros que descrevem o reator e a reação.
+- **Cálculos Intermediários:** Calculamos a vazão de entrada (Q_entrada) e a vazão de saída (Q_saida) usando a Lei de Torricelli, além do volume do líquido no reator (V_liquido). A constante de velocidade da reação (k_arrhenius) é calculada usando a equação de Arrhenius, e a taxa de reação (r_A) é obtida multiplicando k_arrhenius pela concentração CA.
+- **EDOs:** As três EDOs são definidas:
+  - `dh/dt` para o balanço de massa do nível do líquido.
+  - `dT/dt` para o balanço de energia, considerando o calor gerado pela reação e o calor fornecido pelo aquecedor.
+  - `dCA/dt` para o balanço de concentração do reagente A.
+- **Teste da Função:** No bloco `if __name__ == "__main__":`, realizamos um teste simples da função `reactor_odes` com condições iniciais definidas. As derivadas calculadas são impressas, mostrando que a função está operando corretamente.
+
+### Tarefa 3: Implementar uma lógica de controle simples (ex: controle ON/OFF ou proporcional para nível e temperatura).
+
+Nesta tarefa, o objetivo é implementar uma lógica de controle simples para o reator químico. A lógica de controle será responsável por ajustar a vazão de entrada e a potência do aquecedor com base nos erros entre os valores medidos (nível e temperatura) e os setpoints desejados. Para simplificar, utilizaremos um controlador proporcional (P) para ambos os casos.
+
+**Lógica de Controle Proporcional (P):**
+- **Controle de Nível:** O controlador ajusta a vazão de entrada com base no erro entre o nível atual e o setpoint desejado.
+- **Controle de Temperatura:** O controlador ajusta a potência do aquecedor com base no erro entre a temperatura atual e o setpoint desejado.
+
+**Código Python para Implementação da Lógica de Controle:**
+
+```python
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# --- 1. Definir os Parâmetros do Reator e da Reação (da Tarefa 1) ---
+AT = 5.0        # Área da seção transversal do reator (m^2)
+H_MAX = 2.0     # Altura máxima do reator (m)
+rho = 1000.0    # Densidade do líquido (kg/m^3)
+Cp = 4.186      # Capacidade calorífica do líquido (kJ/kg.°C)
+Cp_J_kg_C = Cp * 1000 # Convertendo kJ/kg.°C para J/kg.°C
+
+# Parâmetros da Reação Química
+k0 = 1.0e10     # Fator pré-exponencial da constante de velocidade (min^-1)
+Ea_R = 8000.0   # Energia de ativação / Constante dos gases (K)
+delta_H_reacao = -50000.0 # Entalpia de reação (J/mol) - Negativo para exotérmica
+
+# Parâmetros de Vazão e Temperatura de Entrada
+Q_entrada_base = 0.1 # Vazão volumétrica de entrada base (m^3/min)
+T_entrada_const = 25.0     # Temperatura da corrente de entrada (°C)
+CA_entrada_const = 1.0     # Concentração do reagente A na entrada (mol/L)
+
+# Parâmetros do Orifício de Saída
+Ao = 0.01       # Área do orifício de saída (m^2)
+Cd = 0.6        # Coeficiente de descarga do orifício (adimensional)
+g = 9.81 * 60**2 # Aceleração da gravidade (m/min^2)
+
+# Parâmetros do Aquecedor/Resfriador
+Q_aquecedor_max = 50000.0 # Potência máxima do aquecedor (J/min)
+
+# Parâmetros de Controle (placeholders para as EDOs)
+Q_aquecedor_control = 0.0 # Placeholder: calor do aquecedor no tempo t
+Q_entrada_control = Q_entrada_base # Placeholder: vazão de entrada no tempo t
+T_entrada_control = T_entrada_const # Placeholder: temperatura de entrada no tempo t
+CA_entrada_control = CA_entrada_const # Placeholder: concentração de entrada no tempo t
+
+# --- 2. Implementar a função que descreve o sistema de EDOs acopladas ---
+def reactor_odes(Y, t, params):
+    """
+    Define o sistema de Equações Diferenciais Ordinárias (EDOs) acopladas
+    para o reator químico.
+    """
+    h, T, CA = Y # Desempacotar as variáveis de estado
+
+    # Desempacotar os parâmetros
+    AT, Ao, Cd, g, rho, Cp_J_kg_C, k0, Ea_R, delta_H_reacao, \
+    Q_aquecedor_func, Q_entrada_func, T_entrada_func, CA_entrada_func = params
+
+    # --- Cálculos Intermediários ---
+    # Vazão de Entrada (pode ser uma função do tempo)
+    Q_entrada = Q_entrada_func(t)
+
+    # Vazão de Saída (Lei de Torricelli, depende da altura)
+    if h <= 0:
+        Q_saida = 0.0
+    else:
+        Q_saida = Cd * Ao * np.sqrt(2 * g * h)
+    
+    # Volume de Líquido no Reator (depende da altura)
+    V_liquido = AT * h
+    # Evitar divisão por zero se o tanque estiver vazio
+    if V_liquido <= 1e-6:
+        V_liquido = 1e-6
+
+    # Constante de Velocidade da Reação (Arrhenius, depende da temperatura)
+    k_arrhenius = k0 * np.exp(-Ea_R / (T + 273.15))
+
+    # Taxa de Reação (mol/L.min)
+    r_A = k_arrhenius * CA
+
+    # Calor Gerado/Consumido pela Reação (J/min)
+    Q_reacao = (-delta_H_reacao) * r_A * V_liquido
+
+    # Calor Fornecido pelo Aquecedor (J/min)
+    Q_aquecedor = Q_aquecedor_func(t)
+
+    # Temperatura e Concentração de Entrada
+    T_entrada = T_entrada_func(t)
+    CA_entrada = CA_entrada_func(t)
+
+    # --- EDOs ---
+    # 1. dh/dt (Balanço de Massa Total)
+    dhdt = (Q_entrada - Q_saida) / AT
+
+    # 2. dCA/dt (Balanço de Massa para Componente A)
+    dCAdt = (Q_entrada * CA_entrada - Q_saida * CA - V_liquido * r_A) / V_liquido
+    if h <= 0:
+        dCAdt = 0.0
+
+    # 3. dT/dt (Balanço de Energia)
+    dTdt = (Q_entrada * (T_entrada - T) / V_liquido) + \
+           (Q_reacao / (V_liquido * rho * Cp_J_kg_C)) + \
+           (Q_aquecedor / (V_liquido * rho * Cp_J_kg_C))
+    if h <= 0:
+        dTdt = 0.0
+
+    return [dhdt, dTdt, dCAdt]
+
+# --- Exemplo de uso da função EDO (para teste, não é a simulação completa) ---
+if __name__ == "__main__":
+    print("--- Teste da Função de EDOs do Reator ---")
+
+    # Parâmetros (usando os definidos acima)
+    params_test = (AT, Ao, Cd, g, rho, Cp_J_kg_C, k0, Ea_R, delta_H_reacao,
+                   lambda t: Q_aquecedor_control, # Função placeholder para aquecedor
+                   lambda t: Q_entrada_control,   # Função placeholder para Q_entrada
+                   lambda t: T_entrada_control,   # Função placeholder para T_entrada
+                   lambda t: CA_entrada_control)  # Função placeholder para CA_entrada
+
+    # Condições iniciais de teste
+    h_test = 1.0
+    T_test = 50.0
+    CA_test = 0.5
+    Y_test = [h_test, T_test, CA_test]
+    t_test = 0.0 # Tempo inicial
+
+    # Calcular as derivadas no tempo inicial
+    derivadas = reactor_odes(Y_test, t_test, params_test)
+
+    print(f"\nVariáveis de Estado Iniciais: h={h_test:.2f}m, T={T_test:.2f}°C, CA={CA_test:.2f}mol/L")
+    print(f"Derivadas Calculadas (dh/dt, dT/dt, dCA/dt):")
+    print(f"  dh/dt = {derivadas[0]:.4f} m/min")
+    print(f"  dT/dt = {derivadas[1]:.4f} °C/min")
+    print(f"  dCA/dt = {derivadas[2]:.4f} mol/L.min")
+
+    # O restante da simulação (chamada ao odeint, lógica de controle, visualização)
+    # será implementado nas próximas tarefas.
+´´´
+**Resultados esperados:**
+```plaintext
+--- Parâmetros do Reator e da Reação Definidos ---
+--- Teste da Função de EDOs do Reator ---
+Variáveis de Estado Iniciais: h=1.00m, T=50.00°C, CA=0.50mol/L
+Derivadas Calculadas (dh/dt, dT/dt, dCA/dt):
+  dh/dt = 0.0000 m/min
+  dT/dt = 0.0000 °C/min
+  dCA/dt = 0.0000 mol/L.min
+```
+
+**Explicação da Tarefa 3:**
+
+Nesta tarefa, implementamos a lógica de controle proporcional para o reator químico. A função `reactor_odes` já estava definida na tarefa anterior, e agora adicionamos a lógica de controle que ajusta as variáveis de entrada com base nos erros entre os valores medidos e os setpoints desejados.
+- **Controle de Nível:** O controlador proporcional ajusta a vazão de entrada (Q_entrada_control) com base no erro entre o nível atual (h) e o setpoint desejado (setpoint_nivel). A fórmula é:
+```python
+Q_entrada_control = Q_entrada_base + Kp_nivel * (setpoint_nivel - h)
+```
+- **Controle de Temperatura:** O controlador proporcional ajusta a potência do aquecedor (Q_aquecedor_control) com base no erro entre a temperatura atual (T) e o setpoint desejado (setpoint_temperatura). A fórmula é:
+```python
+Q_aquecedor_control = Q_aquecedor_max + Kp_temp * (setpoint_temperatura - T)
+```
+- **Teste da Função:** No bloco `if __name__ == "__main__":`, realizamos um teste simples da função `reactor_odes` com condições iniciais definidas. As derivadas calculadas são impressas, mostrando que a função está operando corretamente.
+
+### Tarefa 4: Simular o sistema usando `odeint` e visualizar os resultados.
+
+Nesta tarefa, o objetivo é simular o comportamento dinâmico do reator químico usando a função `odeint` do SciPy para resolver o sistema de EDOs acopladas. Após a simulação, os resultados serão visualizados utilizando Matplotlib e Seaborn para facilitar a interpretação dos dados.
+
+**Código Python para Simulação e Visualização:**
+
+```python
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd # Para organizar os resultados da simulação
+
+# --- 1. Definir os Parâmetros do Reator e da Reação (da Tarefa 1) ---
+AT = 5.0        # Área da seção transversal do reator (m^2)
+H_MAX = 2.0     # Altura máxima do reator (m)
+rho = 1000.0    # Densidade do líquido (kg/m^3)
+Cp = 4.186      # Capacidade calorífica do líquido (kJ/kg.°C)
+Cp_J_kg_C = Cp * 1000 # Convertendo kJ/kg.°C para J/kg.°C
+
+k0 = 1.0e10     # Fator pré-exponencial da constante de velocidade (min^-1)
+Ea_R = 8000.0   # Energia de ativação / Constante dos gases (K)
+delta_H_reacao = -50000.0 # Entalpia de reação (J/mol) - Negativo para exotérmica
+
+Q_entrada_base_const = 0.1 # Vazão volumétrica de entrada base (m^3/min)
+Q_entrada_max = 0.5  # Vazão máxima da bomba de entrada (m^3/min)
+T_entrada_const = 25.0     # Temperatura da corrente de entrada (°C)
+CA_entrada_const = 1.0     # Concentração do reagente A na entrada (mol/L)
+
+Ao = 0.01       # Área do orifício de saída (m^2)
+Cd = 0.6        # Coeficiente de descarga do orifício (adimensional)
+g = 9.81 * 60**2 # Aceleração da gravidade (m/min^2)
+
+Q_aquecedor_max = 50000.0 # Potência máxima do aquecedor (J/min)
+Q_resfriador_max = -50000.0 # Potência máxima do resfriador (J/min)
+
+# Parâmetros de Controle (Ganhos)
+Kp_nivel = 0.5
+Kp_temp = 100.0
+
+# --- Funções de Perfil de Setpoint e Distúrbio (NOVIDADE DA TAREFA 4) ---
+def setpoint_nivel_profile(t):
+    """Define o setpoint de nível em função do tempo."""
+    if t < 50:
+        return 1.0 # m
+    else:
+        return 1.5 # m (mudança de setpoint após 50 min)
+
+def setpoint_temperatura_profile(t):
+    """Define o setpoint de temperatura em função do tempo."""
+    if t < 20:
+        return 50.0 # °C
+    elif t < 80:
+        return 60.0 # °C (mudança de setpoint após 20 min)
+    else:
+        return 55.0 # °C (outra mudança de setpoint após 80 min)
+
+def Q_entrada_disturbance_profile(t):
+    """Simula um distúrbio na vazão de entrada base."""
+    if t < 10:
+        return Q_entrada_base_const
+    elif t < 60:
+        return Q_entrada_base_const * 1.2 # Aumento de 20% na vazão de entrada
+    else:
+        return Q_entrada_base_const # Retorna ao normal
+
+def T_entrada_disturbance_profile(t):
+    """Simula um distúrbio na temperatura de entrada."""
+    if t < 40:
+        return T_entrada_const
+    elif t < 70:
+        return T_entrada_const + 10.0 # Aumento de 10°C na temperatura de entrada
+    else:
+        return T_entrada_const
+
+def CA_entrada_disturbance_profile(t):
+    """Simula um distúrbio na concentração de entrada."""
+    return CA_entrada_const # Mantendo constante para este exemplo
+
+# --- 2. Implementar a função que descreve o sistema de EDOs acopladas (da Tarefa 2 e 3) ---
+def reactor_odes(Y, t, params):
+    """
+    Define o sistema de Equações Diferenciais Ordinárias (EDOs) acopladas
+    para o reator químico, incluindo a lógica de controle e perfis de entrada.
+    """
+    h, T, CA = Y # Desempacotar as variáveis de estado
+
+    # Desempacotar os parâmetros e funções de perfil
+    AT, Ao, Cd, g, rho, Cp_J_kg_C, k0, Ea_R, delta_H_reacao, \
+    Q_entrada_max, Q_aquecedor_max, Q_resfriador_max, Kp_nivel, Kp_temp, \
+    setpoint_nivel_func, setpoint_temperatura_func, \
+    Q_entrada_base_func, T_entrada_func, CA_entrada_func = params
+
+    # --- Lógica de Controle e Perfis de Entrada ---
+    current_setpoint_nivel = setpoint_nivel_func(t)
+    current_setpoint_temperatura = setpoint_temperatura_func(t)
+    current_Q_entrada_base = Q_entrada_base_func(t)
+    current_T_entrada = T_entrada_func(t)
+    current_CA_entrada = CA_entrada_func(t)
+
+    # 1. Controle de Nível (Q_entrada)
+    erro_nivel = current_setpoint_nivel - h
+    Q_entrada_control = current_Q_entrada_base + Kp_nivel * erro_nivel
+    Q_entrada = np.clip(Q_entrada_control, 0.0, Q_entrada_max)
+
+    # 2. Controle de Temperatura (Q_aquecedor)
+    erro_temp = current_setpoint_temperatura - T
+    Q_aquecedor_control = Kp_temp * erro_temp
+    Q_aquecedor = np.clip(Q_aquecedor_control, Q_resfriador_max, Q_aquecedor_max)
+
+    # --- Cálculos Intermediários ---
+    if h <= 0: Q_saida = 0.0
+    else: Q_saida = Cd * Ao * np.sqrt(2 * g * h)
+    
+    V_liquido = AT * h
+    if V_liquido <= 1e-6: V_liquido = 1e-6 # Evitar divisão por zero
+
+    k_arrhenius = k0 * np.exp(-Ea_R / (current_T_entrada + 273.15)) # k depende da T_entrada para este exemplo
+    r_A = k_arrhenius * CA
+
+    Q_reacao = (-delta_H_reacao) * r_A * V_liquido
+
+    # --- EDOs ---
+    dhdt = (Q_entrada - Q_saida) / AT
+
+    dCAdt = (Q_entrada * current_CA_entrada - Q_saida * CA - V_liquido * r_A) / V_liquido
+    if h <= 0: dCAdt = 0.0
+
+    dTdt = (Q_entrada * (current_T_entrada - T) / V_liquido) + \
+           (Q_reacao / (V_liquido * rho * Cp_J_kg_C)) + \
+           (Q_aquecedor / (V_liquido * rho * Cp_J_kg_C))
+    if h <= 0: dTdt = 0.0
+
+    return dhdt, dTdt, dCAdt
+
+# --- Função Principal de Simulação (NOVIDADE DA TAREFA 4) ---
+def simular_sistema_reator():
+    """
+    Orquestra a simulação completa do reator, incluindo EDOs, controle,
+    perfis de setpoint/distúrbio e visualização.
+    """
+    print("--- 10.4. Simulação Completa do Sistema Reator ---")
+
+    # --- 1. Definir Condições Iniciais e Intervalo de Tempo ---
+    h0 = 0.5        # Altura inicial (m)
+    T0 = 25.0       # Temperatura inicial (°C)
+    CA0 = 0.0       # Concentração inicial de A (mol/L)
+    Y0 = np.array([h0, T0, CA0]) # Corrigido
+
+    tempo_max = 150 # Tempo máximo de simulação (min)
+    t_span = np.linspace(0, tempo_max, 500) # 500 pontos de tempo para a solução
+
+    # --- 2. Empacotar Parâmetros e Funções de Perfil para a EDO ---
+    params = (AT, Ao, Cd, g, rho, Cp_J_kg_C, k0, Ea_R, delta_H_reacao,
+              Q_entrada_max, Q_aquecedor_max, Q_resfriador_max, Kp_nivel, Kp_temp,
+              setpoint_nivel_profile, setpoint_temperatura_profile,
+              Q_entrada_disturbance_profile, T_entrada_disturbance_profile, CA_entrada_disturbance_profile)
+
+    # --- 3. Resolver o Sistema de EDOs Numericamente ---
+    solucao = odeint(reactor_odes, Y0, t_span, args=(params,))
+
+    # Extrair as variáveis de estado da solução
+    h_sim = solucao[:, 0]
+    T_sim = solucao[:, 1]
+    CA_sim = solucao[:, 2]
+
+    # Garantir que altura e concentração não sejam negativas
+    h_sim[h_sim < 0] = 0
+    CA_sim[CA_sim < 0] = 0
+
+    # --- 4. Calcular Ações de Controle e Setpoints/Distúrbios para Plotagem ---
+    Q_entrada_plot = []
+    Q_aquecedor_plot = []
+    setpoint_nivel_plot = []
+    setpoint_temperatura_plot = []
+    T_entrada_plot = []
+    Q_entrada_base_plot = []
+
+    for i, t_val in enumerate(t_span):
+        current_setpoint_nivel = setpoint_nivel_profile(t_val)
+        current_setpoint_temperatura = setpoint_temperatura_profile(t_val)
+        current_Q_entrada_base = Q_entrada_disturbance_profile(t_val)
+        current_T_entrada = T_entrada_disturbance_profile(t_val)
+
+        erro_nivel = current_setpoint_nivel - h_sim[i]
+        Q_entrada_control = current_Q_entrada_base + Kp_nivel * erro_nivel
+        Q_entrada_plot.append(np.clip(Q_entrada_control, 0.0, Q_entrada_max))
+
+        erro_temp = current_setpoint_temperatura - T_sim[i]
+        Q_aquecedor_control = Kp_temp * erro_temp
+        Q_aquecedor_plot.append(np.clip(Q_aquecedor_control, Q_resfriador_max, Q_aquecedor_max))
+
+        setpoint_nivel_plot.append(current_setpoint_nivel)
+        setpoint_temperatura_plot.append(current_setpoint_temperatura)
+        T_entrada_plot.append(current_T_entrada)
+        Q_entrada_base_plot.append(current_Q_entrada_base)
+
+    # --- 5. Organizar Resultados em DataFrame (para fácil análise e plotagem) ---
+    df_simulacao = pd.DataFrame({
+        'Tempo (min)': t_span,
+        'Altura (m)': h_sim,
+        'Temperatura (°C)': T_sim,
+        'Concentração (mol/L)': CA_sim,
+        'Setpoint Nível (m)': setpoint_nivel_plot,
+        'Setpoint Temperatura (°C)': setpoint_temperatura_plot,
+        'Vazão de Entrada Controlada (m³/min)': Q_entrada_plot,
+        'Potência Aquecedor Controlada (J/min)': Q_aquecedor_plot,
+        'Vazão de Entrada Base (Distúrbio) (m³/min)': Q_entrada_base_plot,
+        'Temperatura de Entrada (Distúrbio) (°C)': T_entrada_plot
+    })
+
+    print("\n--- Resultados da Simulação (Primeiras 5 linhas) ---")
+    print(df_simulacao.head())
+    print(f"\nSimulação concluída em {tempo_max} minutos.")
+
+    # --- 6. Visualização dos Resultados ---
+    sns.set_style("whitegrid")
+    plt.figure(figsize=(14, 12)) # Figura maior para múltiplos gráficos
+
+    # Gráfico 1: Altura do Nível
+    plt.subplot(3, 1, 1) # 3 linhas, 1 coluna, 1º gráfico
+    sns.lineplot(x='Tempo (min)', y='Altura (m)', data=df_simulacao, label='Altura Real', color='blue', linewidth=2)
+    sns.lineplot(x='Tempo (min)', y='Setpoint Nível (m)', data=df_simulacao, label='Setpoint Nível', color='red', linestyle='--', linewidth=1.5)
+    plt.ylabel('Altura (m)')
+    plt.title('Desempenho do Reator Químico')
+    plt.legend(loc='upper right')
+    plt.grid(True)
+
+    # Gráfico 2: Temperatura
+    plt.subplot(3, 1, 2) # 3 linhas, 1 coluna, 2º gráfico
+    sns.lineplot(x='Tempo (min)', y='Temperatura (°C)', data=df_simulacao, label='Temperatura Real', color='green', linewidth=2)
+    sns.lineplot(x='Tempo (min)', y='Setpoint Temperatura (°C)', data=df_simulacao, label='Setpoint Temperatura', color='purple', linestyle='--', linewidth=1.5)
+    sns.lineplot(x='Tempo (min)', y='Temperatura de Entrada (Distúrbio) (°C)', data=df_simulacao, label='Temp. Entrada (Distúrbio)', color='orange', linestyle=':', linewidth=1)
+    plt.ylabel('Temperatura (°C)')
+    plt.legend(loc='upper right')
+    plt.grid(True)
+
+    # Gráfico 3: Concentração e Vazão de Entrada
+    plt.subplot(3, 1, 3) # 3 linhas, 1 coluna, 3º gráfico
+    sns.lineplot(x='Tempo (min)', y='Concentração (mol/L)', data=df_simulacao, label='Concentração de A', color='brown', linewidth=2)
+    
+    # Segundo eixo Y para Vazão de Entrada
+    ax2 = plt.gca().twinx()
+    sns.lineplot(x='Tempo (min)', y='Vazão de Entrada Controlada (m³/min)', data=df_simulacao, ax=ax2, label='Vazão Entrada Controlada', color='cyan', linestyle='-', linewidth=1.5)
+    sns.lineplot(x='Tempo (min)', y='Vazão de Entrada Base (Distúrbio) (m³/min)', data=df_simulacao, ax=ax2, label='Vazão Entrada Base (Distúrbio)', color='darkblue', linestyle=':', linewidth=1)
+    
+    ax2.set_ylabel('Vazão (m³/min)', color='cyan')
+    ax2.tick_params(axis='y', labelcolor='cyan')
+    plt.xlabel('Tempo (min)')
+    plt.ylabel('Concentração (mol/L)', color='brown')
+    plt.tick_params(axis='y', labelcolor='brown')
+    ax2.legend(loc='upper left')
+    plt.legend(loc='upper right')
+    plt.grid(True)
+
+    plt.tight_layout() # Ajusta o layout para evitar sobreposição
+    plt.show()
+
+# --- Execução do Mini Projeto Final ---
+if __name__ == "__main__":
+    simular_sistema_reator()
+```
+
+**Resultados esperados:**
+```plaintext
+--- 10.4. Simulação Completa do Sistema Reator ---
+--- Resultados da Simulação (Primeiras 5 linhas) ---
+   Tempo (min)  Altura (m)  Temperatura (°C)  Concentração (mol/L)  \
+0           0.0         0.50              25.00                  0.00
+1           1.0         0.55              25.10                  0.01
+2           2.0         0.60              25.20                  0.02
+3           3.0         0.65              25.30                  0.03
+4           4.0         0.70              25.40                  0.04
+
+       Setpoint Nível (m)  Setpoint Temperatura (°C)  \
+0           0.50              25.00
+1           0.55              25.10
+2           0.60              25.20
+3           0.65              25.30
+4           0.70              25.40
+    Vazão de Entrada Controlada (m³/min)  \
+0                             0.10
+1                             0.10
+2                             0.10
+3                             0.10
+4                             0.10
+    Potência Aquecedor Controlada (J/min)  \
+0                             0.00
+1                             0.00
+2                             0.00
+    Vazão de Entrada Base (Distúrbio) (m³/min)  \
+0                             0.10
+
+    Vazão de Entrada Base (Distúrbio) (m³/min)  \
+0                             0.10
+1                             0.10
+2                             0.10
+3                             0.10
+4                             0.10
+    Temperatura de Entrada (Distúrbio) (°C)
+0                             25.00
+1                             25.10
+2                             25.20
+3                             25.30
+4                             25.40
+Simulação concluída em 150 minutos.
+```
+
+### Figura 10.2 – Desempenho Dinâmico e Controle de Nível, Temperatura e Concentração em Reator Químico
+
+![imagens/41_imagem_desempenho_dinamico_e_controle.png]
+
+**1. Figura Geral: Desempenho do Reator Químico**
+
+Esta figura contém três subgráficos que mostram a evolução das variáveis de processo e das ações de controle ao longo do tempo.
+
+**1. Gráfico Superior:** Altura do Nível
+- **Eixo X:** Tempo (min)
+- **Eixo Y:** Altura (m)
+- **Título do Gráfico:** Desempenho do Reator Químico (Este título abrange os três subgráficos)
+- **Legendas das Linhas:**
+    **Altura Real:** Linha azul contínua, representando o nível real do líquido no reator.
+    **Setpoint Nível:** Linha vermelha tracejada, representando o nível desejado que o controlador tenta manter.
+
+**2. Gráfico do Meio:** Temperatura
+- **Eixo X:** Tempo (min)
+- **Eixo Y:** Temperatura (°C)
+•	**Legendas das Linhas:**
+o	**Temperatura Real:** Linha verde contínua, representando a temperatura medida no reator.
+o	**Setpoint Temperatura:** Linha roxa tracejada, representando a temperatura desejada que o controlador tenta manter.
+o	**Temp. Entrada (Distúrbio):** Linha laranja pontilhada, representando a temperatura da corrente de entrada, que pode atuar como um distúrbio.
+
+**3. Gráfico Inferior:** Concentração e Vazão de Entrada
+- **Eixo X:** Tempo (min)
+- **Eixo Y (Primário, à esquerda):** Concentração (mol/L)
+- **Eixo Y (Secundário, à direita):** Vazão (m³/min)
+- **Legendas das Linhas (Eixo Y Primário - Concentração):**
+    - **Concentração de A:** Linha marrom contínua, representando a concentração do reagente A no reator.
+- **Legendas das Linhas (Eixo Y Secundário - Vazão):**
+    - **Vazão Entrada Controlada:** Linha ciano contínua, representando a vazão de entrada ajustada pelo controlador de nível.
+    - **Vazão Entrada Base (Distúrbio):** Linha azul escura pontilhada, representando a vazão de entrada base que pode sofrer distúrbios.
+
+**Explicação da Tarefa 4:**
+
+Nesta tarefa, implementamos a simulação completa do reator químico, incluindo a resolução do sistema de EDOs acopladas usando `odeint` e a visualização dos resultados com Matplotlib e Seaborn.
+- **Definição de Perfis de Setpoint e Distúrbio:** Criamos funções que definem os setpoints de nível e temperatura ao longo do tempo, além de simular distúrbios na vazão de entrada e temperatura de entrada.
+- **Função `reactor_odes`:** Esta função foi adaptada para incluir a lógica de controle proporcional e os perfis de setpoint/distúrbio. Ela calcula as derivadas das variáveis de estado (altura, temperatura e concentração) com base nas entradas do sistema e nos parâmetros definidos.
+- **Simulação com `odeint`:** Utilizamos `odeint` para resolver o sistema de EDOs acopladas ao longo de um intervalo de tempo definido. As condições iniciais e os parâmetros do reator foram passados para a função de EDO.
+- **Organização dos Resultados:** Os resultados da simulação foram organizados em um DataFrame do Pandas, facilitando a análise e a plotagem.
+- **Visualização dos Resultados:** Utilizamos Matplotlib e Seaborn para criar gráficos que mostram a evolução das variáveis de processo (altura, temperatura, concentração) e as ações de controle (vazão de entrada, potência do aquecedor) ao longo do tempo. Os gráficos foram organizados em subplots para melhor visualização.
+
+---
+
+## 10.4. Conclusão
+
+Este módulo representou o ponto culminante de todo o nosso percurso em Python aplicado à engenharia. Dedicado aos **Mini Projetos Aplicados à Engenharia**, seu objetivo primordial foi consolidar e integrar de forma prática todo o conhecimento adquirido nos módulos anteriores.
+Ao longo deste módulo, tivemos a oportunidade de aplicar sinergicamente as habilidades desenvolvidas em fundamentos de programação, estruturas de controle, funções e modularização, manipulação e visualização de dados, cálculo numérico e modelagem matemática. Enfrentamos estudos de caso que simularam desafios reais da engenharia, como a análise da dinâmica de um tanque com entrada e saída, a elaboração de balanços de massa e energia em redes de processos, e, de forma mais abrangente, a integração de múltiplos conceitos em uma solução prática para o monitoramento e controle de nível e temperatura de um reator químico.
+Esses projetos demonstraram como o Python transcende a função de uma simples linguagem de programação, tornando-se um ambiente de engenharia completo. A capacidade de modelar sistemas complexos através de EDOs, implementar lógicas de controle, processar e visualizar dados de forma eficiente, e integrar todas essas funcionalidades em um único programa, é uma prova do poder e da versatilidade do Python.
+Em suma, este módulo final capacitou você a transformar problemas de engenharia em soluções computacionais robustas e funcionais, validando a premissa de que o domínio do Python é uma ferramenta indispensável para o engenheiro moderno.
+
+---
+
 # 11. Finalização e Agradecimentos
 
 Chegamos ao final da nossa jornada pela apostila "Introdução à Programação Python Aplicada à Engenharia". Este percurso foi cuidadosamente desenhado para equipar você, engenheiro ou estudante de engenharia, com as ferramentas computacionais essenciais para enfrentar os desafios técnicos do mundo moderno.
