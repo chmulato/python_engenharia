@@ -97,7 +97,7 @@
 - [X] Capítulo 13 – Referências Bibliográficas
 - [ ] Revisão geral da apostila
 - [ ] Inserção/verificação de imagens e figuras
-- [ ] Geração do PDF final
+- [X] Geração do PDF final
 
 ---
 
