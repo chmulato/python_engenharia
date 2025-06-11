@@ -1,67 +1,108 @@
 <head>
 <style>
-nav {
-    background: #f8f9fa;
-    padding: 24px 20px 20px 20px;
-    border-radius: 10px;
-    margin-bottom: 32px;
-    border: 1px solid #dee2e6;
-    max-width: 600px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 16px 48px 16px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.15em;
+    line-height: 1.7;
+    background: #f9f9fb;
+    color: #222;
 }
-nav h3 {
-    color: #007bff;
-    margin-bottom: 18px;
-    border-bottom: 2px solid #007bff22;
-    padding-bottom: 6px;
-    font-size: 1.3em;
+h1, h2, h3, h4, h5, h6 {
+    color: #1a237e;
+    margin-top: 2.2em;
+    margin-bottom: 0.7em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+h1 { font-size: 2.1em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.25em; }
+hr {
+    border: none;
+    border-top: 2px solid #e3e3e3;
+    margin: 2.5em 0 2em 0;
+}
+figure, img {
+    display: block;
+    margin: 1.5em auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #0001;
+}
+figcaption {
+    text-align: center;
+    font-size: 0.98em;
+    color: #555;
+    margin-top: 0.4em;
+}
+pre, code {
+    background: #23272e;
+    color: #e3e3e3;
+    border-radius: 6px;
+    padding: 0.7em 1em;
+    font-size: 1em;
+    overflow-x: auto;
+}
+pre {
+    margin: 1.2em 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    background: #fff;
+}
+th, td {
+    border: 1px solid #d0d0d0;
+    padding: 0.7em 1em;
+    text-align: left;
+}
+th {
+    background: #e3e7fa;
+    color: #1a237e;
+}
+nav, .toc {
+    background: #f2f4fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    padding: 1.2em 1.5em;
+    margin: 2em auto 2.5em auto;
+    max-width: 700px;
+    box-shadow: 0 2px 8px #0001;
+}
+nav h3, .toc h3 {
+    color: #3949ab;
+    margin-bottom: 0.7em;
+    font-size: 1.15em;
     font-weight: 600;
 }
-nav ol, nav ul {
-    padding-left: 20px;
+nav ol, nav ul, .toc ol, .toc ul {
+    padding-left: 1.2em;
     line-height: 1.7;
 }
-nav li {
-    margin-bottom: 6px;
-}
-nav a {
+nav a, .toc a {
+    color: #1a237e;
     text-decoration: none;
-    color: #007bff;
     font-weight: 500;
     transition: color 0.2s;
 }
-nav a:hover {
-    color: #0056b3;
+nav a:hover, .toc a:hover {
+    color: #0d133d;
     text-decoration: underline;
 }
-html {
-    scroll-behavior: smooth;
+@media (max-width: 900px) {
+    body { max-width: 100vw; padding: 18px 4vw 32px 4vw; }
+    nav, .toc, figure, table, pre, code { max-width: 100vw; }
 }
-:target {
-    background: #fff3cd;
-    padding: 8px;
-    border-radius: 5px;
-    border-left: 4px solid #ffc107;
-    margin: 10px 0;
-}
-</style>
-
-<style>
-body {
-    max-width: 760px;
-    margin: 0 auto !important;
-    padding: 24px 12px 32px 12px;
-    font-size: 1.08em;
-    line-height: 1.7;
-    background: #fff;
-}
-figure, nav, h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-p {
-    text-align: justify;
+@media (max-width: 600px) {
+    body { font-size: 1em; }
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    nav, .toc { padding: 0.7em 0.5em; }
 }
 </style>
 </head><hr/>
@@ -722,22 +763,6 @@ Code)</a>
 </nav>
 <hr/>
 <h1 id="apresentação">1. Apresentação</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A presente apostila tem como objetivo introduzir os conceitos
 fundamentais de programação em linguagem Python com foco na aplicação em
 problemas práticos de engenharia. Python é uma linguagem moderna,
@@ -771,22 +796,6 @@ desejam iniciar no uso da programação para aplicações técnicas.</p>
 <hr/>
 <h1 id="fundamentos-da-programação-em-python">2. Fundamentos da
 Programação em Python</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este primeiro módulo tem como objetivo estabelecer uma base sólida em
 programação Python, essencial para todas as aplicações que veremos ao
 longo desta apostila. Dominar os fundamentos da linguagem é crucial para
@@ -813,22 +822,6 @@ dados e interagir com o mundo exterior, lançando as bases para sua
 jornada na programação aplicada à engenharia.</p>
 <hr/>
 <h2 id="tipos-de-dados-em-python">2.1. Tipos de Dados em Python</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em Python, assim como em outras linguagens de programação, os dados
 são classificados em diferentes tipos. Cada tipo de dado possui
 características e comportamentos específicos, o que permite ao
@@ -837,22 +830,6 @@ computador interpretar e manipular as informações corretamente.</p>
 inteiros (INT), - números de ponto flutuante (FLOAT), - cadeias de
 caracteres (STR) e - booleanos (BOOL).</p>
 <h3 id="inteiros-int">2.1.1. Inteiros (INT)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O tipo de dado int representa números inteiros, ou seja, números que
 não possuem parte decimal. Eles podem ser positivos, negativos ou
 zero.</p>
@@ -864,22 +841,6 @@ zero.</p>
 </ul>
 <h3 id="números-de-ponto-flutuante-float">2.1.2. Números de Ponto
 Flutuante (FLOAT)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O tipo de dado <code>float</code> representa números reais, ou seja,
 números que podem possuir uma parte decimal.</p>
 <p>Exemplos em engenharia:</p>
@@ -893,22 +854,6 @@ números que podem possuir uma parte decimal.</p>
 </ul>
 <h3 id="cadeias-de-caracteres-str">2.1.3. Cadeias de Caracteres
 (STR)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O tipo de dado <code>str</code> representa texto, ou seja, uma
 sequência de caracteres. As cadeias de caracteres são delimitadas por
 aspas simples (’) ou aspas duplas (“).</p>
@@ -922,22 +867,6 @@ aspas simples (’) ou aspas duplas (“).</p>
 <code>resultado_ensaio = "Aprovado"</code></li>
 </ul>
 <h3 id="booleanos-bool">2.1.4. Booleanos (BOOL)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O tipo de dado <code>bool</code> representa valores lógicos, ou seja,
 verdadeiro (True) ou falso (False). Eles são fundamentais para realizar
 testes condicionais e controlar o fluxo de execução de um programa.</p>
@@ -954,22 +883,6 @@ que manipulem informações de forma correta e eficiente em aplicações de
 engenharia.</p>
 <h3 id="exemplo-cálculo-da-tensão-em-um-resistor">2.1.5. Exemplo:
 Cálculo da Tensão em um Resistor</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Imagine que você precisa calcular a tensão em um resistor usando a
 Lei de Ohm (V = I * R), onde: - <strong>V</strong> é a tensão (em Volts)
 - <strong>I</strong> é a corrente (em Amperes) - <strong>R</strong> é a
@@ -1063,22 +976,6 @@ lógica e representação de informações do mundo real.</p>
 <hr/>
 <h3 id="exemplo-simulação-da-trajetória-de-um-projétil">2.1.6. Exemplo:
 Simulação da Trajetória de um Projétil</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste exemplo, vamos simular a trajetória de um projétil lançado sob
 um ângulo e com uma velocidade inicial, e gerar um gráfico da
 trajetória. Este exemplo combina física básica com a visualização de
@@ -1185,44 +1082,12 @@ forma completa.</p>
 <hr/>
 <h2 id="operadores-aritméticos-e-lógicos-em-python">2.2. Operadores
 Aritméticos e Lógicos em Python</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em Python, operadores são símbolos especiais que realizam operações
 em valores (chamados de operandos). Eles são essenciais para realizar
 cálculos, comparações e manipular dados em geral. Nesta seção, vamos
 explorar os operadores aritméticos e lógicos, que são fundamentais para
 a programação em engenharia.</p>
 <h3 id="operadores-aritméticos">2.2.1. Operadores Aritméticos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Código Python:</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Exemplo de uso de operadores aritméticos</span></span>
 <span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
@@ -1264,22 +1129,6 @@ restantes após dividir por 60)</p>
 <p><strong>Exponenciação (</strong>):** Eleva o primeiro valor à
 potência do segundo valor. Exemplo: base ** altura</p>
 <h3 id="operadores-lógicos">2.2.2. Operadores Lógicos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os operadores lógicos são usados para combinar ou negar expressões
 lógicas (valores booleanos True ou False).</p>
 <p><strong>AND (and):</strong> Retorna True se ambas as expressões forem
@@ -1327,22 +1176,6 @@ contextos de engenharia.</p>
 <h3 id="exercício-proposto-cálculo-de-área-e-perímetro-de-um-terreno-e-verificação-de-viabilidade">2.2.4.
 Exercício Proposto: Cálculo de Área e Perímetro de um Terreno e
 Verificação de Viabilidade</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong></p>
 <p>Um engenheiro civil precisa desenvolver um programa em Python para
 auxiliar no cálculo da área e perímetro de um terreno retangular e
@@ -1421,22 +1254,6 @@ proporcionando uma aplicação mais completa dos conceitos aprendidos.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-da-deformação-de-uma-viga">2.2.5.
 Exercício Proposto: Análise da Deformação de uma Viga</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong></p>
 <p>Um engenheiro mecânico precisa analisar a deformação de uma viga sob
 diferentes cargas. O programa em Python deve calcular a deflexão da viga
@@ -1579,22 +1396,6 @@ problemas complexos e visualizar resultados.</p>
 <hr/>
 <h3 id="curiosidade-mecânica-dos-sólidos">2.2.6. Curiosidade – Mecânica
 dos Sólidos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>No exemplo do cálculo da deflexão da viga, a teoria física aplicada é
 a da <strong>Mecânica dos Sólidos</strong>, especificamente a
 <strong>Teoria da Elasticidade Linear</strong> para vigas. As fórmulas
@@ -1649,43 +1450,11 @@ eficiência dos projetos de engenharia.</p>
 <hr/>
 <h2 id="entrada-e-saída-de-dados-em-python">2.3. Entrada e Saída de
 Dados em Python</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em programação, a entrada e saída de dados referem-se à forma como um
 programa recebe informações (entrada) e como ele apresenta os resultados
 (saída). Em Python, as funções input() e print() são as mais comuns para
 realizar essas operações.</p>
 <h3 id="entrada-de-dados-input">2.3.1. Entrada de Dados: input()</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A função <code>input()</code> permite que o programa receba dados do
 usuário através do teclado.</p>
 <ul>
@@ -1717,22 +1486,6 @@ explicitamente usando as funções <code>int()</code> (para inteiros) ou
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" href="#cb23-1" tabindex="-1"></a>nome_material <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite o nome do material: "</span>)</span>
 <span id="cb23-2"><a aria-hidden="true" href="#cb23-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nome do material:"</span>, nome_material)</span></code></pre></div>
 <h3 id="saída-de-dados-print">2.3.2. Saída de Dados: print()</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A função <code>print()</code> exibe informações na tela do
 computador.</p>
 <ul>
@@ -1779,22 +1532,6 @@ engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-cálculo-de-conversão-em-um-reator">2.3.4.
 Exercício Proposto: Cálculo de Conversão em um Reator</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong></p>
 <p>Um engenheiro químico precisa de um programa para calcular a
 conversão de um reagente em um reator.<br/>
@@ -1871,22 +1608,6 @@ Use f-strings para formatar a saída, especialmente a conversão
 <hr/>
 <h4 id="figura-2.3.1-esquema-técnico">Figura 2.3.1 – Esquema
 Técnico</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <pre class="plain"><code>+---------------------+
 |   Programa Python   |
 +---------------------+
@@ -1974,22 +1695,6 @@ reforça o uso de entrada e saída de dados com formatação.</p>
 <hr/>
 <h2 id="primeiros-cálculos-aplicados-à-engenharia">2.4. Primeiros
 Cálculos Aplicados à Engenharia</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Nesta seção, vamos explorar como aplicar os fundamentos da
 programação Python para realizar cálculos simples em problemas de
 engenharia. Os exemplos a seguir ilustram como usar os tipos de dados,
@@ -1997,22 +1702,6 @@ operadores aritméticos e entrada/saída para resolver tarefas comuns em
 diferentes disciplinas da engenharia.</p>
 <h3 id="engenharia-civil-cálculo-da-área-de-uma-viga">2.4.1. Engenharia
 Civil: Cálculo da Área de uma Viga</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Problema:</strong> Calcular a área da seção transversal de
 uma viga retangular. <strong>Fórmula:</strong> Área = base * altura
 <strong>Código Python:</strong></p>
@@ -2031,22 +1720,6 @@ Digite a altura da viga (m): 0.5
 A área da seção transversal da viga é: 0.15 m²</code></pre>
 <h3 id="engenharia-elétrica-lei-de-ohm">2.4.2. Engenharia Elétrica: Lei
 de Ohm</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Problema:</strong> Calcular a corrente elétrica em um
 resistor dado a tensão e a resistência. <strong>Fórmula:</strong>
 Corrente = Tensão / Resistência <strong>Código Python:</strong></p>
@@ -2063,22 +1736,6 @@ Corrente = Tensão / Resistência <strong>Código Python:</strong></p>
 <pre class="plaintext"><code>A corrente elétrica é: 2.00 A</code></pre>
 <h3 id="engenharia-mecânica-energia-potencial-gravitacional">2.4.3.
 Engenharia Mecânica: Energia Potencial Gravitacional</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Problema:</strong> Calcular a energia potencial gravitacional
 de um objeto. <strong>Fórmula:</strong> Energia Potencial = massa *
 gravidade * altura <strong>Código Python:</strong></p>
@@ -2096,22 +1753,6 @@ Digite a altura (m): 5
 A energia potencial gravitacional é: 490.50 J</code></pre>
 <h3 id="engenharia-química-vazão-molar">2.4.4. Engenharia Química: Vazão
 Molar</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Problema:</strong> Converter vazão mássica para vazão molar.
 <strong>Fórmula:</strong> Vazão Molar = Vazão Mássica / Massa Molar
 <strong>Código Python:</strong></p>
@@ -2128,22 +1769,6 @@ Molar</h3>
 <pre class="plaintext"><code>A vazão molar é: 2.00 mol/s</code></pre>
 <h3 id="engenharia-ambiental-cálculo-de-concentração">2.4.5. Engenharia
 Ambiental: Cálculo de Concentração</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Problema:</strong> Calcular a concentração de um poluente em
 uma solução. <strong>Fórmula:</strong> Concentração = Massa do Poluente
 / Volume da Solução <strong>Código Python:</strong></p>
@@ -2162,22 +1787,6 @@ Digite o volume da solução (m³): 2
 A concentração do poluente é: 0.25 kg/m³</code></pre>
 <hr/>
 <h3 id="conclusão">2.5. Conclusão</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Estes exemplos demonstram como os conceitos básicos de Python podem
 ser aplicados para resolver problemas simples em diferentes áreas da
 engenharia. Eles reforçam a importância de: - Entender os tipos de dados
@@ -2188,22 +1797,6 @@ forma clara. Nos próximos módulos, exploraremos conceitos mais avançados
 de Python para resolver problemas de engenharia mais complexos.</p>
 <hr/>
 <h1 id="estrutura-de-controle">3. Estrutura de Controle</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste módulo sobre estrutura de controle, exploramos os tipos de
 dados, operadores e entrada/saída, que nos permitem realizar cálculos e
 interagir com o usuário. No entanto, a capacidade de um programa de
@@ -2236,44 +1829,12 @@ inteligentes.</p>
 <hr/>
 <h2 id="condicionais-if-elif-else">3.1. Condicionais: if, elif,
 else</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As estruturas condicionais são fundamentais para controlar o fluxo de
 execução de um programa, permitindo que diferentes blocos de código
 sejam executados dependendo se uma condição é verdadeira ou falsa. Em
 Python, as palavras-chave if, elif (abreviação de “else if”) e else são
 usadas para definir essas estruturas.</p>
 <h3 id="a-estrutura-if">3.1.1. A estrutura if</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A estrutura if é a mais básica e executa um bloco de código somente
 se uma condição especificada for verdadeira.</p>
 <p><strong>Sintaxe:</strong></p>
@@ -2307,22 +1868,6 @@ de um sistema excedeu um limite de segurança.</li>
 Qualidade do ar: Moderada</code></pre>
 <hr/>
 <h3 id="a-estrutura-if-else">3.1.2. A estrutura if-else</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A estrutura if-else permite executar um bloco de código se a condição
 for verdadeira e outro bloco de código se a condição for falsa.
 <strong>Sintaxe:</strong></p>
@@ -2353,22 +1898,6 @@ de código (o do if ou o do else) é executado.</p>
 Material resistente.</code></pre>
 <hr/>
 <h3 id="a-estrutura-if-elif-else">3.1.3. A estrutura if-elif-else</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A estrutura if-elif-else permite verificar múltiplas condições em
 sequência. O elif (else if) especifica uma nova condição a ser
 verificada se a condição anterior for falsa.</p>
@@ -2420,22 +1949,6 @@ resolvam problemas reais de engenharia, onde a tomada de decisões é uma
 parte fundamental do processo.</p>
 <h3 id="exercício-proposto-classificação-de-solos">3.1.4. Exercício
 Proposto: Classificação de Solos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong> Um engenheiro civil precisa de um
 programa para classificar amostras de solo com base em seu Índice de
 Plasticidade (IP) e Limite de Liquidez (LL). O programa deve solicitar
@@ -2511,22 +2024,6 @@ ser implementada em programas para classificar dados e auxiliar na
 análise de materiais.</p>
 <h3 id="curiosidade-engenharia-civil">3.1.5. Curiosidade – Engenharia
 Civil</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Na engenharia civil, a classificação de solos é uma etapa crucial no
 projeto e construção de fundações, estradas e outras estruturas. A
 tabela de classificação de solos baseada no Índice de Plasticidade (IP)
@@ -2541,22 +2038,6 @@ exercício é uma simplificação, mas reflete os princípios básicos usados
 na prática. A classificação correta do solo é essencial para garantir a
 segurança e a estabilidade das estruturas construídas sobre ele.</p>
 <h3 id="conclusão-1">3.1.6. Conclusão</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Dominar as estruturas condicionais <strong>IF, ELIF e ELSE</strong> é
 um marco importante na jornada de programação. Elas fornecem a base para
 criar programas que não apenas executam cálculos, mas também respondem
@@ -2567,22 +2048,6 @@ engenharia.</p>
 <hr/>
 <h2 id="laços-de-repetição-for-while">3.2. Laços de Repetição: for,
 while</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os laços de repetição são fundamentais na programação, permitindo que
 um bloco de código seja executado várias vezes, com base em uma
 condição. Em Python, os principais tipos de laços são o <code>for</code>
@@ -2599,22 +2064,6 @@ enquanto uma condição específica for verdadeira. A sintaxe básica é:</p>
 <p>Ambos os tipos de laços são amplamente utilizados em problemas de
 engenharia, como simulações, otimizações e análises de dados.</p>
 <h3 id="o-laço-for">3.2.1. O laço for</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os laços de repetição são estruturas de controle que permitem
 executar um bloco de código repetidamente, um número específico de vezes
 ou enquanto uma condição for verdadeira. Em Python, os dois tipos
@@ -2640,22 +2089,6 @@ uma série de medidas de temperatura.</p>
 <pre class="plaintext"><code>Média de temperatura: 21.16 °C</code></pre>
 <hr/>
 <h3 id="o-laço-while">3.2.2. O laço while</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O laço <code>while</code> executa um bloco de código enquanto uma
 condição específica for verdadeira. É útil quando o número de iterações
 não é conhecido previamente.</p>
@@ -2725,22 +2158,6 @@ software.</p>
 <hr/>
 <h3 id="exercício-proposto-simulação-de-um-reator-batelada-isotérmico">3.2.3.
 Exercício Proposto: Simulação de um Reator Batelada Isotérmico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong> Um engenheiro químico precisa simular a
 conversão de um reagente A em um produto B em um reator batelada
 isotérmico. A reação segue uma cinética de primeira ordem:</p>
@@ -2827,22 +2244,6 @@ formatar a saída com duas casas decimais.</p>
 <hr/>
 <h3 id="curiosidade-engenharia-química">3.2.4. Curiosidade – Engenharia
 Química</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Na engenharia química, a simulação de reatores é uma prática comum
 para entender o comportamento de reações químicas em diferentes
 condições. O exemplo apresentado no exercício propõe uma simulação de um
@@ -2859,22 +2260,6 @@ eficiência do processo. Compreender como implementar laços de repetição
 em Python para simular essas dinâmicas é uma habilidade valiosa para
 engenheiros químicos.</p>
 <h3 id="conclusão-2">3.2.5. Conclusão</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os laços de repetição <code>for</code> e <code>while</code> são
 ferramentas poderosas na programação, permitindo a execução de blocos de
 código múltiplas vezes com base em condições específicas. Eles são
@@ -2887,22 +2272,6 @@ funções, para criar soluções mais complexas e robustas em Python.</p>
 <hr/>
 <h2 id="aplicações-práticas-em-verificação-de-condições-operacionais">3.3.
 Aplicações Práticas em Verificação de Condições Operacionais</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As estruturas de controle (IF, ELIF, ELSE, FOR, WHILE) são
 extremamente úteis para monitorar e controlar condições operacionais em
 sistemas de engenharia. Nesta seção, apresentaremos exemplos práticos de
@@ -2910,22 +2279,6 @@ como essas estruturas podem ser aplicadas para garantir a segurança,
 eficiência e correto funcionamento de processos e equipamentos.</p>
 <h3 id="monitoramento-de-temperatura-em-um-reator-químico">3.3.1.
 Monitoramento de Temperatura em um Reator Químico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em um reator químico, a temperatura é um parâmetro crítico que deve
 ser mantido dentro de limites seguros para evitar reações indesejadas ou
 danos ao equipamento. O código abaixo demonstra como usar condicionais
@@ -2947,22 +2300,6 @@ Digite a temperatura do reator em °C: 50
 Temperatura dentro dos limites normais.</code></pre>
 <h3 id="controle-de-nível-em-um-tanque">3.3.2. Controle de Nível em um
 Tanque</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O nível de líquido em um tanque é outro parâmetro importante em
 muitos processos industriais. O código a seguir ilustra como usar
 condicionais para controlar o nível e acionar bombas ou válvulas:</p>
@@ -2983,22 +2320,6 @@ Digite o nível do líquido no tanque em %: 50
 Nível dentro dos limites normais.</code></pre>
 <h3 id="verificação-de-pressão-em-um-sistema-de-tubulação">3.3.3.
 Verificação de Pressão em um Sistema de Tubulação</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A pressão em um sistema de tubulação deve ser monitorada para evitar
 vazamentos ou rupturas. O código abaixo mostra como usar condicionais
 para verificar a pressão e emitir avisos:</p>
@@ -3019,22 +2340,6 @@ Digite a pressão do sistema em bar: 5
 Pressão dentro dos limites normais.</code></pre>
 <h3 id="contagem-de-ciclos-de-um-equipamento">3.3.4. Contagem de Ciclos
 de um Equipamento</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em engenharia mecânica, é importante monitorar o número de ciclos de
 operação de um equipamento para programar a manutenção preventiva. O
 código a seguir usa um laço WHILE para simular a operação de um
@@ -3060,22 +2365,6 @@ O equipamento está em operação? (s/n): n
 Operação encerrada.</code></pre>
 <h3 id="análise-de-dados-de-sensores">3.3.5. Análise de Dados de
 Sensores</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em sistemas de automação, os dados dos sensores precisam ser
 analisados para tomar decisões em tempo real. O código a seguir usa um
 laço for para processar dados de um sensor de vibração e identificar
@@ -3102,22 +2391,6 @@ acionam alarmes e automatizam ações de controle, contribuindo para a
 segurança, eficiência e confiabilidade dos processos e equipamentos.</p>
 <hr/>
 <h2 id="conclusão-3">3.4. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste módulo, exploramos as estruturas de controle em Python,
 incluindo condicionais (IF, ELIF, ELSE) e laços de repetição (FOR,
 WHILE). Aprendemos como essas estruturas permitem que os programas tomem
@@ -3135,22 +2408,6 @@ suas habilidades de programação e sua capacidade de resolver problemas
 reais de engenharia.</p>
 <hr/>
 <h1 id="funções-e-modularizações">4. Funções e Modularizações</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste módulo 4, vamos explorar dois conceitos fundamentais para a
 organização e reutilização de código em Python: funções e modularização.
 Primeiramente, abordaremos a definição de funções. Funções são blocos de
@@ -3178,22 +2435,6 @@ habilidades cruciais para o desenvolvimento de soluções de engenharia
 robustas e escaláveis.</p>
 <hr/>
 <h2 id="definição-de-funções">4.1. Definição de Funções</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em Python, uma função é um bloco de código organizado e reutilizável
 que executa uma tarefa específica. Funções ajudam a dividir programas
 complexos em partes menores e gerenciáveis, tornando o código mais
@@ -3204,22 +2445,6 @@ definição e contém o código que será executado quando a função for
 chamada.</p>
 <h3 id="sintaxe-de-definição-de-função">4.1.1. Sintaxe de Definição de
 Função</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A sintaxe para definir uma função em Python é a seguinte:</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a aria-hidden="true" href="#cb80-1" tabindex="-1"></a><span class="kw">def</span> nome_da_funcao(parametros):</span>
 <span id="cb80-2"><a aria-hidden="true" href="#cb80-2" tabindex="-1"></a>    <span class="co"># bloco de código a ser executado</span></span>
@@ -3234,22 +2459,6 @@ indica que a função não faz nada (pode ser substituído pelo código real
 da função).</p>
 <h3 id="exemplo-de-definição-de-função">4.1.2. Exemplo de Definição de
 Função</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Vamos criar uma função simples que calcula a área de um retângulo. A
 função receberá dois parâmetros: a base e a altura do retângulo, e
 retornará a área calculada.</p>
@@ -3263,22 +2472,6 @@ retornará a área calculada.</p>
 <pre class="plaintext"><code>A área do retângulo é: 50 m²</code></pre>
 <h4 id="benefícios-do-uso-de-funções">4.1.3. Benefícios do Uso de
 Funções</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As funções oferecem vários benefícios importantes na programação,
 especialmente em engenharia:</p>
 <ul>
@@ -3300,42 +2493,10 @@ encapsular cálculos complexos, simulações, análises de dados e outras
 tarefas comuns, promovendo a eficiência e a clareza no desenvolvimento
 de software.</p>
 <h2 id="parâmetros-e-retorno">4.2. Parâmetros e Retorno</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Parâmetros e retorno são mecanismos que permitem que as funções se
 comuniquem com o “mundo exterior”, ou seja, que recebam dados para
 trabalhar e que forneçam resultados de volta para quem as chamou.</p>
 <h3 id="parâmetros">4.2.1. Parâmetros</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os parâmetros são variáveis que você define na declaração da função e
 que permitem que a função receba valores de entrada quando é chamada.
 Eles são especificados entre parênteses na definição da função.</p>
@@ -3374,22 +2535,6 @@ funções que aceitam um número variável de argumentos usando
 <span id="cb84-11"><a aria-hidden="true" href="#cb84-11" tabindex="-1"></a><span class="co"># Chamada da função com parâmetros nomeados</span></span>
 <span id="cb84-12"><a aria-hidden="true" href="#cb84-12" tabindex="-1"></a>exemplo_kwargs(nome<span class="op">=</span><span class="st">"João"</span>, idade<span class="op">=</span><span class="dv">30</span>, cidade<span class="op">=</span><span class="st">"São Paulo"</span>)</span></code></pre></div>
 <h3 id="retorno">4.2.2. Retorno</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O retorno é o mecanismo pelo qual uma função envia um resultado de
 volta para quem a chamou. Você pode usar a palavra-chave
 <code>return</code> para especificar o valor que a função deve
@@ -3416,22 +2561,6 @@ outras partes do programa. Juntos, parâmetros e retorno são cruciais
 para a criação de funções modulares e eficientes.</p>
 <h3 id="benefícios-de-parâmetros-e-retorno">4.2.3. Benefícios de
 Parâmetros e Retorno</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Parâmetros e retorno oferecem vários benefícios importantes na
 programação, especialmente em engenharia: - Flexibilidade: Permitem que
 as funções operem em diferentes dados, tornando-as reutilizáveis em
@@ -3451,22 +2580,6 @@ problemas complexos e garantir a qualidade das soluções.</p>
 <hr/>
 <h2 id="organização-de-código-em-módulos-reutilizáveis">4.3. Organização
 de Código em Módulos Reutilizáveis</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A organização de código em módulos reutilizáveis é uma prática
 fundamental na programação, especialmente em projetos maiores e mais
 complexos. Módulos permitem que você divida seu código em arquivos
@@ -3474,22 +2587,6 @@ separados, cada um contendo funções, classes e variáveis relacionadas a
 uma funcionalidade específica. Isso promove a reutilização de código,
 facilita a manutenção e melhora a legibilidade do programa.</p>
 <h3 id="o-que-são-módulos">4.3.1. O que são Módulos?</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Módulos são arquivos Python que contêm definições de funções, classes
 e variáveis. Eles permitem que você organize seu código em partes
 lógicas, facilitando a reutilização e a manutenção. Você pode importar
@@ -3504,22 +2601,6 @@ módulos em outros arquivos Python para acessar suas funcionalidades.</p>
 <span id="cb88-7"><a aria-hidden="true" href="#cb88-7" tabindex="-1"></a><span class="co"># Variável global</span></span>
 <span id="cb88-8"><a aria-hidden="true" href="#cb88-8" tabindex="-1"></a>mensagem <span class="op">=</span> <span class="st">"Este é um módulo de exemplo."</span></span></code></pre></div>
 <h3 id="criando-módulos">4.3.2. Criando Módulos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Para criar um módulo, basta salvar o código Python em um arquivo
 .py.</p>
 <p><strong>Exemplo:</strong> Criando um módulo chamado
@@ -3533,22 +2614,6 @@ calculos_geometricos.py</p>
 <span id="cb89-7"><a aria-hidden="true" href="#cb89-7" tabindex="-1"></a>    <span class="im">import</span> math</span>
 <span id="cb89-8"><a aria-hidden="true" href="#cb89-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> raio</span></code></pre></div>
 <h3 id="importando-módulos">4.3.3. Importando Módulos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Para usar um módulo em outro arquivo Python, você deve importá-lo.
 Existem várias maneiras de importar módulos:</p>
 <ol type="1">
@@ -3568,22 +2633,6 @@ Existem várias maneiras de importar módulos:</p>
 </ol>
 <h3 id="benefícios-da-modularização">4.3.4. Benefícios da
 Modularização</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A modularização oferece vários benefícios importantes na programação,
 especialmente em engenharia: - Reutilização de Código: Módulos permitem
 que você reutilize funções e classes em diferentes projetos,
@@ -3601,22 +2650,6 @@ desenvolvimento de software de engenharia, onde a clareza, a
 reutilização e a eficiência do código são fundamentais para resolver
 problemas complexos e garantir a qualidade das soluções.</p>
 <h3 id="exemplo-de-uso-de-módulos">4.3.5. Exemplo de Uso de Módulos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a aria-hidden="true" href="#cb94-1" tabindex="-1"></a><span class="im">import</span> geometria</span>
 <span id="cb94-2"><a aria-hidden="true" href="#cb94-2" tabindex="-1"></a></span>
 <span id="cb94-3"><a aria-hidden="true" href="#cb94-3" tabindex="-1"></a>raio <span class="op">=</span> <span class="dv">5</span></span>
@@ -3662,22 +2695,6 @@ reutilizável.</p>
 <hr/>
 <h3 id="exercício-proposto-gestão-de-inventário-florestal">4.3.5
 Exercício Proposto: Gestão de Inventário Florestal</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong><br/>
 Um engenheiro florestal precisa desenvolver um sistema para gerenciar o
 inventário de uma floresta. O sistema deve calcular o volume de madeira
@@ -3698,22 +2715,6 @@ relatório na tela.</p>
 <hr/>
 <h4 id="código-do-módulo-calculos_florestais.py">Código do Módulo
 (<code>calculos_florestais.py</code>):</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a aria-hidden="true" href="#cb97-1" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb97-2"><a aria-hidden="true" href="#cb97-2" tabindex="-1"></a></span>
 <span id="cb97-3"><a aria-hidden="true" href="#cb97-3" tabindex="-1"></a><span class="kw">def</span> calcular_volume(dap, altura, fator_forma<span class="op">=</span><span class="fl">0.7</span>):</span>
@@ -3742,22 +2743,6 @@ relatório na tela.</p>
 <hr/>
 <h4 id="programa-principal-main.py">Programa Principal
 (<code>main.py</code>):</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a aria-hidden="true" href="#cb98-1" tabindex="-1"></a><span class="im">import</span> calculos_florestais</span>
 <span id="cb98-2"><a aria-hidden="true" href="#cb98-2" tabindex="-1"></a></span>
 <span id="cb98-3"><a aria-hidden="true" href="#cb98-3" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
@@ -3787,22 +2772,6 @@ reutilizadas em diferentes contextos, promovendo a eficiência e a
 clareza no desenvolvimento de software de engenharia.</p>
 <hr/>
 <h2 id="conclusão-4">4.4. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste módulo, mergulhamos nos conceitos de funções e modularização em
 Python, aprendendo a criar funções para encapsular a lógica de tarefas
 específicas, a utilizar parâmetros para torná-las flexíveis e a retornar
@@ -3817,22 +2786,6 @@ fundamental para o desenvolvimento de software de alta qualidade em
 engenharia.</p>
 <hr/>
 <h1 id="estruturas-de-dados">5. Estruturas de Dados</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este módulo apresenta as estruturas de dados fundamentais em Python:
 listas, tuplas e dicionários. Listas são sequências mutáveis de
 elementos, úteis para armazenar coleções de itens que podem ser
@@ -3848,44 +2801,12 @@ pressão e vazão.</p>
 <hr/>
 <h2 id="listas-tuplas-e-dicionários">5.1. Listas, Tuplas e
 Dicionários</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Python oferece diversas estruturas de dados para organizar e
 armazenar coleções de dados. As mais fundamentais e amplamente
 utilizadas são listas, tuplas e dicionários. Cada uma dessas estruturas
 possui características e usos específicos, tornando-as adequadas para
 diferentes situações na programação.</p>
 <h3 id="listas">5.1.1. Listas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Definição:</strong><br/>
 Listas são sequências ordenadas de itens. Os itens em uma lista podem
 ser de qualquer tipo de dado (números, strings, outras listas, etc.) e
@@ -3935,22 +2856,6 @@ de experimentos, parâmetros de processos, entre outros dados que
 precisam ser manipulados e analisados em sequência.</p>
 <hr/>
 <h3 id="tuplas">5.1.2. Tuplas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Definição:</strong><br/>
 Tuplas são sequências ordenadas de itens, semelhantes às listas. No
 entanto, ao contrário das listas, as tuplas são
@@ -3998,22 +2903,6 @@ alterados, como coordenadas de um ponto, parâmetros fixos de um
 experimento ou registros imutáveis de configuração.</p>
 <hr/>
 <h3 id="dicionários">5.1.3. Dicionários</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Definição:</strong><br/>
 Dicionários são coleções não ordenadas de pares
 <strong>chave-valor</strong>. Cada chave é única dentro do dicionário e
@@ -4075,22 +2964,6 @@ organizado às informações.</p>
 <hr/>
 <h3 id="escolha-da-estrutura-de-dados">5.1.4. Escolha da Estrutura de
 Dados</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Ao desenvolver um programa, a escolha da estrutura de dados adequada
 é fundamental para garantir eficiência, clareza e facilidade de
 manutenção do código. Cada estrutura (lista, tupla ou dicionário) possui
@@ -4176,22 +3049,6 @@ aplicações de engenharia.</p>
 <h3 id="exercício-proposto-análise-de-dados-de-sensores-de-tensão-em-um-sistema-de-distribuição-de-energia">5.1.5.
 Exercício Proposto: Análise de Dados de Sensores de Tensão em um Sistema
 de Distribuição de Energia</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong><br/>
 Um engenheiro eletricista precisa analisar dados de sensores de tensão
 instalados em diferentes pontos de um sistema de distribuição de
@@ -4314,43 +3171,11 @@ sensores em sistemas de engenharia elétrica, permitindo a identificação
 rápida de anomalias e a tomada de decisões baseada em dados.</p>
 <hr/>
 <h3 id="destaque-dos-conceitos">5.1.6. Destaque dos Conceitos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste exercício, utilizamos de forma integrada as três principais
 estruturas de dados do Python: <strong>dicionários</strong>,
 <strong>listas</strong> e <strong>tuplas</strong>. Veja como cada uma
 delas foi aplicada:</p>
 <h4 id="dicionários-1">Dicionários</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li>O dicionário <code>dados_sensores</code> é usado para armazenar os
 dados de todos os sensores.</li>
@@ -4365,22 +3190,6 @@ demonstra como iterar sobre os itens de um dicionário (chave e
 valor).</li>
 </ul>
 <h4 id="listas-1">Listas</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li>As leituras de tensão de cada sensor são armazenadas em uma
 <strong>lista</strong> (por exemplo,
@@ -4397,22 +3206,6 @@ contendo os índices das leituras anômalas.</li>
 acessar a primeira leitura).</li>
 </ul>
 <h4 id="tuplas-1">Tuplas</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li>A tupla <code>faixa_tensao_aceitavel</code> é usada para armazenar a
 faixa de tensão aceitável (tensão mínima e máxima).</li>
@@ -4434,22 +3227,6 @@ eficiente e estruturada.</p>
 <hr/>
 <h2 id="iteração-e-manipulação-de-dados">5.2. Iteração e Manipulação de
 Dados</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Uma vez que entendemos as estruturas de dados básicas (listas, tuplas
 e dicionários), é crucial aprender como percorrer (iterar) seus
 elementos e realizar diversas operações de manipulação. Esta seção
@@ -4457,22 +3234,6 @@ aborda as técnicas e métodos mais comuns para trabalhar com esses dados
 em Python.</p>
 <h3 id="iteração-em-listas-tuplas-e-dicionários">5.2.1. Iteração em
 Listas, Tuplas e Dicionários</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Iteração</strong> é o processo de percorrer cada item em uma
 estrutura de dados (como uma lista, tupla ou dicionário) para acessar ou
 processá-lo. Python fornece maneiras eficientes de realizar essa tarefa,
@@ -4480,22 +3241,6 @@ principalmente usando os loops <code>for</code> e
 <code>while</code>.</p>
 <h4 id="iterando-com-o-loop-for">Iterando com o loop
 <code>for</code></h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O loop <code>for</code> é a forma mais comum e elegante de iterar em
 Python.</p>
 <ul>
@@ -4513,22 +3258,6 @@ for item in minha_tupla: print(item)
 </ul>
 <h4 id="iterando-com-o-loop-while">Iterando com o loop
 <code>while</code></h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O loop <code>while</code> é menos comum para iteração direta em
 estruturas de dados, mas é útil quando você precisa de mais controle
 sobre a condição de parada.</p>
@@ -4546,22 +3275,6 @@ necessário, converta as chaves em uma lista:
 <code>plaintext   a: 1   b: 2   c: 3</code></p></li>
 </ul>
 <h4 id="list-comprehensions">List Comprehensions</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Python oferece uma forma concisa de criar listas usando
 <strong>compreensão de lista</strong>. Isso é eficiente e legível para
 certas operações.</p>
@@ -4571,22 +3284,6 @@ certas operações.</p>
 <p><strong>Resultado:</strong></p>
 <pre class="plaintext"><code>[1, 4, 9, 16, 25]</code></pre>
 <h4 id="generator-expressions">Generator Expressions</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Semelhantes às list comprehensions, mas criam um
 <strong>gerador</strong> (iterador) em vez de uma lista. São mais
 eficientes em termos de memória para grandes conjuntos de dados.</p>
@@ -4601,22 +3298,6 @@ eficientes em termos de memória para grandes conjuntos de dados.</p>
 16
 25</code></pre>
 <h4 id="dicas-para-escolha-do-método">Dicas para Escolha do Método</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li>Use <code>for</code> para iteração simples e direta em listas,
 tuplas e dicionários.</li>
@@ -4637,22 +3318,6 @@ engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-teste-de-tração">5.2.2.
 Exercício Proposto: Análise de Dados de Teste de Tração</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong><br/>
 Um engenheiro mecânico realizou um teste de tração em um novo tipo de
 aço. O teste gerou uma série de dados de força (em Newtons) e
@@ -4789,22 +3454,6 @@ tomada de decisão em projetos de engenharia mecânica.</p>
 <hr/>
 <h2 id="aplicações-em-vetores-de-parâmetros-de-processo">5.3. Aplicações
 em Vetores de Parâmetros de Processo</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em muitas áreas da engenharia, os processos são caracterizados por
 múltiplos parâmetros que influenciam seu comportamento e desempenho.
 Esses parâmetros podem incluir temperaturas, pressões, vazões,
@@ -4815,22 +3464,6 @@ ferramentas poderosas para trabalhar com esses vetores de parâmetros de
 processo.</p>
 <h3 id="representação-de-vetores-de-parâmetros">5.3.1. Representação de
 Vetores de Parâmetros</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em engenharia, é comum lidar com conjuntos de parâmetros que
 representam o estado ou as condições de um processo, como temperaturas,
 pressões, vazões, concentrações, entre outros. Esses conjuntos podem ser
@@ -4895,22 +3528,6 @@ análises, simulações e tomadas de decisão em projetos de engenharia.</p>
 <h3 id="exercício-proposto-análise-do-desempenho-de-um-reator-químico-batch">5.3.2.
 Exercício Proposto: Análise do Desempenho de um Reator Químico
 Batch</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong><br/>
 Um engenheiro químico está analisando o desempenho de um reator químico
 batch onde ocorre uma reação de primeira ordem. O objetivo é usar Python
@@ -4937,22 +3554,6 @@ velocidade (k) - Representações textuais dos gráficos</p>
 <hr/>
 <h3 id="conceitos-aplicados-no-código">5.3.3. Conceitos Aplicados no
 Código</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste exercício, diversos conceitos fundamentais de programação e
 engenharia foram aplicados para analisar o desempenho de um reator
 químico batch. Veja os principais pontos:</p>
@@ -5014,22 +3615,6 @@ de processos em engenharia química.</p>
 <hr/>
 <h2 id="exercício-proposto-resolução">5.3.4. Exercício Proposto:
 Resolução</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste item, apresentamos a resolução detalhada do exercício de
 análise do desempenho de um reator químico batch, integrando os
 conceitos de vetores de parâmetros, funções e manipulação de dados em
@@ -5180,22 +3765,6 @@ eficiente de vetores de parâmetros de processo é essencial para otimizar
 o desempenho e a segurança em processos químicos industriais.</p>
 <hr/>
 <h2 id="conclusão-5">5.4. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste módulo, exploramos as principais estruturas de dados do Python
 — listas, tuplas e dicionários — e aprendemos como utilizá-las para
 organizar, armazenar e manipular informações de forma eficiente em
@@ -5226,22 +3795,6 @@ enfrentar desafios cada vez mais complexos na programação Python voltada
 <hr/>
 <h1 id="manipulação-de-arquivos-e-dados">6. Manipulação de Arquivos e
 Dados</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A capacidade de interagir com arquivos e analisar dados é essencial
 para o trabalho de engenheiros e cientistas. Nesta seção, vamos explorar
 as técnicas e ferramentas fundamentais para a manipulação de dados em
@@ -5256,44 +3809,12 @@ computacionais, demonstrando como extrair informações significativas e
 validar modelos.</p>
 <h2 id="leitura-e-escrita-de-arquivos-.txt-e-.csv">6.1. Leitura e
 Escrita de Arquivos .txt e .csv</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A manipulação de arquivos é fundamental para armazenar, recuperar e
 compartilhar dados em projetos de engenharia. Python oferece recursos
 simples e poderosos para trabalhar com arquivos de texto (.txt) e
 arquivos CSV (.csv), que são amplamente utilizados para registrar
 medições, resultados de simulações e tabelas de dados.</p>
 <h3 id="conceitos">6.1.1. Conceitos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><p><strong>Arquivos de texto (.txt):</strong><br/>
 São arquivos simples, compostos por linhas de texto. Podem ser usados
@@ -5326,40 +3847,8 @@ corrompidos.</p></li>
 </ul>
 <hr/>
 <h3 id="exemplos">6.1.2. Exemplos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <h4 id="ler-um-arquivo-.txt-com-dados-de-temperatura-e-extrair-a-média">1.
 Ler um arquivo .txt com dados de temperatura e extrair a média</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Arquivo de texto <code>temperaturas.txt</code>:</p>
 <pre><code>25.0
 26.5
@@ -5390,22 +3879,6 @@ Ler um arquivo .txt com dados de temperatura e extrair a média</h4>
 <hr/>
 <h4 id="escrever-uma-lista-de-resultados-de-simulação-em-um-arquivo-.txt">2.
 Escrever uma lista de resultados de simulação em um arquivo .txt</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Código Python de Exemplo:</strong></p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a aria-hidden="true" href="#cb122-1" tabindex="-1"></a><span class="kw">def</span> escrever_resultados_simulacao(arquivo, resultados):</span>
 <span id="cb122-2"><a aria-hidden="true" href="#cb122-2" tabindex="-1"></a>    <span class="cf">try</span>:</span>
@@ -5423,22 +3896,6 @@ Escrever uma lista de resultados de simulação em um arquivo .txt</h4>
 <hr/>
 <h4 id="ler-e-escrever-arquivos-csv-com-o-módulo-csv">3. Ler e escrever
 arquivos CSV com o módulo csv</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Código Python de Exemplo:</strong></p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb124-1"><a aria-hidden="true" href="#cb124-1" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb124-2"><a aria-hidden="true" href="#cb124-2" tabindex="-1"></a></span>
@@ -5472,22 +3929,6 @@ documentar resultados de forma eficiente.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-vazão-em-ete">6.1.3.
 Exercício Proposto: Análise de Dados de Vazão em ETE</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Descrição:</strong><br/>
 Em uma Estação de Tratamento de Esgoto (ETE), o controle preciso da
 vazão de água tratada é essencial para garantir a eficiência do processo
@@ -5618,44 +4059,12 @@ Vazão Mínima: Z m³/h (Timestamp: AAAA-MM-DD HH:MM:SS)</code></pre></li>
 <span id="cb128-53"><a aria-hidden="true" href="#cb128-53" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Nenhum dado disponível para análise."</span>)</span></code></pre></div>
 <hr/>
 <h4 id="resumo">Resumo:</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este exercício integra leitura de arquivos CSV, manipulação de datas,
 análise estatística simples e geração de relatórios automatizados,
 mostrando como Python pode ser aplicado para monitorar e documentar o
 desempenho de sistemas de engenharia ambiental.</p>
 <hr/>
 <h3 id="considerações-adicionais">6.1.4. Considerações Adicionais:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Validação de Dados:</strong> É importante validar os dados
 lidos do arquivo para garantir que estão no formato esperado e evitar
@@ -5683,22 +4092,6 @@ Python.</li>
 <hr/>
 <h3 id="análise-e-visualização-de-dados-da-vazão-em-ete">6.1.5. Análise
 e Visualização de Dados da Vazão em ETE</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste exemplo, vamos aprofundar a aplicação prática da manipulação de
 dados em Python, focando na análise e visualização de dados de vazão de
 uma Estação de Tratamento de Esgoto (ETE). Utilizaremos os conhecimentos
@@ -5817,22 +4210,6 @@ transformar dados operacionais em informações úteis para tomada de
 decisão.</p>
 <hr/>
 <h3 id="resumo-1">6.1.6. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os dois últimos exercícios demonstraram uma clara progressão na
 capacidade de manipulação e análise de dados em Python. Enquanto o
 primeiro nos permitiu a leitura básica de dados de vazão de um arquivo
@@ -5847,22 +4224,6 @@ acionáveis para a engenharia.</p>
 <hr/>
 <h2 id="introdução-à-biblioteca-pandas">6.2. Introdução à Biblioteca
 PANDAS</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A biblioteca <strong>PANDAS</strong> é uma das ferramentas mais
 poderosas e populares para análise de dados em Python. Ela fornece
 estruturas de dados flexíveis e eficientes, como
@@ -5872,22 +4233,6 @@ módulo, vamos explorar os conceitos fundamentais do PANDAS, suas
 principais funcionalidades e como aplicá-las em projetos de
 engenharia.</p>
 <h3 id="conceitos-básicos">6.2.1. Conceitos Básicos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><p><strong>DataFrame:</strong><br/>
 Estrutura de dados bidimensional, semelhante a uma tabela, onde cada
@@ -5921,40 +4266,8 @@ gráficos diretamente a partir de DataFrames.</p></li>
 </ul>
 <hr/>
 <h3 id="exemplos-práticos">6.2.2. Exemplos Práticos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <h4 id="criando-um-dataframe-a-partir-de-um-dicionário">1. Criando um
 DataFrame a partir de um dicionário</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a aria-hidden="true" href="#cb131-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb131-2"><a aria-hidden="true" href="#cb131-2" tabindex="-1"></a><span class="co"># Criando um DataFrame a partir de um dicionário</span></span>
 <span id="cb131-3"><a aria-hidden="true" href="#cb131-3" tabindex="-1"></a>dados <span class="op">=</span> {</span>
@@ -5971,22 +4284,6 @@ DataFrame a partir de um dicionário</h4>
 2  Charlie     35  Belo Horizonte</code></pre>
 <h4 id="lendo-dados-de-um-arquivo-csv">2. Lendo dados de um arquivo
 CSV</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb133"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a aria-hidden="true" href="#cb133-1" tabindex="-1"></a><span class="co"># Lendo dados de um arquivo CSV</span></span>
 <span id="cb133-2"><a aria-hidden="true" href="#cb133-2" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'dados.csv'</span>)</span>
 <span id="cb133-3"><a aria-hidden="true" href="#cb133-3" tabindex="-1"></a><span class="bu">print</span>(df.head())  <span class="co"># Exibe as primeiras 5 linhas do DataFrame</span></span></code></pre></div>
@@ -5997,22 +4294,6 @@ CSV</h4>
 2        3        6        9</code></pre>
 <h4 id="manipulando-dados-no-dataframe">3. Manipulando dados no
 DataFrame</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb135"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a aria-hidden="true" href="#cb135-1" tabindex="-1"></a><span class="co"># Filtrando dados</span></span>
 <span id="cb135-2"><a aria-hidden="true" href="#cb135-2" tabindex="-1"></a>df_filtrado <span class="op">=</span> df[df[<span class="st">'Idade'</span>] <span class="op">&gt;</span> <span class="dv">28</span>]</span>
 <span id="cb135-3"><a aria-hidden="true" href="#cb135-3" tabindex="-1"></a><span class="bu">print</span>(df_filtrado)</span></code></pre></div>
@@ -6022,22 +4303,6 @@ DataFrame</h4>
 2  Charlie     35  Belo Horizonte</code></pre>
 <h4 id="agrupando-dados-e-calculando-estatísticas">4. Agrupando dados e
 calculando estatísticas</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb137"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a aria-hidden="true" href="#cb137-1" tabindex="-1"></a><span class="co"># Agrupando dados por cidade e calculando a média de idade</span></span>
 <span id="cb137-2"><a aria-hidden="true" href="#cb137-2" tabindex="-1"></a>df_agrupado <span class="op">=</span> df.groupby(<span class="st">'Cidade'</span>)[<span class="st">'Idade'</span>].mean().reset_index()</span>
 <span id="cb137-3"><a aria-hidden="true" href="#cb137-3" tabindex="-1"></a><span class="bu">print</span>(df_agrupado)</span></code></pre></div>
@@ -6048,22 +4313,6 @@ calculando estatísticas</h4>
 2      São Paulo   25.0</code></pre>
 <h4 id="escrevendo-dados-em-um-arquivo-csv">5. Escrevendo dados em um
 arquivo CSV</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb139"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb139-1"><a aria-hidden="true" href="#cb139-1" tabindex="-1"></a><span class="co"># Escrevendo o DataFrame em um arquivo CSV</span></span>
 <span id="cb139-2"><a aria-hidden="true" href="#cb139-2" tabindex="-1"></a>df.to_csv(<span class="st">'dados_saida.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb139-3"><a aria-hidden="true" href="#cb139-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dados salvos em 'dados_saida.csv'"</span>)</span></code></pre></div>
@@ -6079,22 +4328,6 @@ controle de processos e tomada de decisão baseada em dados.</p>
 <h3 id="exercício-proposto-análise-de-dados-de-tensão-e-corrente-em-um-sistema-elétrico">6.2.3.
 Exercício Proposto: Análise de Dados de Tensão e Corrente em um Sistema
 Elétrico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong><br/>
 Em sistemas elétricos, é fundamental monitorar a tensão e a corrente em
 diferentes pontos da rede para garantir estabilidade, segurança e
@@ -6243,22 +4476,6 @@ que precisam monitorar e otimizar sistemas elétricos com base em dados
 reais.</p>
 <hr/>
 <h3 id="resumo-2">6.2.4. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste módulo, exploramos a biblioteca PANDAS, uma ferramenta
 essencial para análise de dados em Python. Aprendemos sobre suas
 estruturas de dados principais, como DataFrames e Series, e como
@@ -6274,22 +4491,6 @@ otimização de processos em diversas áreas da engenharia.</p>
 <hr/>
 <h2 id="análise-de-dados-experimentais-e-simulações-computacionais">6.3.
 Análise de Dados Experimentais e Simulações Computacionais</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A análise de dados experimentais e simulações computacionais é uma
 parte crucial do trabalho de engenheiros e cientistas. Nesta seção,
 vamos explorar como aplicar os conhecimentos adquiridos sobre
@@ -6298,22 +4499,6 @@ provenientes de medições reais e simulações computacionais. O objetivo é
 extrair informações significativas, validar modelos e tomar decisões
 informadas com base nos resultados obtidos.</p>
 <h3 id="conceitos-fundamentais">6.3.1. Conceitos Fundamentais</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Dados Experimentais:</strong><br/>
 São dados coletados a partir de experimentos físicos, medições em campo
@@ -6339,22 +4524,6 @@ criar gráficos informativos a partir de DataFrames do PANDAS.</li>
 <hr/>
 <h3 id="exemplo-proposto-calibração-de-um-sensor-de-pressão">6.3.2.
 Exemplo Proposto: Calibração de um Sensor de Pressão</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong><br/>
 Sensores de pressão são fundamentais em sistemas de controle e automação
 industrial. Para garantir medições precisas, é necessário calibrar o
@@ -6462,22 +4631,6 @@ visualmente os dados experimentais e o ajuste. - <strong>Aplicação em
 Engenharia:</strong> Permite calibrar sensores e garantir medições
 precisas em sistemas de automação e controle.</p>
 <h3 id="resumo-3">6.3.3 Resumo:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste exemplo, exploramos como utilizar Python para calibrar um
 sensor de pressão, ajustando curvas polinomiais aos dados experimentais.
 Aprendemos a ler dados de um arquivo CSV com Pandas, ajustar curvas
@@ -6491,22 +4644,6 @@ processos, validar modelos teóricos e garantir a precisão em sistemas de
 controle e automação.</p>
 <hr/>
 <h2 id="conclusão-6">6.4. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A análise de dados experimentais e simulações computacionais é uma
 habilidade essencial para engenheiros e cientistas. Neste módulo,
 exploramos como utilizar Python, especialmente as bibliotecas Pandas e
@@ -6522,22 +4659,6 @@ complexos, melhorando a eficiência e a eficácia em suas áreas de
 atuação.</p>
 <hr/>
 <h1 id="visualização-de-dados">7. Visualização de Dados</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A visualização de dados é uma etapa crucial no processo de análise,
 permitindo que os engenheiros interpretem informações complexas de forma
 intuitiva e identifiquem padrões, tendências e outliers que seriam
@@ -6556,44 +4677,12 @@ conclusões.</p>
 <h2 id="mat_plot_lib-e-seaborn-ferramentas-essenciais-para-visualização-de-dados-em-python">7.1.
 MAT_PLOT_LIB e SEABORN: Ferramentas Essenciais para Visualização de
 Dados em Python</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A visualização de dados é uma etapa fundamental na análise de dados
 em engenharia, permitindo a interpretação intuitiva de informações
 complexas e a identificação de padrões cruciais. Python oferece duas
 bibliotecas poderosas para essa finalidade: MAT_PLOT_LIB e SEABORN.</p>
 <h3 id="mat_plot_lib-a-base-da-visualização-em-python">7.1.1.
 MAT_PLOT_LIB: A Base da Visualização em Python</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>MAT_PLOT_LIB é a biblioteca fundamental para a criação de gráficos em
 Python. Ela fornece um controle extenso sobre todos os elementos do
 gráfico, desde os tipos de gráficos (linhas, barras, dispersão,
@@ -6629,22 +4718,6 @@ organizada.</p>
 </figure>
 <h3 id="seaborn-visualização-estatística-avançada">7.1.2. SEABORN:
 Visualização Estatística Avançada</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>SEABORN é uma biblioteca construída sobre MAT_PLOT_LIB, projetada
 para facilitar a criação de gráficos estatísticos complexos. Ela oferece
 uma interface de alto nível para criar visualizações informativas e
@@ -6682,22 +4755,6 @@ identificar padrões complexos.</li>
 <p><strong>Resultado:</strong> <img alt="Gráfico de Seno com Seaborn" src="imagens/19_imagem_grafico_seno_seaborn.png"/></p>
 <h3 id="escolhendo-entre-mat_plot_lib-e-seaborn">7.1.3. Escolhendo entre
 MAT_PLOT_LIB e SEABORN</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em muitos casos, MAT_PLOT_LIB e SEABORN são usados em conjunto.
 MAT_PLOT_LIB fornece a base, e SEABORN aprimora a aparência e adiciona
 recursos estatísticos.</p>
@@ -6712,22 +4769,6 @@ recursos estatísticos.</p>
 <span id="cb149-9"><a aria-hidden="true" href="#cb149-9" tabindex="-1"></a><span class="pp">|------------------------|--------------------------------------------|---------------------------------------------|</span></span></code></pre></div>
 <h3 id="quando-usar-cada-biblioteca">7.1.4. Quando Usar Cada
 Biblioteca</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Use MAT_PLOT_LIB quando:</strong> - Você precisa de controle
 total sobre a aparência do gráfico. - Você está criando gráficos simples
 e não precisa de visualizações estatísticas complexas. - Você está
@@ -6743,22 +4784,6 @@ aplicações.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-trajetória-de-um-míssil-balístico">7.1.5
 Exercício Proposto: Análise de Trajetória de um Míssil Balístico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Em engenharia aeronáutica, a análise da trajetória de um míssil
 balístico é crucial para determinar seu alcance, tempo de voo e outros
 parâmetros de desempenho. Simulações computacionais geram dados
@@ -6833,22 +4858,6 @@ Gráfico de linha mostrando a variação da velocidade do míssil ao longo do te
 Gráfico de dispersão mostrando a velocidade do míssil em função do tempo.</code></pre>
 <h3 id="figura-7.1.1---trajetória-do-míssil-balístico">Figura 7.1.1 -
 Trajetória do Míssil Balístico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Trajetória do Míssil" src="imagens/20_imagem_trajetoria_missel.png"/>
 <figcaption aria-hidden="true">Trajetória do Míssil</figcaption>
@@ -6866,22 +4875,6 @@ vertical (altitude) e horizontal (distância). Ele ajuda a entender o
 alcance e a forma geral da trajetória.</p>
 <h3 id="figura-7.1.2---variação-da-velocidade-ao-longo-do-tempo">Figura
 7.1.2 - Variação da Velocidade ao Longo do Tempo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Variação da Velocidade" src="imagens/20_imagem_variacao_velocidade.png"/>
 <figcaption aria-hidden="true">Variação da Velocidade</figcaption>
@@ -6900,22 +4893,6 @@ desaceleração devido à gravidade e à resistência do ar (se incluída no
 modelo).</p>
 <h3 id="figura-7.1.3---variação-da-altitude-ao-longo-do-tempo">Figura
 7.1.3 - Variação da Altitude ao Longo do Tempo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Velocidade em Função do Tempo" src="imagens/20_imagem_velocidade_funcao_tempo.png"/>
 <figcaption aria-hidden="true">Velocidade em Função do
@@ -6976,43 +4953,11 @@ complementares, e a análise conjunta dos três oferece uma compreensão
 completa do voo do míssil balístico. </p>
 <h2 id="tipos-de-gráficos-escolhendo-a-representação-visual-adequada">7.2.
 Tipos de Gráficos: Escolhendo a Representação Visual Adequada</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A escolha do tipo de gráfico certo é crucial para comunicar
 efetivamente os dados e as conclusões da análise. Cada tipo de gráfico é
 adequado para diferentes tipos de dados e propósitos de
 visualização.</p>
 <h3 id="gráficos-de-linha">7.2.1. Gráficos de Linha</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Propósito:</strong> Mostrar a relação entre duas variáveis
 quantitativas, especialmente como uma variável muda em função da outra
 (frequentemente tempo). São ideais para visualizar tendências, padrões e
@@ -7040,22 +4985,6 @@ com um componente contínuo.</p>
 <figcaption aria-hidden="true">Gráfico de Linha</figcaption>
 </figure>
 <h3 id="gráficos-de-barras">7.2.2. Gráficos de Barras</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Propósito:</strong> Comparar valores entre diferentes
 categorias ou grupos. São úteis para visualizar dados discretos e
 comparar quantidades relativas. <strong>Dados Adequados:</strong> -
@@ -7082,22 +5011,6 @@ máquinas).</p>
 <figcaption aria-hidden="true">Gráfico de Barras</figcaption>
 </figure>
 <h3 id="gráficos-de-dispersão">7.2.3. Gráficos de Dispersão</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Propósito:</strong> Mostrar a relação entre duas variáveis
 quantitativas, permitindo identificar correlações, tendências e
 agrupamentos. São úteis para visualizar a distribuição de dados e
@@ -7122,22 +5035,6 @@ duas variáveis contínuas (ex: altura vs. peso). - Análise de correlação
 <figcaption aria-hidden="true">Gráfico de Dispersão</figcaption>
 </figure>
 <h3 id="histogramas">7.2.4. Histogramas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Propósito:</strong> Mostrar a distribuição de uma variável
 quantitativa, permitindo identificar a frequência de diferentes
 intervalos de valores. São úteis para visualizar a forma da distribuição
@@ -7167,22 +5064,6 @@ em uma prova).</p>
 <h3 id="exercício-proposto-análise-de-dados-de-qualidade-da-água-em-campo-largo">7.2.5.
 Exercício Proposto: Análise de Dados de Qualidade da Água em Campo
 Largo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Engenheiros ambientais monitoram
 regularmente a qualidade da água em rios e corpos d’água para avaliar a
 saúde do ecossistema, identificar fontes de poluição e garantir a
@@ -7268,41 +5149,9 @@ e temperatura da água.</p>
 Gráfico de barras comparando os níveis de oxigênio dissolvido entre os pontos de amostragem.
 Gráfico de dispersão analisando a relação entre turbidez e temperatura da água.</code></pre>
 <h3 id="resultados-dos-gráficos">Resultados dos Gráficos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <h4 id="figura-7.2.1---gráfico-de-linha-mostrando-a-variação-do-ph-ao-longo-do-tempo-para-cada-ponto-de-amostragem.">Figura
 7.2.1 - Gráfico de linha mostrando a variação do pH ao longo do tempo
 para cada ponto de amostragem.</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Variação do pH" src="imagens/25_imagem_variacao_ph.png"/>
 <figcaption aria-hidden="true">Variação do pH</figcaption>
@@ -7318,22 +5167,6 @@ para cada ponto de amostragem.</h4>
 <h4 id="figura-7.2.2---gráfico-de-barras-comparando-os-níveis-de-oxigênio-dissolvido-entre-os-pontos-de-amostragem.">Figura
 7.2.2 - Gráfico de barras comparando os níveis de oxigênio dissolvido
 entre os pontos de amostragem.</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Comparação dos Níveis de Oxigênio Dissolvido" src="imagens/25_imagem_comparacao_oxigenio.png"/>
 <figcaption aria-hidden="true">Comparação dos Níveis de Oxigênio
@@ -7351,22 +5184,6 @@ entre Pontos de Amostragem.</li>
 <h4 id="figura-7.2.3---gráfico-de-dispersão-analisando-a-relação-entre-turbidez-e-temperatura-da-água.">Figura
 7.2.3 - Gráfico de dispersão analisando a relação entre turbidez e
 temperatura da água.</h4>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Relação entre Turbidez e Temperatura" src="imagens/25_imagem_relacao_turbidez_temperatura.png"/>
 <figcaption aria-hidden="true">Relação entre Turbidez e
@@ -7393,22 +5210,6 @@ entre esses parâmetros.</p>
 <hr/>
 <h2 id="visualização-de-curvas-e-resultado-de-processos">7.3.
 Visualização de Curvas e Resultado de Processos</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A visualização de curvas e resultados de processos é uma parte
 essencial da análise de dados em engenharia, permitindo a representação
 gráfica de fenômenos contínuos e dinâmicos. Este módulo se concentra na
@@ -7417,22 +5218,6 @@ longo do tempo, facilitando a interpretação de resultados experimentais
 e simulações computacionais.</p>
 <h3 id="importância-da-visualização-de-curvas">7.3.1. Importância da
 Visualização de Curvas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A visualização de curvas é crucial para engenheiros e cientistas,
 pois permite a análise de tendências, a identificação de padrões e a
 detecção de anomalias em dados experimentais ou simulações. Gráficos bem
@@ -7440,22 +5225,6 @@ elaborados ajudam a comunicar resultados complexos de forma clara e
 intuitiva, facilitando a tomada de decisões informadas.</p>
 <h3 id="tipos-de-gráficos-para-visualização-de-curvas">7.3.2. Tipos de
 Gráficos para Visualização de Curvas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os gráficos mais comuns utilizados para a visualização de curvas
 incluem: - <strong>Gráficos de Linha:</strong> Ideais para mostrar a
 evolução de uma variável ao longo do tempo, como a temperatura de um
@@ -7469,22 +5238,6 @@ superfícies tridimensionais em um plano bidimensional, úteis em análises
 de campo escalar, como temperatura ou pressão em uma área
 específica.</p>
 <h3 id="aplicações-práticas">7.3.3. Aplicações Práticas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A visualização de curvas é amplamente aplicada em diversas áreas da
 engenharia, incluindo:</p>
 <ul>
@@ -7500,22 +5253,6 @@ tempo.</li>
 curvas de carga e deformação em materiais submetidos a esforços.</li>
 </ul>
 <h3 id="ferramentas-e-bibliotecas">7.3.4. Ferramentas e Bibliotecas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Para a visualização de curvas em Python, as bibliotecas MAT_PLOT_LIB
 e SEABORN são amplamente utilizadas. Elas oferecem uma variedade de
 funções para criar gráficos personalizados, permitindo a representação
@@ -7526,22 +5263,6 @@ gráficos de curvas.</p>
 <h3 id="exercício-proposto-análise-do-desempenho-de-um-sistema-de-controle-de-temperatura">7.3.5.
 Exercício Proposto: Análise do Desempenho de um Sistema de Controle de
 Temperatura</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em engenharia de controle, é fundamental
 monitorar e analisar como um sistema responde a mudanças no setpoint
 (valor desejado) e a distúrbios. A visualização das curvas de setpoint,
@@ -7585,22 +5306,6 @@ Saida_Controlador (Sinal de controle enviado ao aquecedor, %)</p>
 <p><strong>Saída Esperada:</strong></p>
 <pre class="plaintext"><code>Gráfico mostrando as curvas de setpoint, temperatura real e saída do controlador ao longo do tempo.</code></pre>
 <h3 id="resultados-do-gráfico">Resultados do Gráfico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Análise do Desempenho de um Sistema de Controle de Temperatura" src="imagens/26_imagem_analise_desempenho_controle_temperatura.png"/>
 <figcaption aria-hidden="true">Análise do Desempenho de um Sistema de
@@ -7609,22 +5314,6 @@ Controle de Temperatura</figcaption>
 <p>Gráfico mostrando as curvas de setpoint, temperatura real e saída do
 controlador ao longo do tempo.</p>
 <h3 id="análise-do-gráfico">Análise do Gráfico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O gráfico gerado apresenta três curvas principais: - <strong>Setpoint
 (Temperatura Desejada):</strong> Representada pela linha azul tracejada,
 mostra a temperatura alvo que o sistema deve atingir. Neste exemplo, o
@@ -7639,22 +5328,6 @@ proporcional à diferença entre o setpoint e a temperatura real,
 ajustando-se para minimizar o erro.</p>
 <h3 id="interpretação-do-desempenho-do-sistema">Interpretação do
 Desempenho do Sistema</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A partir do gráfico, podemos analisar o desempenho do sistema de
 controle: - <strong>Tempo de Subida:</strong> O tempo que leva para a
 temperatura real atingir o novo setpoint após a mudança. Neste caso, é
@@ -7675,22 +5348,6 @@ rapidamente o desempenho do sistema de controle, facilitando ajustes e
 otimizações necessárias para melhorar a resposta do sistema.</p>
 <hr/>
 <h2 id="conclusão-7">7.4. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A visualização de dados é uma habilidade essencial para engenheiros e
 cientistas, permitindo a interpretação clara e eficaz de informações
 complexas. Neste módulo, exploramos os principais tipos de gráficos
@@ -7703,22 +5360,6 @@ visualmente atraentes. A capacidade de visualizar dados de forma eficaz
 tendências e comunicação de resultados.</p>
 <hr/>
 <h1 id="cálculo-numérico-com-num_py">8. Cálculo Numérico com NUM_PY</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>No universo da engenharia, a capacidade de realizar cálculos
 numéricos eficientes e complexos é de suma importância. Este módulo nos
 levará ao coração do Cálculo Numérico com NUM_PY, uma biblioteca
@@ -7737,22 +5378,6 @@ apto a utilizar o NUM_PY para realizar cálculos numéricos robustos e
 eficientes, essenciais para diversas disciplinas da engenharia.</p>
 <h2 id="arrays-e-operações-vetoriais">8.1. Arrays e Operações
 Vetoriais</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>No coração do NUM_PY (Numerical Python) está o objeto ndarray
 (N-dimensional array), uma estrutura de dados fundamental para
 computação numérica eficiente. Diferente das listas Python, que podem
@@ -7763,22 +5388,6 @@ implementação em C, torna as operações com arrays NUM_PY incrivelmente
 mais rápidas e eficientes em termos de memória para grandes volumes de
 dados numéricos.</p>
 <h3 id="o-que-são-arrays-num_py">8.1.1. O que são Arrays NUM_PY?</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Um array NUM_PY é uma grade de valores, todos do mesmo tipo, e é
 indexado por uma tupla de inteiros não negativos. O número de dimensões
 é o rank do array. - <strong>Vetor:</strong> Um array 1-D (uma
@@ -7791,22 +5400,6 @@ memória para armazenar grandes quantidades de dados do mesmo tipo. -
 <strong>Funcionalidade:</strong> Oferecem uma vasta gama de funções
 matemáticas e de álgebra linear otimizadas.</p>
 <h3 id="criação-de-arrays">8.1.2. Criação de Arrays</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os Arrays podem ser criados de diversas formas: - A partir de listas
 Python: Usando np.array(). - Arrays preenchidos com valores específicos:
 np.zeros(), np.ones(), np.full(). - Arrays com sequências numéricas:
@@ -7819,22 +5412,6 @@ elementos no array. - <strong>dtype:</strong> O tipo de dado dos
 elementos no array.</p>
 <h3 id="operações-vetoriais-vectorization">8.1.3. Operações Vetoriais
 (Vectorization)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Uma das características mais poderosas do NUM_PY é a capacidade de
 realizar operações vetoriais. Isso significa que as operações
 matemáticas (adição, subtração, multiplicação, divisão etc.) são
@@ -7847,22 +5424,6 @@ operações são executadas em código C otimizado.</p>
 muito mais lento se feito com loops em listas Python.</p>
 <h3 id="exemplos-arrays-e-operações-vetoriais-com-num_py.">8.1.4.
 Exemplos: Arrays e Operações Vetoriais com NUM_PY.</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Código Python:</strong></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb162-1"><a aria-hidden="true" href="#cb162-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb162-2"><a aria-hidden="true" href="#cb162-2" tabindex="-1"></a><span class="co"># 1. Criação de Arrays</span></span>
@@ -7943,22 +5504,6 @@ para o cálculo numérico em engenharia.</p>
 <h3 id="exercício-proposto-cálculo-e-visualização-de-forças-aerodinâmicas-em-uma-asa">8.1.5.
 Exercício Proposto: Cálculo e Visualização de Forças Aerodinâmicas em
 uma Asa</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em engenharia aeronáutica, o cálculo das
 forças de sustentação (Lift) e arrasto (Drag) é fundamental para o
 projeto e análise de aeronaves. Essas forças dependem de vários fatores,
@@ -8016,22 +5561,6 @@ velocidades variando de 0 a 100 m/s.</p>
 <p><strong>Saída Esperada:</strong></p>
 <pre class="plaintext"><code>Gráfico mostrando as forças de sustentação e arrasto em função da velocidade do ar.</code></pre>
 <h3 id="resultados-do-gráfico-1">Resultados do Gráfico:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Forças Aerodinâmicas" src="imagens/27_imagem_forcas_aerodinamicas.png"/>
 <figcaption aria-hidden="true">Forças Aerodinâmicas</figcaption>
@@ -8039,22 +5568,6 @@ velocidades variando de 0 a 100 m/s.</p>
 <p>Gráfico mostrando as forças de sustentação e arrasto em função da
 velocidade do ar.</p>
 <h3 id="análise-do-gráfico-1">Análise do Gráfico:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>O gráfico gerado apresenta duas curvas
 principais:</strong></p>
 <ul>
@@ -8069,22 +5582,6 @@ um coeficiente menor, refletindo o menor impacto do arrasto em
 comparação com a sustentação.</li>
 </ul>
 <h3 id="interpretação-dos-resultados">Interpretação dos Resultados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A análise das forças aerodinâmicas é crucial para o projeto de
 aeronaves, pois permite entender como a sustentação e o arrasto variam
 com a velocidade do ar. A curva de sustentação indica que, à medida que
@@ -8095,22 +5592,6 @@ a velocidade, ele é relativamente baixo em comparação com a sustentação,
 indicando uma eficiência aerodinâmica favorável.</p>
 <h3 id="conceitos-de-num_py-aplicados">Conceitos de NUM_PY
 Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para representar os
 parâmetros aerodinâmicos e as velocidades do ar, permitindo operações
@@ -8121,22 +5602,6 @@ loops explícitos e melhorando a performance.</li>
 </ul>
 <hr/>
 <h2 id="matrizes-e-álgebra-linear">8.2. Matrizes e Álgebra Linear</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>No contexto do <strong>NUM_PY</strong>, as matrizes são arrays
 bidimensionais (2-D) que desempenham um papel central em diversas áreas
 da engenharia, da física, da economia e da computação. A álgebra linear,
@@ -8147,43 +5612,11 @@ otimizado de ferramentas para trabalhar com matrizes e realizar
 operações de álgebra linear de forma eficiente.</p>
 <h3 id="representação-de-matrizes-no-num_py">8.2.1. Representação de
 Matrizes no NUM_PY</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Uma matriz no NUM_PY é simplesmente um ndarray com duas dimensões. É
 possível criar matrizes a partir de listas aninhadas ou usando funções
 específicas do <strong>NUM_PY</strong>.</p>
 <h3 id="operações-fundamentais-com-matrizes">8.2.2. Operações
 Fundamentais com Matrizes</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Assim como nos arrays unidimensionais, o <strong>NUM_PY</strong>
 permite operações elemento a elemento em matrizes. No entanto, o poder
 real surge nas operações de álgebra linear: - <strong>Multiplicação de
@@ -8209,22 +5642,6 @@ de equações, transformações geométricas, análise de redes, e muito mais,
 com alta performance.</p>
 <h3 id="exemplos-matrizes-e-álgebra-linear-com-num_py">8.2.3. Exemplos:
 Matrizes e Álgebra Linear com NUM_PY</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste exemplo, vamos demonstrar a criação de matrizes, operações
 fundamentais como multiplicação, transposição, inversão e cálculo de
 determinante, além da resolução de sistemas de equações lineares. Essas
@@ -8306,22 +5723,6 @@ essenciais para resolver problemas complexos em engenharia e outras
 disciplinas científicas.</p>
 <h3 id="exercício-proposto-otimização-do-tempo-de-verde-em-um-semáforo">8.2.4.
 Exercício Proposto: Otimização do Tempo de Verde em um Semáforo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em sistemas de controle de tráfego urbano,
 a otimização dos tempos de verde dos semáforos é um problema clássico da
 engenharia de controle e automação. O objetivo é minimizar
@@ -8336,22 +5737,6 @@ cada fluxo. 3. Utilizar NUM_PY para resolver o sistema de equações. 4.
 Interpretar as proporções resultantes como tempos de verde para um ciclo
 semafórico.</p>
 <h3 id="formulação-do-problema">8.2.5. Formulação do Problema</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Cenário:</strong> Considere uma interseção simples com duas
 fases principais de semáforo: - Fase 1: Tráfego Norte-Sul (NS). - Fase
 2: Tráfego Leste-Oeste (EW).</p>
@@ -8402,22 +5787,6 @@ de verde calculadas. 4. Se o ciclo semafórico total for de 60 segundos,
 calcular o tempo de verde em segundos para cada fase</p>
 <h3 id="figura-8.2---otimização-do-tempo-verde-no-semáforo">Figura 8.2 -
 Otimização do Tempo Verde no Semáforo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="SEMAFORO" src="imagens/28_imagem_semaforo.png"/>
 <figcaption aria-hidden="true">SEMAFORO</figcaption>
@@ -8450,22 +5819,6 @@ Proporção de tempo de verde para Leste-Oeste (EW): 0.42857142857142855
 Tempo de verde para Norte-Sul (NS): 34.285714285714285 segundos
 Tempo de verde para Leste-Oeste (EW): 25.714285714285715 segundos</code></pre>
 <h3 id="análise-dos-resultados">Análise dos Resultados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As proporções de tempo de verde calculadas indicam que, para o ciclo
 semafórico total de 60 segundos, aproximadamente 34.29 segundos devem
 ser alocados para o tráfego Norte-Sul (NS) e 25.71 segundos para o
@@ -8474,22 +5827,6 @@ demanda de tráfego de cada direção, garantindo um fluxo equilibrado e
 eficiente.</p>
 <h3 id="conceitos-de-num_py-aplicados-1">Conceitos de NUM_PY
 Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para representar a matriz
 de coeficientes e o vetor de termos independentes, permitindo operações
@@ -8505,22 +5842,6 @@ usando os recursos de álgebra linear do <strong>NUM_PY</strong>.</p>
 <hr/>
 <h2 id="aplicações-em-balanços-e-sistemas-lineares">8.3. Aplicações em
 Balanços e Sistemas Lineares</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A capacidade de resolver sistemas de equações lineares é uma das
 aplicações mais fundamentais e ubíquas da álgebra linear na engenharia.
 Muitos problemas do mundo real, que inicialmente podem parecer
@@ -8547,22 +5868,6 @@ e precisa, mesmo para muitos equações e variáveis, algo que seria
 inviável manualmente ou com métodos iterativos menos eficientes.</p>
 <h3 id="exercício-proposto-balanço-de-massa-em-um-misturador-químico">8.3.1.
 Exercício Proposto: Balanço de Massa em um Misturador Químico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em uma indústria química, é comum misturar
 diferentes correntes para obter um produto com uma composição desejada.
 Considere um misturador onde duas correntes de entrada (Corrente 1 e
@@ -8653,43 +5958,11 @@ esse sistema de equações lineares para encontrar as vazões F1 e F2.</p>
 Vazão mássica da Corrente 2 (F2): 200.0 kg/h</code></pre>
 <h3 id="figura-8.3---balanço-de-massa-em-misturador-químico">Figura 8.3
 - Balanço de Massa em Misturador Químico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="MISTURADOR" src="imagens/29_imagem_balanco_massa.png"/>
 <figcaption aria-hidden="true">MISTURADOR</figcaption>
 </figure>
 <h3 id="análise-dos-resultados-1">Análise dos Resultados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As vazões mássicas calculadas indicam que, para produzir uma Corrente
 3 com uma vazão de 1000 kg/h e a composição desejada, é necessário ter
 800 kg/h da Corrente 1 e 200 kg/h da Corrente 2. Isso garante que a
@@ -8697,22 +5970,6 @@ composição final atenda às especificações de fração mássica do
 Componente A e Componente B.</p>
 <h3 id="conceitos-de-num_py-aplicados-2">Conceitos de NUM_PY
 Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para representar a matriz
 de coeficientes e o vetor de termos independentes, permitindo operações
@@ -8724,22 +5981,6 @@ eficiente.</li>
 </ul>
 <hr/>
 <h2 id="conclusão-8">8.4 Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste capítulo, exploramos o conceito de balanço de massa em um
 misturador químico, utilizando um sistema de equações lineares para
 determinar as vazões mássicas necessárias das correntes de entrada.
@@ -8753,22 +5994,6 @@ práticos é uma competência valiosa no campo da engenharia.</p>
 <hr/>
 <h1 id="modelagem-matemática-simples">9. Modelagem Matemática
 Simples</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A modelagem matemática é a espinha dorsal da engenharia,
 permitindo-nos traduzir fenômenos físicos e processos complexos em uma
 linguagem que pode ser analisada, simulada e otimizada. Neste módulo,
@@ -8790,22 +6015,6 @@ ferramentas para criar modelos matemáticos simplificados e usá-los para
 obter insights valiosos sobre sistemas de engenharia</p>
 <h2 id="equações-algébricas-e-sistemas-lineares">9.1. Equações
 algébricas e sistemas lineares</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>De fato, os conceitos de equações algébricas e sistemas lineares, e
 suas aplicações em balanços, foram amplamente discutidos no módulo
 anterior, especialmente no item 8.3 “Aplicações em balanços e sistemas
@@ -8842,22 +6051,6 @@ engenharia.</p>
 <h3 id="exercício-proposto-determinação-da-constante-de-velocidade-de-reação-por-mínimos-quadrados">9.1.1.
 Exercício Proposto: Determinação da Constante de Velocidade de Reação
 por Mínimos Quadrados</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong></p>
 <p>Em Engenharia Química, a cinética de reações é fundamental para o
 projeto e operação de reatores. Para reações de primeira ordem, a
@@ -8892,22 +6085,6 @@ do reagente A no tempo t - <strong>ln(CA0):</strong> Logaritmo natural
 da concentração inicial do reagente A - <strong>k:</strong> Constante de
 velocidade da reação</p>
 <h3 id="dados-de-entrada-simulação">Dados de Entrada (Simulação):</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Concentração inicial do reagente A (CA0):</strong> 1.0
 mol/L</li>
@@ -9050,22 +6227,6 @@ Concentração Inicial (C_A0): 9.3887 mol/L
 <h3 id="figura-9.1---análise-cinética-de-reação-de-primeira-ordem-concentração-vs.-tempo-e-linearização-por-mínimos-quadrados">Figura
 9.1 - Análise Cinética de Reação de Primeira Ordem: Concentração
 vs. Tempo e Linearização por Mínimos Quadrados</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Análise Cinética de Reação de Primeira Ordem" src="imagens/30_imagem_cinetica_reacao.png"/>
 <figcaption aria-hidden="true">Análise Cinética de Reação de Primeira
@@ -9073,22 +6234,6 @@ Ordem</figcaption>
 </figure>
 <h3 id="gráfico-superior-ou-à-esquerda">1. Gráfico Superior (ou à
 Esquerda):</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Concentração vs. Tempo (Reação de Primeira
 Ordem)</strong></p>
 <p>Este gráfico mostra a relação direta entre a concentração do reagente
@@ -9110,22 +6255,6 @@ quadrados.</li>
 </ul>
 <h3 id="gráfico-superior-ou-à-direita">2. Gráfico Superior (ou à
 Direita):</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Linearização e Ajuste por Mínimos Quadrados</strong></p>
 <p>Este gráfico é a chave para a aplicação dos mínimos quadrados,
 mostrando os dados transformados logaritmicamente e a reta ajustada.</p>
@@ -9144,22 +6273,6 @@ constante de velocidade e a concentração inicial são derivadas.</li>
 </ul></li>
 </ul>
 <h3 id="análise-dos-resultados-2">Análise dos Resultados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Os resultados mostram que a constante de velocidade da reação foi
 calculada como aproximadamente 0.0526 s⁻¹, e a concentração inicial foi
 estimada em cerca de 9.3887 mol/L. Esses valores estão próximos dos
@@ -9168,22 +6281,6 @@ demonstrando a eficácia do método dos mínimos quadrados para ajustar um
 modelo linear aos dados experimentais.</p>
 <h3 id="conceitos-de-num_py-aplicados-3">Conceitos de NUM_PY
 Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para armazenar e
 manipular os dados experimentais e os resultados do ajuste.</li>
@@ -9197,22 +6294,6 @@ resultados.</li>
 </ul>
 <hr/>
 <h3 id="resumo-4">9.1.2. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Recapitulando, exploramos como problemas que envolvem a determinação
 de parâmetros a partir de dados experimentais, que muitas vezes não se
 encaixam perfeitamente em um modelo, podem ser linearizados e resolvidos
@@ -9230,22 +6311,6 @@ de processos.</p>
 <hr/>
 <h2 id="equações-diferenciais-ordinárias-edos">9.2. Equações
 diferenciais ordinárias (EDOs)</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As <strong>Equações Diferenciais Ordinárias (EDOs)</strong> são a
 linguagem fundamental para descrever sistemas dinâmicos, ou seja,
 sistemas cujas variáveis mudam continuamente ao longo do tempo (ou de
@@ -9255,22 +6320,6 @@ derivadas de uma função desconhecida em relação a uma única variável
 independente, capturando a taxa de mudança e a evolução do sistema.</p>
 <h3 id="contexto-e-importância-na-engenharia">Contexto e Importância na
 Engenharia:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>As EDOs são ubíquas em todas as disciplinas da engenharia, pois a
 maioria dos processos e fenômenos naturais são dinâmicos. Elas permitem
 modelar:</p>
@@ -9292,22 +6341,6 @@ controle.</li>
 </ul>
 <h3 id="solução-numérica-de-edos-com-python">Solução Numérica de EDOs
 com Python:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Embora algumas EDOs simples possam ter soluções analíticas (fórmulas
 exatas), a maioria dos problemas de engenharia resulta em EDOs complexas
 que não possuem soluções analíticas ou são extremamente difíceis de
@@ -9326,22 +6359,6 @@ o período de tempo para o qual queremos simular a EDO.</p>
 <hr/>
 <h3 id="exemplo-proposto-descarga-de-um-tanque-cilíndrico">9.2.1.
 Exemplo Proposto: Descarga de um Tanque Cilíndrico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Considere um tanque cilíndrico com uma
 área de seção transversal constante (<strong>AT</strong>) que está sendo
 esvaziado através de um orifício na base com uma área
@@ -9359,22 +6376,6 @@ a taxa de saída é proporcional à raiz quadrada da altura do líquido:</p>
 <p>Rearranjando, obtemos a <strong>EDO</strong>:</p>
 <pre class="plaintext"><code>dh/dt = - (Ao / AT) * sqrt(2 * g * h)</code></pre>
 <h3 id="dados-de-entrada">Dados de Entrada:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li><strong>Área do Tanque (AT):</strong> 1.0 m²</li>
 <li><strong>Área do Orifício (Ao):</strong> 0.01 m²</li>
@@ -9382,22 +6383,6 @@ a taxa de saída é proporcional à raiz quadrada da altura do líquido:</p>
 <li><strong>Aceleração da Gravidade (g):</strong> 9.81 m/s²</li>
 </ul>
 <h3 id="código-python-para-simulação">Código Python para Simulação:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <div class="sourceCode" id="cb191"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb191-1"><a aria-hidden="true" href="#cb191-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb191-2"><a aria-hidden="true" href="#cb191-2" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint <span class="co"># Função para resolver EDOs</span></span>
 <span id="cb191-3"><a aria-hidden="true" href="#cb191-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -9477,22 +6462,6 @@ Altura final (após 200 s): 0.00 m
 Tempo aproximado para esvaziamento: 200 s</code></pre>
 <h3 id="figura-9.2---gráfico-descarga-de-um-tanque-cilíndrico">Figura
 9.2 - Gráfico: Descarga de um Tanque Cilíndrico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Descarga de um Tanque Cilíndrico" src="imagens/31_imagem_descarga_tanque.png"/>
 <figcaption aria-hidden="true">Descarga de um Tanque
@@ -9504,22 +6473,6 @@ Cilíndrico</figcaption>
 <strong>Legenda da Linha:</strong> Altura do Líquido (h)</p>
 <hr/>
 <h3 id="resumo-5">9.2.2. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Sobre as <strong>Equações Diferenciais Ordinárias (EDOs)</strong>,
 mergulhamos na linguagem fundamental para descrever sistemas dinâmicos,
 ou seja, aqueles cujas variáveis mudam continuamente ao longo do tempo.
@@ -9544,22 +6497,6 @@ de sistemas de engenharia.</p>
 <hr/>
 <h2 id="simulações-de-tanques-reatores-e-processos-dinâmicos">9.3.
 Simulações de Tanques, Reatores e Processos Dinâmicos</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A capacidade de modelar e simular o comportamento dinâmico de
 tanques, reatores e outros processos industriais é um pilar fundamental
 da engenharia de processos e controle. Essas simulações permitem aos
@@ -9586,22 +6523,6 @@ outras variáveis do sistema.</p>
 <h3 id="exercício-proposto-reator-tanque-agitado-contínuo-cstr-com-reação-de-primeira-ordem">9.3.1.
 Exercício Proposto: Reator Tanque Agitado Contínuo (CSTR) com Reação de
 Primeira Ordem</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Um Reator Tanque Agitado Contínuo (CSTR) é
 um tipo de reator idealizado onde a mistura é perfeita e a concentração
 no reator é uniforme e igual à concentração na corrente de saída.
@@ -9725,22 +6646,6 @@ do tempo.</li>
 <span id="cb196-82"><a aria-hidden="true" href="#cb196-82" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb196-83"><a aria-hidden="true" href="#cb196-83" tabindex="-1"></a>    simular_cstr()</span></code></pre></div>
 <h3 id="conceitos-chave-aplicados">Conceitos Chave Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ol type="1">
 <li><strong>Modelagem de Processos Dinâmicos:</strong> A EDO para o CSTR
 é um modelo simplificado que descreve como a concentração de um reagente
@@ -9774,22 +6679,6 @@ Concentração final no reator (após 100 min): 4.99 mol/L
 Concentração de regime permanente esperada (após mudança): 4.76 mol/L</code></pre>
 <h3 id="figura-9.3---gráfico-dinâmica-da-concentração-de-a-em-um-cstr">Figura
 9.3 - Gráfico: Dinâmica da Concentração de A em um CSTR</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Dinâmica da Concentração de A em um CSTR" src="imagens/33_imagem_dinamica_cstr.png"/>
 <figcaption aria-hidden="true">Dinâmica da Concentração de A em um
@@ -9808,22 +6697,6 @@ entra no reator ao longo do tempo, ilustrando a mudança que ocorre em
 t=20 minutos.</p>
 <hr/>
 <h3 id="resumo-6">9.3.2. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste assunto. Simulações de Tanques, Reatores e Processos Dinâmicos,
 exploramos a importância da modelagem e simulação do comportamento
 dinâmico de equipamentos e processos industriais, como tanques e
@@ -9848,22 +6721,6 @@ mais realistas. </p>
 <hr/>
 <h2 id="otimização-de-funções-com-scipy.optimize">9.4. Otimização de
 Funções com scipy.optimize</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A otimização é um processo fundamental em todas as áreas da
 engenharia. Envolve encontrar os melhores valores para as variáveis de
 um sistema de forma a maximizar ou minimizar uma determinada função
@@ -9902,22 +6759,6 @@ que minimizam a diferença entre os dados e o modelo.</p>
 <h2 id="exemplo-proposto-otimização-da-área-de-transferência-de-calor-em-um-trocador-de-calor-de-casco-e-tubos">9.4.1.
 Exemplo Proposto: Otimização da Área de Transferência de Calor em um
 Trocador de Calor de Casco e Tubos</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em engenharia química e de processos, o
 projeto de trocadores de calor envolve otimizar vários parâmetros para
 minimizar custos (de material, bombeamento etc.) e maximizar a
@@ -9950,22 +6791,6 @@ razoável. - Visualizar a função custo e o ponto de mínimo
 encontrado.</p>
 <h3 id="otimização-de-área-de-trocador">Otimização de Área de
 Trocador</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="OTIMIZACAO_TROCADOR_DE_CALOR" src="imagens/34_imagem_otimizacao_trocador_de_calor.png"/>
 <figcaption aria-hidden="true">OTIMIZACAO_TROCADOR_DE_CALOR</figcaption>
@@ -10033,22 +6858,6 @@ Trocador</h3>
 <span id="cb200-60"><a aria-hidden="true" href="#cb200-60" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb200-61"><a aria-hidden="true" href="#cb200-61" tabindex="-1"></a>    otimizar_area_trocador_calor()</span></code></pre></div>
 <h3 id="conceitos-chave-aplicados-1">Conceitos Chave Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ol type="1">
 <li><strong>Definição da Função Objetivo:</strong> Expressar a
 quantidade que queremos otimizar (neste caso, o custo total) como uma
@@ -10076,22 +6885,6 @@ desempenho, custo ou outros critérios importantes. </p>
 Custo total mínimo correspondente: $1000.00 / ano</code></pre>
 <h3 id="figura-9.4---gráfico-otimização-da-área-de-trocador-de-calor">Figura
 9.4 - Gráfico: Otimização da Área de Trocador de Calor</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Otimização da Área de Trocador de Calor" src="imagens/35_imagem_otimizacao_trocador_calor.png"/>
 <figcaption aria-hidden="true">Otimização da Área de Trocador de
@@ -10110,22 +6903,6 @@ numérico da área ótima (X.XX) incluído.</p>
 <h3 id="exercício-proposto-ii-localização-de-dispositivo-móvel-por-triangulação-toa-e-otimização">9.4.2.
 Exercício Proposto II: Localização de Dispositivo Móvel por Triangulação
 (ToA) e Otimização</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em telecomunicações, a localização de
 dispositivos móveis (como celulares) é fundamental para serviços de
 emergência, rastreamento e otimização de rede. Um método comum é a
@@ -10167,22 +6944,6 @@ comparação). - <strong>Distâncias Medidas:</strong> Calculadas a partir
 da posição real e adicionando um ruído aleatório.</p>
 <h3 id="localização-de-celular-por-otimização-toa">Localização de
 Celular por Otimização (ToA):</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="LOCALIZACAO_CELULAR_TOA" src="imagens/36_imagem_localizacao_celular_toa.png"/>
 <figcaption aria-hidden="true">LOCALIZACAO_CELULAR_TOA</figcaption>
@@ -10249,22 +7010,6 @@ Celular por Otimização (ToA):</h3>
 <span id="cb204-59"><a aria-hidden="true" href="#cb204-59" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
 <span id="cb204-60"><a aria-hidden="true" href="#cb204-60" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <h3 id="conceitos-chave-aplicados-2">Conceitos Chave Aplicados:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ol type="1">
 <li><strong>Modelagem de Distâncias:</strong> Utilizamos a fórmula da
 distância euclidiana para calcular as distâncias reais entre o
@@ -10291,22 +7036,6 @@ Posição Estimada do Dispositivo: [60.12, 39.87]
 Posição Estimada do Dispositivo: [60.12, 39.87]</code></pre>
 <h3 id="figura-9.4---gráfico-localização-de-dispositivo-por-triangulação-toa">Figura
 9.4 - Gráfico: Localização de Dispositivo por Triangulação (ToA)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Localização de Dispositivo por Triangulação (ToA)" src="imagens/37_imagem_localizacao_celular_toa.png"/>
 <figcaption aria-hidden="true">Localização de Dispositivo por
@@ -10329,22 +7058,6 @@ de cada antena. Devido ao ruído, eles não se intersectam perfeitamente
 em um único ponto. </p>
 <hr/>
 <h3 id="resumo-7">9.4.3. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Neste assunto sobre Modelagem Matemática Simples introduzimos, uma
 habilidade essencial para traduzir desafios de engenharia em problemas
 computacionais. Começamos revisitando a resolução de equações algébricas
@@ -10382,22 +7095,6 @@ computacionalmente é um diferencial fundamental para o engenheiro
 moderno.</p>
 <hr/>
 <h2 id="conclusão-9">9.5. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este módulo consolidou nossa jornada pela Modelagem Matemática,
 revelando-a como a linguagem essencial para decifrar e intervir em
 sistemas de engenharia. Aprofundamos a compreensão das equações
@@ -10425,22 +7122,6 @@ resolução eficaz de problemas em todas as disciplinas da engenharia.</p>
 <hr/>
 <h1 id="mini-projetos-aplicados-à-engenharia">10. Mini Projetos
 Aplicados à Engenharia</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Chegamos ao ápice da nossa jornada de aprendizado em Python aplicado
 à engenharia. Este último módulo, dedicado aos <strong>Mini Projetos
 Aplicados à Engenharia</strong>, tem como objetivo principal consolidar
@@ -10464,22 +7145,6 @@ chance de aplicar o que aprendeu e desenvolver projetos que demonstrem a
 verdadeira capacidade do Python como ferramenta de engenharia. </p>
 <h2 id="estudo-de-caso-tanque-com-entrada-e-saída">10.1. Estudo de caso:
 tanque com entrada e saída</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este estudo de caso é um problema clássico em engenharia de processos
 e controle, servindo como um excelente exemplo para integrar diversos
 conceitos de programação e modelagem matemática aprendidos nos módulos
@@ -10658,22 +7323,6 @@ Altura final (após 200 s): 0.75 m
 O tanque parece ter atingido um regime permanente.</code></pre>
 <h3 id="figura-10.1---gráfico-dinâmica-da-altura-do-líquido-em-um-tanque">Figura
 10.1 - Gráfico: Dinâmica da Altura do Líquido em um Tanque</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Dinâmica da Altura do Líquido em um Tanque" src="imagens/39_imagem_dinamica_altura_tanque.png"/>
 <figcaption aria-hidden="true">Dinâmica da Altura do Líquido em um
@@ -10691,22 +7340,6 @@ do líquido no tanque varia ao longo do tempo. - <strong>Vazão de Entrada
 vazão de líquido que entra no tanque, contextualizando as mudanças no
 nível.</p>
 <h3 id="resumo-8">10.1.1. Resumo</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>O exercício “Estudo de caso: tanque com entrada e saída” focou na
 simulação da dinâmica do nível de líquido em um tanque cilíndrico.
 Modelamos o problema como uma <strong>Equação Diferencial Ordinária
@@ -10720,22 +7353,6 @@ visualização de dados. </p>
 <hr/>
 <h2 id="balanço-de-massa-e-energia-com-dados-reais-ou-simulados">10.2.
 Balanço de massa e energia com dados reais ou simulados</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>A aplicação dos princípios de conservação de massa e energia é a base
 de qualquer análise e projeto em engenharia de processos. Em sistemas
 industriais, como reatores, misturadores, trocadores de calor e colunas
@@ -10755,22 +7372,6 @@ uma habilidade crucial para o engenheiro.</p>
 <h3 id="exemplo-proposto-balanço-de-massa-em-uma-rede-de-processos-misturador-e-separador">10.2.1.
 Exemplo Proposto: Balanço de Massa em uma Rede de Processos (Misturador
 e Separador)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Um engenheiro de processos está analisando
 uma pequena rede de unidades em uma planta química, composta por um
 misturador seguido por um separador. Duas correntes de entrada (Corrente
@@ -10812,22 +7413,6 @@ Separador):</strong> - Fração mássica de A (xA4): 0.95 -
 <strong>Corrente 5:</strong> m5</p>
 <h3 id="balanço-de-massa-em-rede-de-processos">Balanço de Massa em Rede
 de Processos</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="Balanço de Massa em Rede de Processos" src="imagens/40_imagem_balanco_massa_rede_processos.png"/>
 <figcaption aria-hidden="true">Balanço de Massa em Rede de
@@ -10971,22 +7556,6 @@ Verificação Componente A: m4*xA4 + m5*xA5 = 85.00 (Esperado: 85.00)
        5                    7.5              0.1000</code></pre>
 <h3 id="integração-de-módulos-anteriores">Integração de Módulos
 Anteriores:</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este exercício é um excelente exemplo de integração, utilizando
 conceitos de:</p>
 <ul>
@@ -11011,22 +7580,6 @@ fundamental em engenharia de processos. </p>
 <hr/>
 <h2 id="integração-de-módulos-anteriores-em-soluções-prática">10.3.
 Integração de módulos anteriores em soluções prática</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este item representa o ponto culminante de toda a sua jornada de
 aprendizado em Python aplicado à engenharia. Até agora, exploramos
 conceitos fundamentais de programação, estruturas de controle, funções e
@@ -11052,22 +7605,6 @@ simulações preditivas e problemas complexos em soluções elegantes.</p>
 <h3 id="mini-projeto-final-sistema-de-monitoramento-e-controle-de-nível-e-temperatura-de-um-reator-químico">10.3.1.
 Mini Projeto Final: Sistema de Monitoramento e Controle de Nível e
 Temperatura de um Reator Químico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p><strong>Contexto:</strong> Em uma planta química, um reator é
 utilizado para uma reação exotérmica (que libera calor). É crucial
 controlar tanto o nível do líquido no reator quanto sua temperatura para
@@ -11131,22 +7668,6 @@ consolidar todas as habilidades de programação e engenharia adquiridas
 ao longo da apostila.</p>
 <h3 id="tarefa-1-definir-os-parâmetros-do-reator-e-da-reação.">Tarefa 1:
 Definir os parâmetros do reator e da reação.</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Nesta primeira tarefa, o objetivo é estabelecer todas as constantes e
 parâmetros físicos e operacionais que descrevem o reator, o líquido e a
 reação química. Isso inclui dimensões do reator, propriedades do fluido,
@@ -11269,22 +7790,6 @@ leitura, a depuração e a modificação do modelo em etapas futuras. </p>
 <h3 id="tarefa-2-implementar-a-função-que-descreve-o-sistema-de-edos-acopladas-dhdt-dtdt-dcadt.">Tarefa
 2: Implementar a função que descreve o sistema de EDOs acopladas (dh/dt,
 dT/dt, dCA/dt).</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Nesta tarefa, o foco é traduzir os balanços de massa e energia do
 reator em um sistema de Equações Diferenciais Ordinárias (EDOs)
 acopladas. As variáveis de estado que descrevem o comportamento dinâmico
@@ -11465,22 +7970,6 @@ corretamente.</p>
 <h3 id="tarefa-3-implementar-uma-lógica-de-controle-simples-ex-controle-onoff-ou-proporcional-para-nível-e-temperatura.">Tarefa
 3: Implementar uma lógica de controle simples (ex: controle ON/OFF ou
 proporcional para nível e temperatura).</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Nesta tarefa, o objetivo é implementar uma lógica de controle simples
 para o reator químico. A lógica de controle será responsável por ajustar
 a vazão de entrada e a potência do aquecedor com base nos erros entre os
@@ -11659,22 +8148,6 @@ corretamente.</li>
 <h3 id="tarefa-4-simular-o-sistema-usando-odeint-e-visualizar-os-resultados.">Tarefa
 4: Simular o sistema usando <code>odeint</code> e visualizar os
 resultados.</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Nesta tarefa, o objetivo é simular o comportamento dinâmico do reator
 químico usando a função <code>odeint</code> do SciPy para resolver o
 sistema de EDOs acopladas. Após a simulação, os resultados serão
@@ -11980,22 +8453,6 @@ Simulação concluída em 150 minutos.</code></pre>
 <h3 id="figura-10.2-desempenho-dinâmico-e-controle-de-nível-temperatura-e-concentração-em-reator-químico">Figura
 10.2 – Desempenho Dinâmico e Controle de Nível, Temperatura e
 Concentração em Reator Químico</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <figure>
 <img alt="imagens/41_imagem_desempenho_dinamico_e_controle.png" src="imagens/41_imagem_desempenho_dinamico_e_controle.png"/>
 <figcaption aria-hidden="true">imagens/41_imagem_desempenho_dinamico_e_controle.png</figcaption>
@@ -12057,22 +8514,6 @@ aquecedor) ao longo do tempo. Os gráficos foram organizados em subplots
 para melhor visualização.</p>
 <hr/>
 <h2 id="conclusão-10">10.4. Conclusão</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Este módulo representou o ponto culminante de todo o nosso percurso
 em Python aplicado à engenharia. Dedicado aos <strong>Mini Projetos
 Aplicados à Engenharia</strong>, seu objetivo primordial foi consolidar
@@ -12099,22 +8540,6 @@ ferramenta indispensável para o engenheiro moderno.</p>
 <hr/>
 <h1 id="finalização-e-agradecimentos">11. Finalização e
 Agradecimentos</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Chegamos ao final da nossa jornada pela apostila “Introdução à
 Programação Python Aplicada à Engenharia”. Este percurso foi
 cuidadosamente desenhado para equipar você, engenheiro ou estudante de
@@ -12194,60 +8619,12 @@ transformação!</p>
 <hr/>
 <h1 id="configuração-do-ambiente-python-e-vs-code">12. Configuração do
 Ambiente Python e VS Code</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <h2 id="configuração-rápida-do-ambiente-de-desenvolvimento">12.1.
 Configuração Rápida do Ambiente de Desenvolvimento</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Esta seção fornece instruções concisas para configurar seu ambiente
 Python para engenharia.</p>
 <h3 id="instalação-do-python-windows-macos-linux">12.1.1. Instalação do
 Python (Windows, MacOS, Linux)</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <p>Para começar a programar em Python, é necessário instalar o
 interpretador Python e as bibliotecas essenciais. A seguir, apresentamos
 instruções para instalação em diferentes sistemas operacionais.</p>
@@ -12266,42 +8643,10 @@ marque “Add Python to PATH” Clique em “Install Now”</p>
 <h3 id="instalação-de-bibliotecas-essenciais-numpy-pandas-matplotlib-scipy-seaborn">12.1.2.
 Instalação de bibliotecas essenciais: numpy, pandas, matplotlib, scipy,
 seaborn</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <pre><code># Instale todas as bibliotecas necessárias de uma vez
 pip install numpy pandas matplotlib scipy seaborn</code></pre>
 <h3 id="testando-a-instalação-do-python-e-das-bibliotecas">12.1.3. -
 Testando a instalação do Python e das bibliotecas</h3>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ol type="1">
 <li>Crie um novo arquivo com extensão .py</li>
 <li>Insira o código de teste:</li>
@@ -12329,22 +8674,6 @@ Testando a instalação do Python e das bibliotecas</h3>
 pronta para os exercícios da apostila.</p>
 <h2 id="visual-studio-code-vs-code">12.2. Visual Studio Code (VS
 Code)</h2>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ol type="1">
 <li>Baixe e instale o VS Code da página oficial</li>
 <li>Abra o VS Code e instale a extensão Python:
@@ -12362,22 +8691,6 @@ Code)</h2>
 </ol>
 <hr/>
 <h1 id="referências-bibliográficas">13. Referências Bibliográficas</h1>
-<a class="btn-voltar-sumario" href="#sumário" style="
-    display:inline-block;
-    margin:6px 0 18px 0;
-    padding:2px 8px;
-    background:none;
-    color:#007bff !important;
-    border-radius:4px;
-    font-size:0.97em;
-    text-decoration:underline;
-    font-weight:400;
-    box-shadow:none;
-    border:none;
-    opacity:0.7;
-    transition:opacity 0.2s;
-">⬆️ Sumário</a>
-
 <ul>
 <li>BEAZLEY, D. M.; JONES, P. K. Python Cookbook. 3rd ed. Sebastopol:
 O’Reilly Media, 2013.</li>
