@@ -854,7 +854,7 @@ A habilidade de obter dados do usuário e apresentar resultados de forma clara �
 
 ***
 
-### 2.3.4. Exercício Proposto: Cálculo de Conversão em um Reator
+### 2.3.2. Exercício Proposto: Cálculo de Conversão em um Reator
 
 **Descrição:**
 
