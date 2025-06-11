@@ -94,6 +94,23 @@ nav a:hover, .toc a:hover {
     color: #0d133d;
     text-decoration: underline;
 }
+.sumario-link {
+    display: inline-block;
+    margin: 0.5em 0 2em 0;
+    padding: 0.25em 0.9em;
+    background: #e3e7fa;
+    color: #1a237e;
+    border-radius: 6px;
+    font-size: 0.98em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border: 1px solid #c3c7e0;
+}
+.sumario-link:hover {
+    background: #c3c7e0;
+    color: #0d133d;
+}
 @media (max-width: 900px) {
     body { max-width: 100vw; padding: 18px 4vw 32px 4vw; }
     nav, .toc, figure, table, pre, code { max-width: 100vw; }
@@ -117,9 +134,9 @@ nav a:hover, .toc a:hover {
 </figure>
 <hr/>
 <h3 id="título-introdução-à-programação-python-aplicada-à-engenharia">Título:
-Introdução à Programação Python Aplicada à Engenharia</h3>
+Introdução à Programação Python Aplicada à Engenharia</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <h3 id="autor-christian-vladimir-uhdre-mulato">Autor: Christian Vladimir
-Uhdre Mulato</h3>
+Uhdre Mulato</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <h3 id="sumário">Sumário</h3>
 <nav>
 <h3 id="sumário">Sumário</h3>
@@ -762,7 +779,7 @@ Code)</a>
 </ol>
 </nav>
 <hr/>
-<h1 id="apresentação">1. Apresentação</h1>
+<h1 id="apresentação">1. Apresentação</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A presente apostila tem como objetivo introduzir os conceitos
 fundamentais de programação em linguagem Python com foco na aplicação em
 problemas práticos de engenharia. Python é uma linguagem moderna,
@@ -795,7 +812,7 @@ desejam iniciar no uso da programação para aplicações técnicas.</p>
 <p>Campo Largo – PR</p>
 <hr/>
 <h1 id="fundamentos-da-programação-em-python">2. Fundamentos da
-Programação em Python</h1>
+Programação em Python</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este primeiro módulo tem como objetivo estabelecer uma base sólida em
 programação Python, essencial para todas as aplicações que veremos ao
 longo desta apostila. Dominar os fundamentos da linguagem é crucial para
@@ -821,7 +838,7 @@ Python simples, mas poderosos, que podem realizar cálculos, manipular
 dados e interagir com o mundo exterior, lançando as bases para sua
 jornada na programação aplicada à engenharia.</p>
 <hr/>
-<h2 id="tipos-de-dados-em-python">2.1. Tipos de Dados em Python</h2>
+<h2 id="tipos-de-dados-em-python">2.1. Tipos de Dados em Python</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em Python, assim como em outras linguagens de programação, os dados
 são classificados em diferentes tipos. Cada tipo de dado possui
 características e comportamentos específicos, o que permite ao
@@ -829,7 +846,7 @@ computador interpretar e manipular as informações corretamente.</p>
 <p>Nesta seção, vamos explorar os quatro tipos de dados fundamentais: -
 inteiros (INT), - números de ponto flutuante (FLOAT), - cadeias de
 caracteres (STR) e - booleanos (BOOL).</p>
-<h3 id="inteiros-int">2.1.1. Inteiros (INT)</h3>
+<h3 id="inteiros-int">2.1.1. Inteiros (INT)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O tipo de dado int representa números inteiros, ou seja, números que
 não possuem parte decimal. Eles podem ser positivos, negativos ou
 zero.</p>
@@ -840,7 +857,7 @@ zero.</p>
 <li>Número de iterações em um cálculo: iteracoes = 1000</li>
 </ul>
 <h3 id="números-de-ponto-flutuante-float">2.1.2. Números de Ponto
-Flutuante (FLOAT)</h3>
+Flutuante (FLOAT)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O tipo de dado <code>float</code> representa números reais, ou seja,
 números que podem possuir uma parte decimal.</p>
 <p>Exemplos em engenharia:</p>
@@ -853,7 +870,7 @@ números que podem possuir uma parte decimal.</p>
 (°C)</li>
 </ul>
 <h3 id="cadeias-de-caracteres-str">2.1.3. Cadeias de Caracteres
-(STR)</h3>
+(STR)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O tipo de dado <code>str</code> representa texto, ou seja, uma
 sequência de caracteres. As cadeias de caracteres são delimitadas por
 aspas simples (’) ou aspas duplas (“).</p>
@@ -866,7 +883,7 @@ aspas simples (’) ou aspas duplas (“).</p>
 <li>Resultado de um ensaio:
 <code>resultado_ensaio = "Aprovado"</code></li>
 </ul>
-<h3 id="booleanos-bool">2.1.4. Booleanos (BOOL)</h3>
+<h3 id="booleanos-bool">2.1.4. Booleanos (BOOL)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O tipo de dado <code>bool</code> representa valores lógicos, ou seja,
 verdadeiro (True) ou falso (False). Eles são fundamentais para realizar
 testes condicionais e controlar o fluxo de execução de um programa.</p>
@@ -882,7 +899,7 @@ testes condicionais e controlar o fluxo de execução de um programa.</p>
 que manipulem informações de forma correta e eficiente em aplicações de
 engenharia.</p>
 <h3 id="exemplo-cálculo-da-tensão-em-um-resistor">2.1.5. Exemplo:
-Cálculo da Tensão em um Resistor</h3>
+Cálculo da Tensão em um Resistor</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Imagine que você precisa calcular a tensão em um resistor usando a
 Lei de Ohm (V = I * R), onde: - <strong>V</strong> é a tensão (em Volts)
 - <strong>I</strong> é a corrente (em Amperes) - <strong>R</strong> é a
@@ -975,7 +992,7 @@ aplicados em um problema simples de engenharia, combinando cálculo,
 lógica e representação de informações do mundo real.</p>
 <hr/>
 <h3 id="exemplo-simulação-da-trajetória-de-um-projétil">2.1.6. Exemplo:
-Simulação da Trajetória de um Projétil</h3>
+Simulação da Trajetória de um Projétil</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste exemplo, vamos simular a trajetória de um projétil lançado sob
 um ângulo e com uma velocidade inicial, e gerar um gráfico da
 trajetória. Este exemplo combina física básica com a visualização de
@@ -1081,13 +1098,13 @@ forma completa.</p>
 </figure>
 <hr/>
 <h2 id="operadores-aritméticos-e-lógicos-em-python">2.2. Operadores
-Aritméticos e Lógicos em Python</h2>
+Aritméticos e Lógicos em Python</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em Python, operadores são símbolos especiais que realizam operações
 em valores (chamados de operandos). Eles são essenciais para realizar
 cálculos, comparações e manipular dados em geral. Nesta seção, vamos
 explorar os operadores aritméticos e lógicos, que são fundamentais para
 a programação em engenharia.</p>
-<h3 id="operadores-aritméticos">2.2.1. Operadores Aritméticos</h3>
+<h3 id="operadores-aritméticos">2.2.1. Operadores Aritméticos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Código Python:</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Exemplo de uso de operadores aritméticos</span></span>
 <span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
@@ -1128,7 +1145,7 @@ valor pelo segundo. Exemplo: total_segundos % 60 (obter os segundos
 restantes após dividir por 60)</p>
 <p><strong>Exponenciação (</strong>):** Eleva o primeiro valor à
 potência do segundo valor. Exemplo: base ** altura</p>
-<h3 id="operadores-lógicos">2.2.2. Operadores Lógicos</h3>
+<h3 id="operadores-lógicos">2.2.2. Operadores Lógicos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os operadores lógicos são usados para combinar ou negar expressões
 lógicas (valores booleanos True ou False).</p>
 <p><strong>AND (and):</strong> Retorna True se ambas as expressões forem
@@ -1175,7 +1192,7 @@ contextos de engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-cálculo-de-área-e-perímetro-de-um-terreno-e-verificação-de-viabilidade">2.2.4.
 Exercício Proposto: Cálculo de Área e Perímetro de um Terreno e
-Verificação de Viabilidade</h3>
+Verificação de Viabilidade</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong></p>
 <p>Um engenheiro civil precisa desenvolver um programa em Python para
 auxiliar no cálculo da área e perímetro de um terreno retangular e
@@ -1253,7 +1270,7 @@ aritméticos e lógicos em um contexto prático de engenharia civil,
 proporcionando uma aplicação mais completa dos conceitos aprendidos.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-da-deformação-de-uma-viga">2.2.5.
-Exercício Proposto: Análise da Deformação de uma Viga</h3>
+Exercício Proposto: Análise da Deformação de uma Viga</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong></p>
 <p>Um engenheiro mecânico precisa analisar a deformação de uma viga sob
 diferentes cargas. O programa em Python deve calcular a deflexão da viga
@@ -1395,7 +1412,7 @@ engenharia mecânica e demonstra a utilidade da programação para resolver
 problemas complexos e visualizar resultados.</p>
 <hr/>
 <h3 id="curiosidade-mecânica-dos-sólidos">2.2.6. Curiosidade – Mecânica
-dos Sólidos</h3>
+dos Sólidos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>No exemplo do cálculo da deflexão da viga, a teoria física aplicada é
 a da <strong>Mecânica dos Sólidos</strong>, especificamente a
 <strong>Teoria da Elasticidade Linear</strong> para vigas. As fórmulas
@@ -1449,12 +1466,12 @@ corretamente os resultados dos cálculos e garantir a segurança e a
 eficiência dos projetos de engenharia.</p>
 <hr/>
 <h2 id="entrada-e-saída-de-dados-em-python">2.3. Entrada e Saída de
-Dados em Python</h2>
+Dados em Python</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em programação, a entrada e saída de dados referem-se à forma como um
 programa recebe informações (entrada) e como ele apresenta os resultados
 (saída). Em Python, as funções input() e print() são as mais comuns para
 realizar essas operações.</p>
-<h3 id="entrada-de-dados-input">2.3.1. Entrada de Dados: input()</h3>
+<h3 id="entrada-de-dados-input">2.3.1. Entrada de Dados: input()</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A função <code>input()</code> permite que o programa receba dados do
 usuário através do teclado.</p>
 <ul>
@@ -1485,7 +1502,7 @@ explicitamente usando as funções <code>int()</code> (para inteiros) ou
 <p>Obter o nome de um material:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" href="#cb23-1" tabindex="-1"></a>nome_material <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite o nome do material: "</span>)</span>
 <span id="cb23-2"><a aria-hidden="true" href="#cb23-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nome do material:"</span>, nome_material)</span></code></pre></div>
-<h3 id="saída-de-dados-print">2.3.2. Saída de Dados: print()</h3>
+<h3 id="saída-de-dados-print">2.3.2. Saída de Dados: print()</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A função <code>print()</code> exibe informações na tela do
 computador.</p>
 <ul>
@@ -1531,7 +1548,7 @@ forma clara é fundamental para criar programas interativos e úteis em
 engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-cálculo-de-conversão-em-um-reator">2.3.4.
-Exercício Proposto: Cálculo de Conversão em um Reator</h3>
+Exercício Proposto: Cálculo de Conversão em um Reator</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong></p>
 <p>Um engenheiro químico precisa de um programa para calcular a
 conversão de um reagente em um reator.<br/>
@@ -1694,14 +1711,14 @@ Tempo de Reação: 30.00 minutos</code></pre>
 reforça o uso de entrada e saída de dados com formatação.</p>
 <hr/>
 <h2 id="primeiros-cálculos-aplicados-à-engenharia">2.4. Primeiros
-Cálculos Aplicados à Engenharia</h2>
+Cálculos Aplicados à Engenharia</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Nesta seção, vamos explorar como aplicar os fundamentos da
 programação Python para realizar cálculos simples em problemas de
 engenharia. Os exemplos a seguir ilustram como usar os tipos de dados,
 operadores aritméticos e entrada/saída para resolver tarefas comuns em
 diferentes disciplinas da engenharia.</p>
 <h3 id="engenharia-civil-cálculo-da-área-de-uma-viga">2.4.1. Engenharia
-Civil: Cálculo da Área de uma Viga</h3>
+Civil: Cálculo da Área de uma Viga</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Problema:</strong> Calcular a área da seção transversal de
 uma viga retangular. <strong>Fórmula:</strong> Área = base * altura
 <strong>Código Python:</strong></p>
@@ -1719,7 +1736,7 @@ uma viga retangular. <strong>Fórmula:</strong> Área = base * altura
 Digite a altura da viga (m): 0.5
 A área da seção transversal da viga é: 0.15 m²</code></pre>
 <h3 id="engenharia-elétrica-lei-de-ohm">2.4.2. Engenharia Elétrica: Lei
-de Ohm</h3>
+de Ohm</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Problema:</strong> Calcular a corrente elétrica em um
 resistor dado a tensão e a resistência. <strong>Fórmula:</strong>
 Corrente = Tensão / Resistência <strong>Código Python:</strong></p>
@@ -1735,7 +1752,7 @@ Corrente = Tensão / Resistência <strong>Código Python:</strong></p>
 <p><strong>Resultado:</strong></p>
 <pre class="plaintext"><code>A corrente elétrica é: 2.00 A</code></pre>
 <h3 id="engenharia-mecânica-energia-potencial-gravitacional">2.4.3.
-Engenharia Mecânica: Energia Potencial Gravitacional</h3>
+Engenharia Mecânica: Energia Potencial Gravitacional</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Problema:</strong> Calcular a energia potencial gravitacional
 de um objeto. <strong>Fórmula:</strong> Energia Potencial = massa *
 gravidade * altura <strong>Código Python:</strong></p>
@@ -1752,7 +1769,7 @@ gravidade * altura <strong>Código Python:</strong></p>
 Digite a altura (m): 5
 A energia potencial gravitacional é: 490.50 J</code></pre>
 <h3 id="engenharia-química-vazão-molar">2.4.4. Engenharia Química: Vazão
-Molar</h3>
+Molar</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Problema:</strong> Converter vazão mássica para vazão molar.
 <strong>Fórmula:</strong> Vazão Molar = Vazão Mássica / Massa Molar
 <strong>Código Python:</strong></p>
@@ -1768,7 +1785,7 @@ Molar</h3>
 <p><strong>Resultado:</strong></p>
 <pre class="plaintext"><code>A vazão molar é: 2.00 mol/s</code></pre>
 <h3 id="engenharia-ambiental-cálculo-de-concentração">2.4.5. Engenharia
-Ambiental: Cálculo de Concentração</h3>
+Ambiental: Cálculo de Concentração</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Problema:</strong> Calcular a concentração de um poluente em
 uma solução. <strong>Fórmula:</strong> Concentração = Massa do Poluente
 / Volume da Solução <strong>Código Python:</strong></p>
@@ -1786,7 +1803,7 @@ uma solução. <strong>Fórmula:</strong> Concentração = Massa do Poluente
 Digite o volume da solução (m³): 2
 A concentração do poluente é: 0.25 kg/m³</code></pre>
 <hr/>
-<h3 id="conclusão">2.5. Conclusão</h3>
+<h3 id="conclusão">2.5. Conclusão</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Estes exemplos demonstram como os conceitos básicos de Python podem
 ser aplicados para resolver problemas simples em diferentes áreas da
 engenharia. Eles reforçam a importância de: - Entender os tipos de dados
@@ -1796,7 +1813,7 @@ usuário para obter os dados necessários e apresentar os resultados de
 forma clara. Nos próximos módulos, exploraremos conceitos mais avançados
 de Python para resolver problemas de engenharia mais complexos.</p>
 <hr/>
-<h1 id="estrutura-de-controle">3. Estrutura de Controle</h1>
+<h1 id="estrutura-de-controle">3. Estrutura de Controle</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste módulo sobre estrutura de controle, exploramos os tipos de
 dados, operadores e entrada/saída, que nos permitem realizar cálculos e
 interagir com o usuário. No entanto, a capacidade de um programa de
@@ -1828,13 +1845,13 @@ caminho para a criação de soluções de engenharia mais robustas e
 inteligentes.</p>
 <hr/>
 <h2 id="condicionais-if-elif-else">3.1. Condicionais: if, elif,
-else</h2>
+else</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>As estruturas condicionais são fundamentais para controlar o fluxo de
 execução de um programa, permitindo que diferentes blocos de código
 sejam executados dependendo se uma condição é verdadeira ou falsa. Em
 Python, as palavras-chave if, elif (abreviação de “else if”) e else são
 usadas para definir essas estruturas.</p>
-<h3 id="a-estrutura-if">3.1.1. A estrutura if</h3>
+<h3 id="a-estrutura-if">3.1.1. A estrutura if</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A estrutura if é a mais básica e executa um bloco de código somente
 se uma condição especificada for verdadeira.</p>
 <p><strong>Sintaxe:</strong></p>
@@ -1867,7 +1884,7 @@ de um sistema excedeu um limite de segurança.</li>
 <pre class="plaintext"><code>Digite o índice de poluição do ar: 75
 Qualidade do ar: Moderada</code></pre>
 <hr/>
-<h3 id="a-estrutura-if-else">3.1.2. A estrutura if-else</h3>
+<h3 id="a-estrutura-if-else">3.1.2. A estrutura if-else</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A estrutura if-else permite executar um bloco de código se a condição
 for verdadeira e outro bloco de código se a condição for falsa.
 <strong>Sintaxe:</strong></p>
@@ -1897,7 +1914,7 @@ de código (o do if ou o do else) é executado.</p>
 <pre class="plaintext"><code>Digite a tensão aplicada (N/m²): 75
 Material resistente.</code></pre>
 <hr/>
-<h3 id="a-estrutura-if-elif-else">3.1.3. A estrutura if-elif-else</h3>
+<h3 id="a-estrutura-if-elif-else">3.1.3. A estrutura if-elif-else</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A estrutura if-elif-else permite verificar múltiplas condições em
 sequência. O elif (else if) especifica uma nova condição a ser
 verificada se a condição anterior for falsa.</p>
@@ -1948,7 +1965,7 @@ estruturas condicionais é essencial para desenvolver programas que
 resolvam problemas reais de engenharia, onde a tomada de decisões é uma
 parte fundamental do processo.</p>
 <h3 id="exercício-proposto-classificação-de-solos">3.1.4. Exercício
-Proposto: Classificação de Solos</h3>
+Proposto: Classificação de Solos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong> Um engenheiro civil precisa de um
 programa para classificar amostras de solo com base em seu Índice de
 Plasticidade (IP) e Limite de Liquidez (LL). O programa deve solicitar
@@ -2023,7 +2040,7 @@ prático de engenharia civil, demonstrando como a lógica de decisão pode
 ser implementada em programas para classificar dados e auxiliar na
 análise de materiais.</p>
 <h3 id="curiosidade-engenharia-civil">3.1.5. Curiosidade – Engenharia
-Civil</h3>
+Civil</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Na engenharia civil, a classificação de solos é uma etapa crucial no
 projeto e construção de fundações, estradas e outras estruturas. A
 tabela de classificação de solos baseada no Índice de Plasticidade (IP)
@@ -2037,7 +2054,7 @@ suscetibilidade à deformação. A tabela de classificação apresentada no
 exercício é uma simplificação, mas reflete os princípios básicos usados
 na prática. A classificação correta do solo é essencial para garantir a
 segurança e a estabilidade das estruturas construídas sobre ele.</p>
-<h3 id="conclusão-1">3.1.6. Conclusão</h3>
+<h3 id="conclusão-1">3.1.6. Conclusão</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Dominar as estruturas condicionais <strong>IF, ELIF e ELSE</strong> é
 um marco importante na jornada de programação. Elas fornecem a base para
 criar programas que não apenas executam cálculos, mas também respondem
@@ -2047,7 +2064,7 @@ complexos, como laços de repetição, funções e projetos de
 engenharia.</p>
 <hr/>
 <h2 id="laços-de-repetição-for-while">3.2. Laços de Repetição: for,
-while</h2>
+while</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os laços de repetição são fundamentais na programação, permitindo que
 um bloco de código seja executado várias vezes, com base em uma
 condição. Em Python, os principais tipos de laços são o <code>for</code>
@@ -2063,7 +2080,7 @@ enquanto uma condição específica for verdadeira. A sintaxe básica é:</p>
 <span id="cb57-2"><a aria-hidden="true" href="#cb57-2" tabindex="-1"></a>    <span class="co"># bloco de código</span></span></code></pre></div>
 <p>Ambos os tipos de laços são amplamente utilizados em problemas de
 engenharia, como simulações, otimizações e análises de dados.</p>
-<h3 id="o-laço-for">3.2.1. O laço for</h3>
+<h3 id="o-laço-for">3.2.1. O laço for</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os laços de repetição são estruturas de controle que permitem
 executar um bloco de código repetidamente, um número específico de vezes
 ou enquanto uma condição for verdadeira. Em Python, os dois tipos
@@ -2088,7 +2105,7 @@ uma série de medidas de temperatura.</p>
 <p><strong>Resultado:</strong></p>
 <pre class="plaintext"><code>Média de temperatura: 21.16 °C</code></pre>
 <hr/>
-<h3 id="o-laço-while">3.2.2. O laço while</h3>
+<h3 id="o-laço-while">3.2.2. O laço while</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O laço <code>while</code> executa um bloco de código enquanto uma
 condição específica for verdadeira. É útil quando o número de iterações
 não é conhecido previamente.</p>
@@ -2157,7 +2174,7 @@ complexos, economizando tempo e esforço no desenvolvimento de
 software.</p>
 <hr/>
 <h3 id="exercício-proposto-simulação-de-um-reator-batelada-isotérmico">3.2.3.
-Exercício Proposto: Simulação de um Reator Batelada Isotérmico</h3>
+Exercício Proposto: Simulação de um Reator Batelada Isotérmico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong> Um engenheiro químico precisa simular a
 conversão de um reagente A em um produto B em um reator batelada
 isotérmico. A reação segue uma cinética de primeira ordem:</p>
@@ -2243,7 +2260,7 @@ calcular a concentração de A em cada ponto. - Use f-strings para
 formatar a saída com duas casas decimais.</p>
 <hr/>
 <h3 id="curiosidade-engenharia-química">3.2.4. Curiosidade – Engenharia
-Química</h3>
+Química</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Na engenharia química, a simulação de reatores é uma prática comum
 para entender o comportamento de reações químicas em diferentes
 condições. O exemplo apresentado no exercício propõe uma simulação de um
@@ -2259,7 +2276,7 @@ ajudando a prever a conversão de reagentes, a formação de produtos e a
 eficiência do processo. Compreender como implementar laços de repetição
 em Python para simular essas dinâmicas é uma habilidade valiosa para
 engenheiros químicos.</p>
-<h3 id="conclusão-2">3.2.5. Conclusão</h3>
+<h3 id="conclusão-2">3.2.5. Conclusão</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os laços de repetição <code>for</code> e <code>while</code> são
 ferramentas poderosas na programação, permitindo a execução de blocos de
 código múltiplas vezes com base em condições específicas. Eles são
@@ -2271,14 +2288,14 @@ repetição com outras estruturas de controle, como condicionais e
 funções, para criar soluções mais complexas e robustas em Python.</p>
 <hr/>
 <h2 id="aplicações-práticas-em-verificação-de-condições-operacionais">3.3.
-Aplicações Práticas em Verificação de Condições Operacionais</h2>
+Aplicações Práticas em Verificação de Condições Operacionais</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>As estruturas de controle (IF, ELIF, ELSE, FOR, WHILE) são
 extremamente úteis para monitorar e controlar condições operacionais em
 sistemas de engenharia. Nesta seção, apresentaremos exemplos práticos de
 como essas estruturas podem ser aplicadas para garantir a segurança,
 eficiência e correto funcionamento de processos e equipamentos.</p>
 <h3 id="monitoramento-de-temperatura-em-um-reator-químico">3.3.1.
-Monitoramento de Temperatura em um Reator Químico</h3>
+Monitoramento de Temperatura em um Reator Químico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em um reator químico, a temperatura é um parâmetro crítico que deve
 ser mantido dentro de limites seguros para evitar reações indesejadas ou
 danos ao equipamento. O código abaixo demonstra como usar condicionais
@@ -2299,7 +2316,7 @@ Alerta: Temperatura muito baixa!
 Digite a temperatura do reator em °C: 50
 Temperatura dentro dos limites normais.</code></pre>
 <h3 id="controle-de-nível-em-um-tanque">3.3.2. Controle de Nível em um
-Tanque</h3>
+Tanque</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O nível de líquido em um tanque é outro parâmetro importante em
 muitos processos industriais. O código a seguir ilustra como usar
 condicionais para controlar o nível e acionar bombas ou válvulas:</p>
@@ -2319,7 +2336,7 @@ Alerta: Nível muito baixo! Acionando bomba de enchimento.
 Digite o nível do líquido no tanque em %: 50
 Nível dentro dos limites normais.</code></pre>
 <h3 id="verificação-de-pressão-em-um-sistema-de-tubulação">3.3.3.
-Verificação de Pressão em um Sistema de Tubulação</h3>
+Verificação de Pressão em um Sistema de Tubulação</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A pressão em um sistema de tubulação deve ser monitorada para evitar
 vazamentos ou rupturas. O código abaixo mostra como usar condicionais
 para verificar a pressão e emitir avisos:</p>
@@ -2339,7 +2356,7 @@ Alerta: Pressão muito baixa!
 Digite a pressão do sistema em bar: 5
 Pressão dentro dos limites normais.</code></pre>
 <h3 id="contagem-de-ciclos-de-um-equipamento">3.3.4. Contagem de Ciclos
-de um Equipamento</h3>
+de um Equipamento</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em engenharia mecânica, é importante monitorar o número de ciclos de
 operação de um equipamento para programar a manutenção preventiva. O
 código a seguir usa um laço WHILE para simular a operação de um
@@ -2364,7 +2381,7 @@ Ciclos de operação: 2
 O equipamento está em operação? (s/n): n
 Operação encerrada.</code></pre>
 <h3 id="análise-de-dados-de-sensores">3.3.5. Análise de Dados de
-Sensores</h3>
+Sensores</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em sistemas de automação, os dados dos sensores precisam ser
 analisados para tomar decisões em tempo real. O código a seguir usa um
 laço for para processar dados de um sensor de vibração e identificar
@@ -2390,7 +2407,7 @@ podem criar programas que monitoram sistemas, detectam anomalias,
 acionam alarmes e automatizam ações de controle, contribuindo para a
 segurança, eficiência e confiabilidade dos processos e equipamentos.</p>
 <hr/>
-<h2 id="conclusão-3">3.4. Conclusão</h2>
+<h2 id="conclusão-3">3.4. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste módulo, exploramos as estruturas de controle em Python,
 incluindo condicionais (IF, ELIF, ELSE) e laços de repetição (FOR,
 WHILE). Aprendemos como essas estruturas permitem que os programas tomem
@@ -2407,7 +2424,7 @@ complexas. A prática contínua com estruturas de controle fortalecerá
 suas habilidades de programação e sua capacidade de resolver problemas
 reais de engenharia.</p>
 <hr/>
-<h1 id="funções-e-modularizações">4. Funções e Modularizações</h1>
+<h1 id="funções-e-modularizações">4. Funções e Modularizações</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste módulo 4, vamos explorar dois conceitos fundamentais para a
 organização e reutilização de código em Python: funções e modularização.
 Primeiramente, abordaremos a definição de funções. Funções são blocos de
@@ -2434,7 +2451,7 @@ módulos para promover a reutilização e a manutenção eficiente do código,
 habilidades cruciais para o desenvolvimento de soluções de engenharia
 robustas e escaláveis.</p>
 <hr/>
-<h2 id="definição-de-funções">4.1. Definição de Funções</h2>
+<h2 id="definição-de-funções">4.1. Definição de Funções</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em Python, uma função é um bloco de código organizado e reutilizável
 que executa uma tarefa específica. Funções ajudam a dividir programas
 complexos em partes menores e gerenciáveis, tornando o código mais
@@ -2444,7 +2461,7 @@ que podem conter parâmetros. O corpo da função é indentado abaixo da
 definição e contém o código que será executado quando a função for
 chamada.</p>
 <h3 id="sintaxe-de-definição-de-função">4.1.1. Sintaxe de Definição de
-Função</h3>
+Função</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A sintaxe para definir uma função em Python é a seguinte:</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a aria-hidden="true" href="#cb80-1" tabindex="-1"></a><span class="kw">def</span> nome_da_funcao(parametros):</span>
 <span id="cb80-2"><a aria-hidden="true" href="#cb80-2" tabindex="-1"></a>    <span class="co"># bloco de código a ser executado</span></span>
@@ -2458,7 +2475,7 @@ receber como entrada (opcional). - <code>pass</code>: um comando que
 indica que a função não faz nada (pode ser substituído pelo código real
 da função).</p>
 <h3 id="exemplo-de-definição-de-função">4.1.2. Exemplo de Definição de
-Função</h3>
+Função</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Vamos criar uma função simples que calcula a área de um retângulo. A
 função receberá dois parâmetros: a base e a altura do retângulo, e
 retornará a área calculada.</p>
@@ -2492,11 +2509,11 @@ lugares.</li>
 encapsular cálculos complexos, simulações, análises de dados e outras
 tarefas comuns, promovendo a eficiência e a clareza no desenvolvimento
 de software.</p>
-<h2 id="parâmetros-e-retorno">4.2. Parâmetros e Retorno</h2>
+<h2 id="parâmetros-e-retorno">4.2. Parâmetros e Retorno</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Parâmetros e retorno são mecanismos que permitem que as funções se
 comuniquem com o “mundo exterior”, ou seja, que recebam dados para
 trabalhar e que forneçam resultados de volta para quem as chamou.</p>
-<h3 id="parâmetros">4.2.1. Parâmetros</h3>
+<h3 id="parâmetros">4.2.1. Parâmetros</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os parâmetros são variáveis que você define na declaração da função e
 que permitem que a função receba valores de entrada quando é chamada.
 Eles são especificados entre parênteses na definição da função.</p>
@@ -2534,7 +2551,7 @@ funções que aceitam um número variável de argumentos usando
 <span id="cb84-10"><a aria-hidden="true" href="#cb84-10" tabindex="-1"></a>exemplo_args(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb84-11"><a aria-hidden="true" href="#cb84-11" tabindex="-1"></a><span class="co"># Chamada da função com parâmetros nomeados</span></span>
 <span id="cb84-12"><a aria-hidden="true" href="#cb84-12" tabindex="-1"></a>exemplo_kwargs(nome<span class="op">=</span><span class="st">"João"</span>, idade<span class="op">=</span><span class="dv">30</span>, cidade<span class="op">=</span><span class="st">"São Paulo"</span>)</span></code></pre></div>
-<h3 id="retorno">4.2.2. Retorno</h3>
+<h3 id="retorno">4.2.2. Retorno</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O retorno é o mecanismo pelo qual uma função envia um resultado de
 volta para quem a chamou. Você pode usar a palavra-chave
 <code>return</code> para especificar o valor que a função deve
@@ -2560,7 +2577,7 @@ permite que as funções produzam resultados que podem ser usados em
 outras partes do programa. Juntos, parâmetros e retorno são cruciais
 para a criação de funções modulares e eficientes.</p>
 <h3 id="benefícios-de-parâmetros-e-retorno">4.2.3. Benefícios de
-Parâmetros e Retorno</h3>
+Parâmetros e Retorno</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Parâmetros e retorno oferecem vários benefícios importantes na
 programação, especialmente em engenharia: - Flexibilidade: Permitem que
 as funções operem em diferentes dados, tornando-as reutilizáveis em
@@ -2579,14 +2596,14 @@ reutilização e a eficiência do código são fundamentais para resolver
 problemas complexos e garantir a qualidade das soluções.</p>
 <hr/>
 <h2 id="organização-de-código-em-módulos-reutilizáveis">4.3. Organização
-de Código em Módulos Reutilizáveis</h2>
+de Código em Módulos Reutilizáveis</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A organização de código em módulos reutilizáveis é uma prática
 fundamental na programação, especialmente em projetos maiores e mais
 complexos. Módulos permitem que você divida seu código em arquivos
 separados, cada um contendo funções, classes e variáveis relacionadas a
 uma funcionalidade específica. Isso promove a reutilização de código,
 facilita a manutenção e melhora a legibilidade do programa.</p>
-<h3 id="o-que-são-módulos">4.3.1. O que são Módulos?</h3>
+<h3 id="o-que-são-módulos">4.3.1. O que são Módulos?</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Módulos são arquivos Python que contêm definições de funções, classes
 e variáveis. Eles permitem que você organize seu código em partes
 lógicas, facilitando a reutilização e a manutenção. Você pode importar
@@ -2600,7 +2617,7 @@ módulos em outros arquivos Python para acessar suas funcionalidades.</p>
 <span id="cb88-6"><a aria-hidden="true" href="#cb88-6" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb88-7"><a aria-hidden="true" href="#cb88-7" tabindex="-1"></a><span class="co"># Variável global</span></span>
 <span id="cb88-8"><a aria-hidden="true" href="#cb88-8" tabindex="-1"></a>mensagem <span class="op">=</span> <span class="st">"Este é um módulo de exemplo."</span></span></code></pre></div>
-<h3 id="criando-módulos">4.3.2. Criando Módulos</h3>
+<h3 id="criando-módulos">4.3.2. Criando Módulos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Para criar um módulo, basta salvar o código Python em um arquivo
 .py.</p>
 <p><strong>Exemplo:</strong> Criando um módulo chamado
@@ -2613,7 +2630,7 @@ calculos_geometricos.py</p>
 <span id="cb89-6"><a aria-hidden="true" href="#cb89-6" tabindex="-1"></a><span class="kw">def</span> perimetro_circulo(raio):</span>
 <span id="cb89-7"><a aria-hidden="true" href="#cb89-7" tabindex="-1"></a>    <span class="im">import</span> math</span>
 <span id="cb89-8"><a aria-hidden="true" href="#cb89-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> raio</span></code></pre></div>
-<h3 id="importando-módulos">4.3.3. Importando Módulos</h3>
+<h3 id="importando-módulos">4.3.3. Importando Módulos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Para usar um módulo em outro arquivo Python, você deve importá-lo.
 Existem várias maneiras de importar módulos:</p>
 <ol type="1">
@@ -2632,7 +2649,7 @@ Existem várias maneiras de importar módulos:</p>
 <span id="cb93-3"><a aria-hidden="true" href="#cb93-3" tabindex="-1"></a><span class="bu">print</span>(soma(<span class="dv">5</span>, <span class="dv">10</span>))</span></code></pre></div></li>
 </ol>
 <h3 id="benefícios-da-modularização">4.3.4. Benefícios da
-Modularização</h3>
+Modularização</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A modularização oferece vários benefícios importantes na programação,
 especialmente em engenharia: - Reutilização de Código: Módulos permitem
 que você reutilize funções e classes em diferentes projetos,
@@ -2649,7 +2666,7 @@ estrutura existente. Esses benefícios são essenciais para o
 desenvolvimento de software de engenharia, onde a clareza, a
 reutilização e a eficiência do código são fundamentais para resolver
 problemas complexos e garantir a qualidade das soluções.</p>
-<h3 id="exemplo-de-uso-de-módulos">4.3.5. Exemplo de Uso de Módulos</h3>
+<h3 id="exemplo-de-uso-de-módulos">4.3.5. Exemplo de Uso de Módulos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a aria-hidden="true" href="#cb94-1" tabindex="-1"></a><span class="im">import</span> geometria</span>
 <span id="cb94-2"><a aria-hidden="true" href="#cb94-2" tabindex="-1"></a></span>
 <span id="cb94-3"><a aria-hidden="true" href="#cb94-3" tabindex="-1"></a>raio <span class="op">=</span> <span class="dv">5</span></span>
@@ -2694,7 +2711,7 @@ demonstra como a modularização pode tornar o código mais organizado e
 reutilizável.</p>
 <hr/>
 <h3 id="exercício-proposto-gestão-de-inventário-florestal">4.3.5
-Exercício Proposto: Gestão de Inventário Florestal</h3>
+Exercício Proposto: Gestão de Inventário Florestal</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong><br/>
 Um engenheiro florestal precisa desenvolver um sistema para gerenciar o
 inventário de uma floresta. O sistema deve calcular o volume de madeira
@@ -2771,7 +2788,7 @@ florestais. A modularização do código permite que as funções sejam
 reutilizadas em diferentes contextos, promovendo a eficiência e a
 clareza no desenvolvimento de software de engenharia.</p>
 <hr/>
-<h2 id="conclusão-4">4.4. Conclusão</h2>
+<h2 id="conclusão-4">4.4. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste módulo, mergulhamos nos conceitos de funções e modularização em
 Python, aprendendo a criar funções para encapsular a lógica de tarefas
 específicas, a utilizar parâmetros para torná-las flexíveis e a retornar
@@ -2785,7 +2802,7 @@ eficientes e fáceis de manter. O domínio desses conceitos é um passo
 fundamental para o desenvolvimento de software de alta qualidade em
 engenharia.</p>
 <hr/>
-<h1 id="estruturas-de-dados">5. Estruturas de Dados</h1>
+<h1 id="estruturas-de-dados">5. Estruturas de Dados</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este módulo apresenta as estruturas de dados fundamentais em Python:
 listas, tuplas e dicionários. Listas são sequências mutáveis de
 elementos, úteis para armazenar coleções de itens que podem ser
@@ -2800,13 +2817,13 @@ analisar dados em sistemas de engenharia, como medições de temperatura,
 pressão e vazão.</p>
 <hr/>
 <h2 id="listas-tuplas-e-dicionários">5.1. Listas, Tuplas e
-Dicionários</h2>
+Dicionários</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Python oferece diversas estruturas de dados para organizar e
 armazenar coleções de dados. As mais fundamentais e amplamente
 utilizadas são listas, tuplas e dicionários. Cada uma dessas estruturas
 possui características e usos específicos, tornando-as adequadas para
 diferentes situações na programação.</p>
-<h3 id="listas">5.1.1. Listas</h3>
+<h3 id="listas">5.1.1. Listas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Definição:</strong><br/>
 Listas são sequências ordenadas de itens. Os itens em uma lista podem
 ser de qualquer tipo de dado (números, strings, outras listas, etc.) e
@@ -2855,7 +2872,7 @@ Listas são muito úteis para armazenar conjuntos de medições, resultados
 de experimentos, parâmetros de processos, entre outros dados que
 precisam ser manipulados e analisados em sequência.</p>
 <hr/>
-<h3 id="tuplas">5.1.2. Tuplas</h3>
+<h3 id="tuplas">5.1.2. Tuplas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Definição:</strong><br/>
 Tuplas são sequências ordenadas de itens, semelhantes às listas. No
 entanto, ao contrário das listas, as tuplas são
@@ -2902,7 +2919,7 @@ Tuplas são úteis para representar conjuntos de dados que não devem ser
 alterados, como coordenadas de um ponto, parâmetros fixos de um
 experimento ou registros imutáveis de configuração.</p>
 <hr/>
-<h3 id="dicionários">5.1.3. Dicionários</h3>
+<h3 id="dicionários">5.1.3. Dicionários</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Definição:</strong><br/>
 Dicionários são coleções não ordenadas de pares
 <strong>chave-valor</strong>. Cada chave é única dentro do dicionário e
@@ -2963,7 +2980,7 @@ equipamentos ou resultados de experimentos, permitindo acesso rápido e
 organizado às informações.</p>
 <hr/>
 <h3 id="escolha-da-estrutura-de-dados">5.1.4. Escolha da Estrutura de
-Dados</h3>
+Dados</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Ao desenvolver um programa, a escolha da estrutura de dados adequada
 é fundamental para garantir eficiência, clareza e facilidade de
 manutenção do código. Cada estrutura (lista, tupla ou dicionário) possui
@@ -3048,7 +3065,7 @@ aplicações de engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-sensores-de-tensão-em-um-sistema-de-distribuição-de-energia">5.1.5.
 Exercício Proposto: Análise de Dados de Sensores de Tensão em um Sistema
-de Distribuição de Energia</h3>
+de Distribuição de Energia</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong><br/>
 Um engenheiro eletricista precisa analisar dados de sensores de tensão
 instalados em diferentes pontos de um sistema de distribuição de
@@ -3170,7 +3187,7 @@ usados em conjunto para organizar, analisar e monitorar dados de
 sensores em sistemas de engenharia elétrica, permitindo a identificação
 rápida de anomalias e a tomada de decisões baseada em dados.</p>
 <hr/>
-<h3 id="destaque-dos-conceitos">5.1.6. Destaque dos Conceitos</h3>
+<h3 id="destaque-dos-conceitos">5.1.6. Destaque dos Conceitos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste exercício, utilizamos de forma integrada as três principais
 estruturas de dados do Python: <strong>dicionários</strong>,
 <strong>listas</strong> e <strong>tuplas</strong>. Veja como cada uma
@@ -3226,14 +3243,14 @@ organizando, armazenando e manipulando dados de sensores de forma
 eficiente e estruturada.</p>
 <hr/>
 <h2 id="iteração-e-manipulação-de-dados">5.2. Iteração e Manipulação de
-Dados</h2>
+Dados</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Uma vez que entendemos as estruturas de dados básicas (listas, tuplas
 e dicionários), é crucial aprender como percorrer (iterar) seus
 elementos e realizar diversas operações de manipulação. Esta seção
 aborda as técnicas e métodos mais comuns para trabalhar com esses dados
 em Python.</p>
 <h3 id="iteração-em-listas-tuplas-e-dicionários">5.2.1. Iteração em
-Listas, Tuplas e Dicionários</h3>
+Listas, Tuplas e Dicionários</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Iteração</strong> é o processo de percorrer cada item em uma
 estrutura de dados (como uma lista, tupla ou dicionário) para acessar ou
 processá-lo. Python fornece maneiras eficientes de realizar essa tarefa,
@@ -3317,7 +3334,7 @@ processe e analise dados de maneira eficiente em aplicações de
 engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-teste-de-tração">5.2.2.
-Exercício Proposto: Análise de Dados de Teste de Tração</h3>
+Exercício Proposto: Análise de Dados de Teste de Tração</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong><br/>
 Um engenheiro mecânico realizou um teste de tração em um novo tipo de
 aço. O teste gerou uma série de dados de força (em Newtons) e
@@ -3453,7 +3470,7 @@ experimentais de materiais, calcular propriedades mecânicas e apoiar a
 tomada de decisão em projetos de engenharia mecânica.</p>
 <hr/>
 <h2 id="aplicações-em-vetores-de-parâmetros-de-processo">5.3. Aplicações
-em Vetores de Parâmetros de Processo</h2>
+em Vetores de Parâmetros de Processo</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em muitas áreas da engenharia, os processos são caracterizados por
 múltiplos parâmetros que influenciam seu comportamento e desempenho.
 Esses parâmetros podem incluir temperaturas, pressões, vazões,
@@ -3463,7 +3480,7 @@ estruturas de dados de Python (listas, tuplas e dicionários) são
 ferramentas poderosas para trabalhar com esses vetores de parâmetros de
 processo.</p>
 <h3 id="representação-de-vetores-de-parâmetros">5.3.1. Representação de
-Vetores de Parâmetros</h3>
+Vetores de Parâmetros</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em engenharia, é comum lidar com conjuntos de parâmetros que
 representam o estado ou as condições de um processo, como temperaturas,
 pressões, vazões, concentrações, entre outros. Esses conjuntos podem ser
@@ -3527,7 +3544,7 @@ análises, simulações e tomadas de decisão em projetos de engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-do-desempenho-de-um-reator-químico-batch">5.3.2.
 Exercício Proposto: Análise do Desempenho de um Reator Químico
-Batch</h3>
+Batch</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong><br/>
 Um engenheiro químico está analisando o desempenho de um reator químico
 batch onde ocorre uma reação de primeira ordem. O objetivo é usar Python
@@ -3553,7 +3570,7 @@ vs. Tempo 4. <strong>Saída de Dados:</strong> - Exibir: - Constante de
 velocidade (k) - Representações textuais dos gráficos</p>
 <hr/>
 <h3 id="conceitos-aplicados-no-código">5.3.3. Conceitos Aplicados no
-Código</h3>
+Código</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste exercício, diversos conceitos fundamentais de programação e
 engenharia foram aplicados para analisar o desempenho de um reator
 químico batch. Veja os principais pontos:</p>
@@ -3614,7 +3631,7 @@ como Python pode ser uma ferramenta poderosa para a análise e otimização
 de processos em engenharia química.</p>
 <hr/>
 <h2 id="exercício-proposto-resolução">5.3.4. Exercício Proposto:
-Resolução</h2>
+Resolução</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste item, apresentamos a resolução detalhada do exercício de
 análise do desempenho de um reator químico batch, integrando os
 conceitos de vetores de parâmetros, funções e manipulação de dados em
@@ -3764,7 +3781,7 @@ cinéticas e gerar visualizações textuais dos resultados. A manipulação
 eficiente de vetores de parâmetros de processo é essencial para otimizar
 o desempenho e a segurança em processos químicos industriais.</p>
 <hr/>
-<h2 id="conclusão-5">5.4. Conclusão</h2>
+<h2 id="conclusão-5">5.4. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste módulo, exploramos as principais estruturas de dados do Python
 — listas, tuplas e dicionários — e aprendemos como utilizá-las para
 organizar, armazenar e manipular informações de forma eficiente em
@@ -3794,7 +3811,7 @@ enfrentar desafios cada vez mais complexos na programação Python voltada
 à engenharia.</p>
 <hr/>
 <h1 id="manipulação-de-arquivos-e-dados">6. Manipulação de Arquivos e
-Dados</h1>
+Dados</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A capacidade de interagir com arquivos e analisar dados é essencial
 para o trabalho de engenheiros e cientistas. Nesta seção, vamos explorar
 as técnicas e ferramentas fundamentais para a manipulação de dados em
@@ -3808,13 +3825,13 @@ dados experimentais, provenientes de medições reais, e de simulações
 computacionais, demonstrando como extrair informações significativas e
 validar modelos.</p>
 <h2 id="leitura-e-escrita-de-arquivos-.txt-e-.csv">6.1. Leitura e
-Escrita de Arquivos .txt e .csv</h2>
+Escrita de Arquivos .txt e .csv</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A manipulação de arquivos é fundamental para armazenar, recuperar e
 compartilhar dados em projetos de engenharia. Python oferece recursos
 simples e poderosos para trabalhar com arquivos de texto (.txt) e
 arquivos CSV (.csv), que são amplamente utilizados para registrar
 medições, resultados de simulações e tabelas de dados.</p>
-<h3 id="conceitos">6.1.1. Conceitos</h3>
+<h3 id="conceitos">6.1.1. Conceitos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><p><strong>Arquivos de texto (.txt):</strong><br/>
 São arquivos simples, compostos por linhas de texto. Podem ser usados
@@ -3846,7 +3863,7 @@ evitar falhas ao manipular arquivos inexistentes ou
 corrompidos.</p></li>
 </ul>
 <hr/>
-<h3 id="exemplos">6.1.2. Exemplos</h3>
+<h3 id="exemplos">6.1.2. Exemplos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <h4 id="ler-um-arquivo-.txt-com-dados-de-temperatura-e-extrair-a-média">1.
 Ler um arquivo .txt com dados de temperatura e extrair a média</h4>
 <p>Arquivo de texto <code>temperaturas.txt</code>:</p>
@@ -3928,7 +3945,7 @@ Dominar essas operações permite automatizar rotinas, integrar sistemas e
 documentar resultados de forma eficiente.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-vazão-em-ete">6.1.3.
-Exercício Proposto: Análise de Dados de Vazão em ETE</h3>
+Exercício Proposto: Análise de Dados de Vazão em ETE</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Descrição:</strong><br/>
 Em uma Estação de Tratamento de Esgoto (ETE), o controle preciso da
 vazão de água tratada é essencial para garantir a eficiência do processo
@@ -4064,7 +4081,7 @@ análise estatística simples e geração de relatórios automatizados,
 mostrando como Python pode ser aplicado para monitorar e documentar o
 desempenho de sistemas de engenharia ambiental.</p>
 <hr/>
-<h3 id="considerações-adicionais">6.1.4. Considerações Adicionais:</h3>
+<h3 id="considerações-adicionais">6.1.4. Considerações Adicionais:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Validação de Dados:</strong> É importante validar os dados
 lidos do arquivo para garantir que estão no formato esperado e evitar
@@ -4091,7 +4108,7 @@ Python.</li>
 </ul>
 <hr/>
 <h3 id="análise-e-visualização-de-dados-da-vazão-em-ete">6.1.5. Análise
-e Visualização de Dados da Vazão em ETE</h3>
+e Visualização de Dados da Vazão em ETE</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste exemplo, vamos aprofundar a aplicação prática da manipulação de
 dados em Python, focando na análise e visualização de dados de vazão de
 uma Estação de Tratamento de Esgoto (ETE). Utilizaremos os conhecimentos
@@ -4209,7 +4226,7 @@ essenciais para engenheiros ambientais e de processos que precisam
 transformar dados operacionais em informações úteis para tomada de
 decisão.</p>
 <hr/>
-<h3 id="resumo-1">6.1.6. Resumo</h3>
+<h3 id="resumo-1">6.1.6. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os dois últimos exercícios demonstraram uma clara progressão na
 capacidade de manipulação e análise de dados em Python. Enquanto o
 primeiro nos permitiu a leitura básica de dados de vazão de um arquivo
@@ -4223,7 +4240,7 @@ tendências e desvios, transformando dados brutos em informações
 acionáveis para a engenharia.</p>
 <hr/>
 <h2 id="introdução-à-biblioteca-pandas">6.2. Introdução à Biblioteca
-PANDAS</h2>
+PANDAS</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A biblioteca <strong>PANDAS</strong> é uma das ferramentas mais
 poderosas e populares para análise de dados em Python. Ela fornece
 estruturas de dados flexíveis e eficientes, como
@@ -4232,7 +4249,7 @@ manipulação, análise e visualização de grandes volumes de dados. Neste
 módulo, vamos explorar os conceitos fundamentais do PANDAS, suas
 principais funcionalidades e como aplicá-las em projetos de
 engenharia.</p>
-<h3 id="conceitos-básicos">6.2.1. Conceitos Básicos</h3>
+<h3 id="conceitos-básicos">6.2.1. Conceitos Básicos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><p><strong>DataFrame:</strong><br/>
 Estrutura de dados bidimensional, semelhante a uma tabela, onde cada
@@ -4265,7 +4282,7 @@ facilmente com bibliotecas como Matplotlib e Seaborn, permitindo criar
 gráficos diretamente a partir de DataFrames.</p></li>
 </ul>
 <hr/>
-<h3 id="exemplos-práticos">6.2.2. Exemplos Práticos</h3>
+<h3 id="exemplos-práticos">6.2.2. Exemplos Práticos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <h4 id="criando-um-dataframe-a-partir-de-um-dicionário">1. Criando um
 DataFrame a partir de um dicionário</h4>
 <div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a aria-hidden="true" href="#cb131-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -4327,7 +4344,7 @@ controle de processos e tomada de decisão baseada em dados.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-tensão-e-corrente-em-um-sistema-elétrico">6.2.3.
 Exercício Proposto: Análise de Dados de Tensão e Corrente em um Sistema
-Elétrico</h3>
+Elétrico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong><br/>
 Em sistemas elétricos, é fundamental monitorar a tensão e a corrente em
 diferentes pontos da rede para garantir estabilidade, segurança e
@@ -4475,7 +4492,7 @@ filtragem e ordenação. Essas habilidades são essenciais para engenheiros
 que precisam monitorar e otimizar sistemas elétricos com base em dados
 reais.</p>
 <hr/>
-<h3 id="resumo-2">6.2.4. Resumo</h3>
+<h3 id="resumo-2">6.2.4. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste módulo, exploramos a biblioteca PANDAS, uma ferramenta
 essencial para análise de dados em Python. Aprendemos sobre suas
 estruturas de dados principais, como DataFrames e Series, e como
@@ -4490,7 +4507,7 @@ brutos em informações valiosas, apoiando a tomada de decisões e a
 otimização de processos em diversas áreas da engenharia.</p>
 <hr/>
 <h2 id="análise-de-dados-experimentais-e-simulações-computacionais">6.3.
-Análise de Dados Experimentais e Simulações Computacionais</h2>
+Análise de Dados Experimentais e Simulações Computacionais</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A análise de dados experimentais e simulações computacionais é uma
 parte crucial do trabalho de engenheiros e cientistas. Nesta seção,
 vamos explorar como aplicar os conhecimentos adquiridos sobre
@@ -4498,7 +4515,7 @@ manipulação de arquivos e a biblioteca PANDAS para analisar dados
 provenientes de medições reais e simulações computacionais. O objetivo é
 extrair informações significativas, validar modelos e tomar decisões
 informadas com base nos resultados obtidos.</p>
-<h3 id="conceitos-fundamentais">6.3.1. Conceitos Fundamentais</h3>
+<h3 id="conceitos-fundamentais">6.3.1. Conceitos Fundamentais</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Dados Experimentais:</strong><br/>
 São dados coletados a partir de experimentos físicos, medições em campo
@@ -4523,7 +4540,7 @@ criar gráficos informativos a partir de DataFrames do PANDAS.</li>
 </ul>
 <hr/>
 <h3 id="exemplo-proposto-calibração-de-um-sensor-de-pressão">6.3.2.
-Exemplo Proposto: Calibração de um Sensor de Pressão</h3>
+Exemplo Proposto: Calibração de um Sensor de Pressão</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong><br/>
 Sensores de pressão são fundamentais em sistemas de controle e automação
 industrial. Para garantir medições precisas, é necessário calibrar o
@@ -4630,7 +4647,7 @@ leituras do sensor em valores de pressão corrigidos. -
 visualmente os dados experimentais e o ajuste. - <strong>Aplicação em
 Engenharia:</strong> Permite calibrar sensores e garantir medições
 precisas em sistemas de automação e controle.</p>
-<h3 id="resumo-3">6.3.3 Resumo:</h3>
+<h3 id="resumo-3">6.3.3 Resumo:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste exemplo, exploramos como utilizar Python para calibrar um
 sensor de pressão, ajustando curvas polinomiais aos dados experimentais.
 Aprendemos a ler dados de um arquivo CSV com Pandas, ajustar curvas
@@ -4643,7 +4660,7 @@ medição. Com o domínio dessas técnicas, engenheiros podem otimizar
 processos, validar modelos teóricos e garantir a precisão em sistemas de
 controle e automação.</p>
 <hr/>
-<h2 id="conclusão-6">6.4. Conclusão</h2>
+<h2 id="conclusão-6">6.4. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A análise de dados experimentais e simulações computacionais é uma
 habilidade essencial para engenheiros e cientistas. Neste módulo,
 exploramos como utilizar Python, especialmente as bibliotecas Pandas e
@@ -4658,7 +4675,7 @@ engenheiros podem extrair insights significativos de conjuntos de dados
 complexos, melhorando a eficiência e a eficácia em suas áreas de
 atuação.</p>
 <hr/>
-<h1 id="visualização-de-dados">7. Visualização de Dados</h1>
+<h1 id="visualização-de-dados">7. Visualização de Dados</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A visualização de dados é uma etapa crucial no processo de análise,
 permitindo que os engenheiros interpretem informações complexas de forma
 intuitiva e identifiquem padrões, tendências e outliers que seriam
@@ -4676,13 +4693,13 @@ mais apropriadas para comunicar efetivamente seus resultados e
 conclusões.</p>
 <h2 id="mat_plot_lib-e-seaborn-ferramentas-essenciais-para-visualização-de-dados-em-python">7.1.
 MAT_PLOT_LIB e SEABORN: Ferramentas Essenciais para Visualização de
-Dados em Python</h2>
+Dados em Python</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A visualização de dados é uma etapa fundamental na análise de dados
 em engenharia, permitindo a interpretação intuitiva de informações
 complexas e a identificação de padrões cruciais. Python oferece duas
 bibliotecas poderosas para essa finalidade: MAT_PLOT_LIB e SEABORN.</p>
 <h3 id="mat_plot_lib-a-base-da-visualização-em-python">7.1.1.
-MAT_PLOT_LIB: A Base da Visualização em Python</h3>
+MAT_PLOT_LIB: A Base da Visualização em Python</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>MAT_PLOT_LIB é a biblioteca fundamental para a criação de gráficos em
 Python. Ela fornece um controle extenso sobre todos os elementos do
 gráfico, desde os tipos de gráficos (linhas, barras, dispersão,
@@ -4717,7 +4734,7 @@ organizada.</p>
 <figcaption aria-hidden="true">Gráfico de Seno</figcaption>
 </figure>
 <h3 id="seaborn-visualização-estatística-avançada">7.1.2. SEABORN:
-Visualização Estatística Avançada</h3>
+Visualização Estatística Avançada</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>SEABORN é uma biblioteca construída sobre MAT_PLOT_LIB, projetada
 para facilitar a criação de gráficos estatísticos complexos. Ela oferece
 uma interface de alto nível para criar visualizações informativas e
@@ -4754,7 +4771,7 @@ identificar padrões complexos.</li>
 <span id="cb148-18"><a aria-hidden="true" href="#cb148-18" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><strong>Resultado:</strong> <img alt="Gráfico de Seno com Seaborn" src="imagens/19_imagem_grafico_seno_seaborn.png"/></p>
 <h3 id="escolhendo-entre-mat_plot_lib-e-seaborn">7.1.3. Escolhendo entre
-MAT_PLOT_LIB e SEABORN</h3>
+MAT_PLOT_LIB e SEABORN</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em muitos casos, MAT_PLOT_LIB e SEABORN são usados em conjunto.
 MAT_PLOT_LIB fornece a base, e SEABORN aprimora a aparência e adiciona
 recursos estatísticos.</p>
@@ -4768,7 +4785,7 @@ recursos estatísticos.</p>
 <span id="cb149-8"><a aria-hidden="true" href="#cb149-8" tabindex="-1"></a><span class="pp">|</span> Facilidade de Uso      <span class="pp">|</span> Requer mais código para gráficos complexos <span class="pp">|</span> Mais fácil para gráficos estatísticos       <span class="pp">|</span></span>
 <span id="cb149-9"><a aria-hidden="true" href="#cb149-9" tabindex="-1"></a><span class="pp">|------------------------|--------------------------------------------|---------------------------------------------|</span></span></code></pre></div>
 <h3 id="quando-usar-cada-biblioteca">7.1.4. Quando Usar Cada
-Biblioteca</h3>
+Biblioteca</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Use MAT_PLOT_LIB quando:</strong> - Você precisa de controle
 total sobre a aparência do gráfico. - Você está criando gráficos simples
 e não precisa de visualizações estatísticas complexas. - Você está
@@ -4783,7 +4800,7 @@ os tópicos subsequentes sobre tipos específicos de gráficos e suas
 aplicações.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-trajetória-de-um-míssil-balístico">7.1.5
-Exercício Proposto: Análise de Trajetória de um Míssil Balístico</h3>
+Exercício Proposto: Análise de Trajetória de um Míssil Balístico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Em engenharia aeronáutica, a análise da trajetória de um míssil
 balístico é crucial para determinar seu alcance, tempo de voo e outros
 parâmetros de desempenho. Simulações computacionais geram dados
@@ -4857,7 +4874,7 @@ velocidade em função do tempo. <strong>Código Python:</strong></p>
 Gráfico de linha mostrando a variação da velocidade do míssil ao longo do tempo.
 Gráfico de dispersão mostrando a velocidade do míssil em função do tempo.</code></pre>
 <h3 id="figura-7.1.1---trajetória-do-míssil-balístico">Figura 7.1.1 -
-Trajetória do Míssil Balístico</h3>
+Trajetória do Míssil Balístico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Trajetória do Míssil" src="imagens/20_imagem_trajetoria_missel.png"/>
 <figcaption aria-hidden="true">Trajetória do Míssil</figcaption>
@@ -4874,7 +4891,7 @@ Trajetória do Míssil Balístico</h3>
 vertical (altitude) e horizontal (distância). Ele ajuda a entender o
 alcance e a forma geral da trajetória.</p>
 <h3 id="figura-7.1.2---variação-da-velocidade-ao-longo-do-tempo">Figura
-7.1.2 - Variação da Velocidade ao Longo do Tempo</h3>
+7.1.2 - Variação da Velocidade ao Longo do Tempo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Variação da Velocidade" src="imagens/20_imagem_variacao_velocidade.png"/>
 <figcaption aria-hidden="true">Variação da Velocidade</figcaption>
@@ -4892,7 +4909,7 @@ desde o lançamento até o impacto (ou o fim da simulação). Ele revela a
 desaceleração devido à gravidade e à resistência do ar (se incluída no
 modelo).</p>
 <h3 id="figura-7.1.3---variação-da-altitude-ao-longo-do-tempo">Figura
-7.1.3 - Variação da Altitude ao Longo do Tempo</h3>
+7.1.3 - Variação da Altitude ao Longo do Tempo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Velocidade em Função do Tempo" src="imagens/20_imagem_velocidade_funcao_tempo.png"/>
 <figcaption aria-hidden="true">Velocidade em Função do
@@ -4952,12 +4969,12 @@ decompondo-a em velocidade e altitude. Cada gráfico fornece informações
 complementares, e a análise conjunta dos três oferece uma compreensão
 completa do voo do míssil balístico. </p>
 <h2 id="tipos-de-gráficos-escolhendo-a-representação-visual-adequada">7.2.
-Tipos de Gráficos: Escolhendo a Representação Visual Adequada</h2>
+Tipos de Gráficos: Escolhendo a Representação Visual Adequada</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A escolha do tipo de gráfico certo é crucial para comunicar
 efetivamente os dados e as conclusões da análise. Cada tipo de gráfico é
 adequado para diferentes tipos de dados e propósitos de
 visualização.</p>
-<h3 id="gráficos-de-linha">7.2.1. Gráficos de Linha</h3>
+<h3 id="gráficos-de-linha">7.2.1. Gráficos de Linha</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Propósito:</strong> Mostrar a relação entre duas variáveis
 quantitativas, especialmente como uma variável muda em função da outra
 (frequentemente tempo). São ideais para visualizar tendências, padrões e
@@ -4984,7 +5001,7 @@ com um componente contínuo.</p>
 <img alt="Gráfico de Linha" src="imagens/21_imagem_grafico_linha.png"/>
 <figcaption aria-hidden="true">Gráfico de Linha</figcaption>
 </figure>
-<h3 id="gráficos-de-barras">7.2.2. Gráficos de Barras</h3>
+<h3 id="gráficos-de-barras">7.2.2. Gráficos de Barras</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Propósito:</strong> Comparar valores entre diferentes
 categorias ou grupos. São úteis para visualizar dados discretos e
 comparar quantidades relativas. <strong>Dados Adequados:</strong> -
@@ -5010,7 +5027,7 @@ máquinas).</p>
 <img alt="Gráfico de Barras" src="imagens/22_imagem_grafico_barras.png"/>
 <figcaption aria-hidden="true">Gráfico de Barras</figcaption>
 </figure>
-<h3 id="gráficos-de-dispersão">7.2.3. Gráficos de Dispersão</h3>
+<h3 id="gráficos-de-dispersão">7.2.3. Gráficos de Dispersão</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Propósito:</strong> Mostrar a relação entre duas variáveis
 quantitativas, permitindo identificar correlações, tendências e
 agrupamentos. São úteis para visualizar a distribuição de dados e
@@ -5034,7 +5051,7 @@ duas variáveis contínuas (ex: altura vs. peso). - Análise de correlação
 <img alt="Gráfico de Dispersão" src="imagens/23_imagem_grafico_dispersao.png"/>
 <figcaption aria-hidden="true">Gráfico de Dispersão</figcaption>
 </figure>
-<h3 id="histogramas">7.2.4. Histogramas</h3>
+<h3 id="histogramas">7.2.4. Histogramas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Propósito:</strong> Mostrar a distribuição de uma variável
 quantitativa, permitindo identificar a frequência de diferentes
 intervalos de valores. São úteis para visualizar a forma da distribuição
@@ -5063,7 +5080,7 @@ em uma prova).</p>
 <hr/>
 <h3 id="exercício-proposto-análise-de-dados-de-qualidade-da-água-em-campo-largo">7.2.5.
 Exercício Proposto: Análise de Dados de Qualidade da Água em Campo
-Largo</h3>
+Largo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Engenheiros ambientais monitoram
 regularmente a qualidade da água em rios e corpos d’água para avaliar a
 saúde do ecossistema, identificar fontes de poluição e garantir a
@@ -5148,7 +5165,7 @@ e temperatura da água.</p>
 <pre class="plaintext"><code>Gráfico de linha mostrando a variação do pH ao longo do tempo para cada ponto de amostragem.
 Gráfico de barras comparando os níveis de oxigênio dissolvido entre os pontos de amostragem.
 Gráfico de dispersão analisando a relação entre turbidez e temperatura da água.</code></pre>
-<h3 id="resultados-dos-gráficos">Resultados dos Gráficos</h3>
+<h3 id="resultados-dos-gráficos">Resultados dos Gráficos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <h4 id="figura-7.2.1---gráfico-de-linha-mostrando-a-variação-do-ph-ao-longo-do-tempo-para-cada-ponto-de-amostragem.">Figura
 7.2.1 - Gráfico de linha mostrando a variação do pH ao longo do tempo
 para cada ponto de amostragem.</h4>
@@ -5209,7 +5226,7 @@ turbidez e temperatura, ajudando a identificar possíveis correlações
 entre esses parâmetros.</p>
 <hr/>
 <h2 id="visualização-de-curvas-e-resultado-de-processos">7.3.
-Visualização de Curvas e Resultado de Processos</h2>
+Visualização de Curvas e Resultado de Processos</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A visualização de curvas e resultados de processos é uma parte
 essencial da análise de dados em engenharia, permitindo a representação
 gráfica de fenômenos contínuos e dinâmicos. Este módulo se concentra na
@@ -5217,14 +5234,14 @@ criação de gráficos que ajudam a entender o comportamento de sistemas ao
 longo do tempo, facilitando a interpretação de resultados experimentais
 e simulações computacionais.</p>
 <h3 id="importância-da-visualização-de-curvas">7.3.1. Importância da
-Visualização de Curvas</h3>
+Visualização de Curvas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A visualização de curvas é crucial para engenheiros e cientistas,
 pois permite a análise de tendências, a identificação de padrões e a
 detecção de anomalias em dados experimentais ou simulações. Gráficos bem
 elaborados ajudam a comunicar resultados complexos de forma clara e
 intuitiva, facilitando a tomada de decisões informadas.</p>
 <h3 id="tipos-de-gráficos-para-visualização-de-curvas">7.3.2. Tipos de
-Gráficos para Visualização de Curvas</h3>
+Gráficos para Visualização de Curvas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os gráficos mais comuns utilizados para a visualização de curvas
 incluem: - <strong>Gráficos de Linha:</strong> Ideais para mostrar a
 evolução de uma variável ao longo do tempo, como a temperatura de um
@@ -5237,7 +5254,7 @@ contínuas, como a velocidade e a aceleração de um objeto em movimento. -
 superfícies tridimensionais em um plano bidimensional, úteis em análises
 de campo escalar, como temperatura ou pressão em uma área
 específica.</p>
-<h3 id="aplicações-práticas">7.3.3. Aplicações Práticas</h3>
+<h3 id="aplicações-práticas">7.3.3. Aplicações Práticas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A visualização de curvas é amplamente aplicada em diversas áreas da
 engenharia, incluindo:</p>
 <ul>
@@ -5252,7 +5269,7 @@ tempo.</li>
 <li><strong>Engenharia Civil:</strong> Análise de estruturas, como
 curvas de carga e deformação em materiais submetidos a esforços.</li>
 </ul>
-<h3 id="ferramentas-e-bibliotecas">7.3.4. Ferramentas e Bibliotecas</h3>
+<h3 id="ferramentas-e-bibliotecas">7.3.4. Ferramentas e Bibliotecas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Para a visualização de curvas em Python, as bibliotecas MAT_PLOT_LIB
 e SEABORN são amplamente utilizadas. Elas oferecem uma variedade de
 funções para criar gráficos personalizados, permitindo a representação
@@ -5262,7 +5279,7 @@ gráficos de curvas.</p>
 <hr/>
 <h3 id="exercício-proposto-análise-do-desempenho-de-um-sistema-de-controle-de-temperatura">7.3.5.
 Exercício Proposto: Análise do Desempenho de um Sistema de Controle de
-Temperatura</h3>
+Temperatura</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em engenharia de controle, é fundamental
 monitorar e analisar como um sistema responde a mudanças no setpoint
 (valor desejado) e a distúrbios. A visualização das curvas de setpoint,
@@ -5305,7 +5322,7 @@ Saida_Controlador (Sinal de controle enviado ao aquecedor, %)</p>
 <span id="cb160-20"><a aria-hidden="true" href="#cb160-20" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><strong>Saída Esperada:</strong></p>
 <pre class="plaintext"><code>Gráfico mostrando as curvas de setpoint, temperatura real e saída do controlador ao longo do tempo.</code></pre>
-<h3 id="resultados-do-gráfico">Resultados do Gráfico</h3>
+<h3 id="resultados-do-gráfico">Resultados do Gráfico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Análise do Desempenho de um Sistema de Controle de Temperatura" src="imagens/26_imagem_analise_desempenho_controle_temperatura.png"/>
 <figcaption aria-hidden="true">Análise do Desempenho de um Sistema de
@@ -5313,7 +5330,7 @@ Controle de Temperatura</figcaption>
 </figure>
 <p>Gráfico mostrando as curvas de setpoint, temperatura real e saída do
 controlador ao longo do tempo.</p>
-<h3 id="análise-do-gráfico">Análise do Gráfico</h3>
+<h3 id="análise-do-gráfico">Análise do Gráfico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O gráfico gerado apresenta três curvas principais: - <strong>Setpoint
 (Temperatura Desejada):</strong> Representada pela linha azul tracejada,
 mostra a temperatura alvo que o sistema deve atingir. Neste exemplo, o
@@ -5327,7 +5344,7 @@ indica o sinal de controle enviado ao aquecedor. Este sinal é
 proporcional à diferença entre o setpoint e a temperatura real,
 ajustando-se para minimizar o erro.</p>
 <h3 id="interpretação-do-desempenho-do-sistema">Interpretação do
-Desempenho do Sistema</h3>
+Desempenho do Sistema</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A partir do gráfico, podemos analisar o desempenho do sistema de
 controle: - <strong>Tempo de Subida:</strong> O tempo que leva para a
 temperatura real atingir o novo setpoint após a mudança. Neste caso, é
@@ -5347,7 +5364,7 @@ a temperatura real parece se aproximar do setpoint de 70°C.</p>
 rapidamente o desempenho do sistema de controle, facilitando ajustes e
 otimizações necessárias para melhorar a resposta do sistema.</p>
 <hr/>
-<h2 id="conclusão-7">7.4. Conclusão</h2>
+<h2 id="conclusão-7">7.4. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A visualização de dados é uma habilidade essencial para engenheiros e
 cientistas, permitindo a interpretação clara e eficaz de informações
 complexas. Neste módulo, exploramos os principais tipos de gráficos
@@ -5359,7 +5376,7 @@ visualmente atraentes. A capacidade de visualizar dados de forma eficaz
 é crucial para a análise de desempenho de sistemas, identificação de
 tendências e comunicação de resultados.</p>
 <hr/>
-<h1 id="cálculo-numérico-com-num_py">8. Cálculo Numérico com NUM_PY</h1>
+<h1 id="cálculo-numérico-com-num_py">8. Cálculo Numérico com NUM_PY</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>No universo da engenharia, a capacidade de realizar cálculos
 numéricos eficientes e complexos é de suma importância. Este módulo nos
 levará ao coração do Cálculo Numérico com NUM_PY, uma biblioteca
@@ -5377,7 +5394,7 @@ análise de circuitos e estruturas. Ao final deste módulo, você estará
 apto a utilizar o NUM_PY para realizar cálculos numéricos robustos e
 eficientes, essenciais para diversas disciplinas da engenharia.</p>
 <h2 id="arrays-e-operações-vetoriais">8.1. Arrays e Operações
-Vetoriais</h2>
+Vetoriais</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>No coração do NUM_PY (Numerical Python) está o objeto ndarray
 (N-dimensional array), uma estrutura de dados fundamental para
 computação numérica eficiente. Diferente das listas Python, que podem
@@ -5387,7 +5404,7 @@ ou seja, todos os seus elementos devem ser do mesmo tipo de dado
 implementação em C, torna as operações com arrays NUM_PY incrivelmente
 mais rápidas e eficientes em termos de memória para grandes volumes de
 dados numéricos.</p>
-<h3 id="o-que-são-arrays-num_py">8.1.1. O que são Arrays NUM_PY?</h3>
+<h3 id="o-que-são-arrays-num_py">8.1.1. O que são Arrays NUM_PY?</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Um array NUM_PY é uma grade de valores, todos do mesmo tipo, e é
 indexado por uma tupla de inteiros não negativos. O número de dimensões
 é o rank do array. - <strong>Vetor:</strong> Um array 1-D (uma
@@ -5399,7 +5416,7 @@ rapidamente. - <strong>Memória:</strong> Arrays NUM_PY consomem menos
 memória para armazenar grandes quantidades de dados do mesmo tipo. -
 <strong>Funcionalidade:</strong> Oferecem uma vasta gama de funções
 matemáticas e de álgebra linear otimizadas.</p>
-<h3 id="criação-de-arrays">8.1.2. Criação de Arrays</h3>
+<h3 id="criação-de-arrays">8.1.2. Criação de Arrays</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os Arrays podem ser criados de diversas formas: - A partir de listas
 Python: Usando np.array(). - Arrays preenchidos com valores específicos:
 np.zeros(), np.ones(), np.full(). - Arrays com sequências numéricas:
@@ -5411,7 +5428,7 @@ tamanho de cada dimensão. - <strong>size:</strong> O número total de
 elementos no array. - <strong>dtype:</strong> O tipo de dado dos
 elementos no array.</p>
 <h3 id="operações-vetoriais-vectorization">8.1.3. Operações Vetoriais
-(Vectorization)</h3>
+(Vectorization)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Uma das características mais poderosas do NUM_PY é a capacidade de
 realizar operações vetoriais. Isso significa que as operações
 matemáticas (adição, subtração, multiplicação, divisão etc.) são
@@ -5423,7 +5440,7 @@ operações são executadas em código C otimizado.</p>
 <strong>a + b</strong> fará a soma elemento a elemento, o que seria
 muito mais lento se feito com loops em listas Python.</p>
 <h3 id="exemplos-arrays-e-operações-vetoriais-com-num_py.">8.1.4.
-Exemplos: Arrays e Operações Vetoriais com NUM_PY.</h3>
+Exemplos: Arrays e Operações Vetoriais com NUM_PY.</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Código Python:</strong></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb162-1"><a aria-hidden="true" href="#cb162-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb162-2"><a aria-hidden="true" href="#cb162-2" tabindex="-1"></a><span class="co"># 1. Criação de Arrays</span></span>
@@ -5503,7 +5520,7 @@ forma eficiente e concisa através da vetorização. Isso é fundamental
 para o cálculo numérico em engenharia.</p>
 <h3 id="exercício-proposto-cálculo-e-visualização-de-forças-aerodinâmicas-em-uma-asa">8.1.5.
 Exercício Proposto: Cálculo e Visualização de Forças Aerodinâmicas em
-uma Asa</h3>
+uma Asa</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em engenharia aeronáutica, o cálculo das
 forças de sustentação (Lift) e arrasto (Drag) é fundamental para o
 projeto e análise de aeronaves. Essas forças dependem de vários fatores,
@@ -5560,14 +5577,14 @@ velocidades variando de 0 a 100 m/s.</p>
 <span id="cb166-22"><a aria-hidden="true" href="#cb166-22" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><strong>Saída Esperada:</strong></p>
 <pre class="plaintext"><code>Gráfico mostrando as forças de sustentação e arrasto em função da velocidade do ar.</code></pre>
-<h3 id="resultados-do-gráfico-1">Resultados do Gráfico:</h3>
+<h3 id="resultados-do-gráfico-1">Resultados do Gráfico:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Forças Aerodinâmicas" src="imagens/27_imagem_forcas_aerodinamicas.png"/>
 <figcaption aria-hidden="true">Forças Aerodinâmicas</figcaption>
 </figure>
 <p>Gráfico mostrando as forças de sustentação e arrasto em função da
 velocidade do ar.</p>
-<h3 id="análise-do-gráfico-1">Análise do Gráfico:</h3>
+<h3 id="análise-do-gráfico-1">Análise do Gráfico:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>O gráfico gerado apresenta duas curvas
 principais:</strong></p>
 <ul>
@@ -5581,7 +5598,7 @@ vermelha, também aumenta quadraticamente com a velocidade do ar, mas com
 um coeficiente menor, refletindo o menor impacto do arrasto em
 comparação com a sustentação.</li>
 </ul>
-<h3 id="interpretação-dos-resultados">Interpretação dos Resultados:</h3>
+<h3 id="interpretação-dos-resultados">Interpretação dos Resultados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A análise das forças aerodinâmicas é crucial para o projeto de
 aeronaves, pois permite entender como a sustentação e o arrasto variam
 com a velocidade do ar. A curva de sustentação indica que, à medida que
@@ -5591,7 +5608,7 @@ lado, a curva de arrasto mostra que, embora o arrasto também aumente com
 a velocidade, ele é relativamente baixo em comparação com a sustentação,
 indicando uma eficiência aerodinâmica favorável.</p>
 <h3 id="conceitos-de-num_py-aplicados">Conceitos de NUM_PY
-Aplicados:</h3>
+Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para representar os
 parâmetros aerodinâmicos e as velocidades do ar, permitindo operações
@@ -5601,7 +5618,7 @@ sustentação e arrasto foram realizados de forma vetorizada, evitando
 loops explícitos e melhorando a performance.</li>
 </ul>
 <hr/>
-<h2 id="matrizes-e-álgebra-linear">8.2. Matrizes e Álgebra Linear</h2>
+<h2 id="matrizes-e-álgebra-linear">8.2. Matrizes e Álgebra Linear</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>No contexto do <strong>NUM_PY</strong>, as matrizes são arrays
 bidimensionais (2-D) que desempenham um papel central em diversas áreas
 da engenharia, da física, da economia e da computação. A álgebra linear,
@@ -5611,12 +5628,12 @@ lineares. O <strong>NUM_PY</strong> oferece um conjunto robusto e
 otimizado de ferramentas para trabalhar com matrizes e realizar
 operações de álgebra linear de forma eficiente.</p>
 <h3 id="representação-de-matrizes-no-num_py">8.2.1. Representação de
-Matrizes no NUM_PY</h3>
+Matrizes no NUM_PY</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Uma matriz no NUM_PY é simplesmente um ndarray com duas dimensões. É
 possível criar matrizes a partir de listas aninhadas ou usando funções
 específicas do <strong>NUM_PY</strong>.</p>
 <h3 id="operações-fundamentais-com-matrizes">8.2.2. Operações
-Fundamentais com Matrizes</h3>
+Fundamentais com Matrizes</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Assim como nos arrays unidimensionais, o <strong>NUM_PY</strong>
 permite operações elemento a elemento em matrizes. No entanto, o poder
 real surge nas operações de álgebra linear: - <strong>Multiplicação de
@@ -5641,7 +5658,7 @@ crucial para lidar com problemas complexos que envolvem grandes sistemas
 de equações, transformações geométricas, análise de redes, e muito mais,
 com alta performance.</p>
 <h3 id="exemplos-matrizes-e-álgebra-linear-com-num_py">8.2.3. Exemplos:
-Matrizes e Álgebra Linear com NUM_PY</h3>
+Matrizes e Álgebra Linear com NUM_PY</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste exemplo, vamos demonstrar a criação de matrizes, operações
 fundamentais como multiplicação, transposição, inversão e cálculo de
 determinante, além da resolução de sistemas de equações lineares. Essas
@@ -5722,7 +5739,7 @@ além da resolução de sistemas de equações lineares. Essas operações são
 essenciais para resolver problemas complexos em engenharia e outras
 disciplinas científicas.</p>
 <h3 id="exercício-proposto-otimização-do-tempo-de-verde-em-um-semáforo">8.2.4.
-Exercício Proposto: Otimização do Tempo de Verde em um Semáforo</h3>
+Exercício Proposto: Otimização do Tempo de Verde em um Semáforo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em sistemas de controle de tráfego urbano,
 a otimização dos tempos de verde dos semáforos é um problema clássico da
 engenharia de controle e automação. O objetivo é minimizar
@@ -5736,7 +5753,7 @@ lineares para determinar as proporções ideais de tempo de verde para
 cada fluxo. 3. Utilizar NUM_PY para resolver o sistema de equações. 4.
 Interpretar as proporções resultantes como tempos de verde para um ciclo
 semafórico.</p>
-<h3 id="formulação-do-problema">8.2.5. Formulação do Problema</h3>
+<h3 id="formulação-do-problema">8.2.5. Formulação do Problema</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Cenário:</strong> Considere uma interseção simples com duas
 fases principais de semáforo: - Fase 1: Tráfego Norte-Sul (NS). - Fase
 2: Tráfego Leste-Oeste (EW).</p>
@@ -5786,7 +5803,7 @@ x1 e x2 utilizando np.linalg.solve(). 3. Imprimir as proporções de tempo
 de verde calculadas. 4. Se o ciclo semafórico total for de 60 segundos,
 calcular o tempo de verde em segundos para cada fase</p>
 <h3 id="figura-8.2---otimização-do-tempo-verde-no-semáforo">Figura 8.2 -
-Otimização do Tempo Verde no Semáforo</h3>
+Otimização do Tempo Verde no Semáforo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="SEMAFORO" src="imagens/28_imagem_semaforo.png"/>
 <figcaption aria-hidden="true">SEMAFORO</figcaption>
@@ -5818,7 +5835,7 @@ Otimização do Tempo Verde no Semáforo</h3>
 Proporção de tempo de verde para Leste-Oeste (EW): 0.42857142857142855
 Tempo de verde para Norte-Sul (NS): 34.285714285714285 segundos
 Tempo de verde para Leste-Oeste (EW): 25.714285714285715 segundos</code></pre>
-<h3 id="análise-dos-resultados">Análise dos Resultados:</h3>
+<h3 id="análise-dos-resultados">Análise dos Resultados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>As proporções de tempo de verde calculadas indicam que, para o ciclo
 semafórico total de 60 segundos, aproximadamente 34.29 segundos devem
 ser alocados para o tráfego Norte-Sul (NS) e 25.71 segundos para o
@@ -5826,7 +5843,7 @@ tráfego Leste-Oeste (EW). Essas proporções refletem a capacidade e a
 demanda de tráfego de cada direção, garantindo um fluxo equilibrado e
 eficiente.</p>
 <h3 id="conceitos-de-num_py-aplicados-1">Conceitos de NUM_PY
-Aplicados:</h3>
+Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para representar a matriz
 de coeficientes e o vetor de termos independentes, permitindo operações
@@ -5841,7 +5858,7 @@ tráfego pode ser modelado e resolvido de forma elegante e eficiente
 usando os recursos de álgebra linear do <strong>NUM_PY</strong>.</p>
 <hr/>
 <h2 id="aplicações-em-balanços-e-sistemas-lineares">8.3. Aplicações em
-Balanços e Sistemas Lineares</h2>
+Balanços e Sistemas Lineares</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A capacidade de resolver sistemas de equações lineares é uma das
 aplicações mais fundamentais e ubíquas da álgebra linear na engenharia.
 Muitos problemas do mundo real, que inicialmente podem parecer
@@ -5867,7 +5884,7 @@ aplicações é a sua capacidade de resolver esses sistemas de forma rápida
 e precisa, mesmo para muitos equações e variáveis, algo que seria
 inviável manualmente ou com métodos iterativos menos eficientes.</p>
 <h3 id="exercício-proposto-balanço-de-massa-em-um-misturador-químico">8.3.1.
-Exercício Proposto: Balanço de Massa em um Misturador Químico</h3>
+Exercício Proposto: Balanço de Massa em um Misturador Químico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em uma indústria química, é comum misturar
 diferentes correntes para obter um produto com uma composição desejada.
 Considere um misturador onde duas correntes de entrada (Corrente 1 e
@@ -5957,19 +5974,19 @@ esse sistema de equações lineares para encontrar as vazões F1 e F2.</p>
 <pre class="plaintext"><code>Vazão mássica da Corrente 1 (F1): 800.0 kg/h
 Vazão mássica da Corrente 2 (F2): 200.0 kg/h</code></pre>
 <h3 id="figura-8.3---balanço-de-massa-em-misturador-químico">Figura 8.3
-- Balanço de Massa em Misturador Químico</h3>
+- Balanço de Massa em Misturador Químico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="MISTURADOR" src="imagens/29_imagem_balanco_massa.png"/>
 <figcaption aria-hidden="true">MISTURADOR</figcaption>
 </figure>
-<h3 id="análise-dos-resultados-1">Análise dos Resultados:</h3>
+<h3 id="análise-dos-resultados-1">Análise dos Resultados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>As vazões mássicas calculadas indicam que, para produzir uma Corrente
 3 com uma vazão de 1000 kg/h e a composição desejada, é necessário ter
 800 kg/h da Corrente 1 e 200 kg/h da Corrente 2. Isso garante que a
 composição final atenda às especificações de fração mássica do
 Componente A e Componente B.</p>
 <h3 id="conceitos-de-num_py-aplicados-2">Conceitos de NUM_PY
-Aplicados:</h3>
+Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para representar a matriz
 de coeficientes e o vetor de termos independentes, permitindo operações
@@ -5980,7 +5997,7 @@ otimizada para resolver sistemas de equações de forma rápida e
 eficiente.</li>
 </ul>
 <hr/>
-<h2 id="conclusão-8">8.4 Conclusão</h2>
+<h2 id="conclusão-8">8.4 Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste capítulo, exploramos o conceito de balanço de massa em um
 misturador químico, utilizando um sistema de equações lineares para
 determinar as vazões mássicas necessárias das correntes de entrada.
@@ -5993,7 +6010,7 @@ programação e ferramentas computacionais para resolver problemas
 práticos é uma competência valiosa no campo da engenharia.</p>
 <hr/>
 <h1 id="modelagem-matemática-simples">9. Modelagem Matemática
-Simples</h1>
+Simples</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A modelagem matemática é a espinha dorsal da engenharia,
 permitindo-nos traduzir fenômenos físicos e processos complexos em uma
 linguagem que pode ser analisada, simulada e otimizada. Neste módulo,
@@ -6014,7 +6031,7 @@ minimizando custos ou maximizando desempenho. Ao final, você terá as
 ferramentas para criar modelos matemáticos simplificados e usá-los para
 obter insights valiosos sobre sistemas de engenharia</p>
 <h2 id="equações-algébricas-e-sistemas-lineares">9.1. Equações
-algébricas e sistemas lineares</h2>
+algébricas e sistemas lineares</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>De fato, os conceitos de equações algébricas e sistemas lineares, e
 suas aplicações em balanços, foram amplamente discutidos no módulo
 anterior, especialmente no item 8.3 “Aplicações em balanços e sistemas
@@ -6050,7 +6067,7 @@ engenharia.</p>
 <hr/>
 <h3 id="exercício-proposto-determinação-da-constante-de-velocidade-de-reação-por-mínimos-quadrados">9.1.1.
 Exercício Proposto: Determinação da Constante de Velocidade de Reação
-por Mínimos Quadrados</h3>
+por Mínimos Quadrados</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong></p>
 <p>Em Engenharia Química, a cinética de reações é fundamental para o
 projeto e operação de reatores. Para reações de primeira ordem, a
@@ -6084,7 +6101,7 @@ ambos os lados:</p>
 do reagente A no tempo t - <strong>ln(CA0):</strong> Logaritmo natural
 da concentração inicial do reagente A - <strong>k:</strong> Constante de
 velocidade da reação</p>
-<h3 id="dados-de-entrada-simulação">Dados de Entrada (Simulação):</h3>
+<h3 id="dados-de-entrada-simulação">Dados de Entrada (Simulação):</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Concentração inicial do reagente A (CA0):</strong> 1.0
 mol/L</li>
@@ -6226,14 +6243,14 @@ Concentração Inicial (C_A0): 9.3887 mol/L
  (Valores reais na simulação: k=0.05, C_A0=10.0)</code></pre>
 <h3 id="figura-9.1---análise-cinética-de-reação-de-primeira-ordem-concentração-vs.-tempo-e-linearização-por-mínimos-quadrados">Figura
 9.1 - Análise Cinética de Reação de Primeira Ordem: Concentração
-vs. Tempo e Linearização por Mínimos Quadrados</h3>
+vs. Tempo e Linearização por Mínimos Quadrados</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Análise Cinética de Reação de Primeira Ordem" src="imagens/30_imagem_cinetica_reacao.png"/>
 <figcaption aria-hidden="true">Análise Cinética de Reação de Primeira
 Ordem</figcaption>
 </figure>
 <h3 id="gráfico-superior-ou-à-esquerda">1. Gráfico Superior (ou à
-Esquerda):</h3>
+Esquerda):</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Concentração vs. Tempo (Reação de Primeira
 Ordem)</strong></p>
 <p>Este gráfico mostra a relação direta entre a concentração do reagente
@@ -6254,7 +6271,7 @@ quadrados.</li>
 </ul></li>
 </ul>
 <h3 id="gráfico-superior-ou-à-direita">2. Gráfico Superior (ou à
-Direita):</h3>
+Direita):</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Linearização e Ajuste por Mínimos Quadrados</strong></p>
 <p>Este gráfico é a chave para a aplicação dos mínimos quadrados,
 mostrando os dados transformados logaritmicamente e a reta ajustada.</p>
@@ -6272,7 +6289,7 @@ que melhor se ajusta aos dados linearizados, a partir da qual a
 constante de velocidade e a concentração inicial são derivadas.</li>
 </ul></li>
 </ul>
-<h3 id="análise-dos-resultados-2">Análise dos Resultados:</h3>
+<h3 id="análise-dos-resultados-2">Análise dos Resultados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Os resultados mostram que a constante de velocidade da reação foi
 calculada como aproximadamente 0.0526 s⁻¹, e a concentração inicial foi
 estimada em cerca de 9.3887 mol/L. Esses valores estão próximos dos
@@ -6280,7 +6297,7 @@ parâmetros reais utilizados na simulação (k=0.05 s⁻¹ e C_A0=10.0 mol/L),
 demonstrando a eficácia do método dos mínimos quadrados para ajustar um
 modelo linear aos dados experimentais.</p>
 <h3 id="conceitos-de-num_py-aplicados-3">Conceitos de NUM_PY
-Aplicados:</h3>
+Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Arrays NUM_PY:</strong> Utilizados para armazenar e
 manipular os dados experimentais e os resultados do ajuste.</li>
@@ -6293,7 +6310,7 @@ teórica e a reta ajustada, facilitando a interpretação dos
 resultados.</li>
 </ul>
 <hr/>
-<h3 id="resumo-4">9.1.2. Resumo</h3>
+<h3 id="resumo-4">9.1.2. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Recapitulando, exploramos como problemas que envolvem a determinação
 de parâmetros a partir de dados experimentais, que muitas vezes não se
 encaixam perfeitamente em um modelo, podem ser linearizados e resolvidos
@@ -6310,7 +6327,7 @@ de dados com ruído, uma aplicação crucial para a validação e otimização
 de processos.</p>
 <hr/>
 <h2 id="equações-diferenciais-ordinárias-edos">9.2. Equações
-diferenciais ordinárias (EDOs)</h2>
+diferenciais ordinárias (EDOs)</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>As <strong>Equações Diferenciais Ordinárias (EDOs)</strong> são a
 linguagem fundamental para descrever sistemas dinâmicos, ou seja,
 sistemas cujas variáveis mudam continuamente ao longo do tempo (ou de
@@ -6319,7 +6336,7 @@ descrevem relações estáticas ou de equilíbrio, as EDOs envolvem
 derivadas de uma função desconhecida em relação a uma única variável
 independente, capturando a taxa de mudança e a evolução do sistema.</p>
 <h3 id="contexto-e-importância-na-engenharia">Contexto e Importância na
-Engenharia:</h3>
+Engenharia:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>As EDOs são ubíquas em todas as disciplinas da engenharia, pois a
 maioria dos processos e fenômenos naturais são dinâmicos. Elas permitem
 modelar:</p>
@@ -6340,7 +6357,7 @@ resposta de sistemas a controladores, projeto de algoritmos de
 controle.</li>
 </ul>
 <h3 id="solução-numérica-de-edos-com-python">Solução Numérica de EDOs
-com Python:</h3>
+com Python:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Embora algumas EDOs simples possam ter soluções analíticas (fórmulas
 exatas), a maioria dos problemas de engenharia resulta em EDOs complexas
 que não possuem soluções analíticas ou são extremamente difíceis de
@@ -6358,7 +6375,7 @@ estado no tempo inicial. - <strong>Intervalo de Tempo:</strong> Definir
 o período de tempo para o qual queremos simular a EDO.</p>
 <hr/>
 <h3 id="exemplo-proposto-descarga-de-um-tanque-cilíndrico">9.2.1.
-Exemplo Proposto: Descarga de um Tanque Cilíndrico</h3>
+Exemplo Proposto: Descarga de um Tanque Cilíndrico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Considere um tanque cilíndrico com uma
 área de seção transversal constante (<strong>AT</strong>) que está sendo
 esvaziado através de um orifício na base com uma área
@@ -6375,14 +6392,14 @@ a taxa de saída é proporcional à raiz quadrada da altura do líquido:</p>
 9.81 m/s²) - <strong>h:</strong> Altura do líquido no tanque (m)</p>
 <p>Rearranjando, obtemos a <strong>EDO</strong>:</p>
 <pre class="plaintext"><code>dh/dt = - (Ao / AT) * sqrt(2 * g * h)</code></pre>
-<h3 id="dados-de-entrada">Dados de Entrada:</h3>
+<h3 id="dados-de-entrada">Dados de Entrada:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li><strong>Área do Tanque (AT):</strong> 1.0 m²</li>
 <li><strong>Área do Orifício (Ao):</strong> 0.01 m²</li>
 <li><strong>Altura Inicial do Líquido (h0):</strong> 1.0 m</li>
 <li><strong>Aceleração da Gravidade (g):</strong> 9.81 m/s²</li>
 </ul>
-<h3 id="código-python-para-simulação">Código Python para Simulação:</h3>
+<h3 id="código-python-para-simulação">Código Python para Simulação:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <div class="sourceCode" id="cb191"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb191-1"><a aria-hidden="true" href="#cb191-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb191-2"><a aria-hidden="true" href="#cb191-2" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint <span class="co"># Função para resolver EDOs</span></span>
 <span id="cb191-3"><a aria-hidden="true" href="#cb191-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -6461,7 +6478,7 @@ Altura inicial: 2.00 m
 Altura final (após 200 s): 0.00 m
 Tempo aproximado para esvaziamento: 200 s</code></pre>
 <h3 id="figura-9.2---gráfico-descarga-de-um-tanque-cilíndrico">Figura
-9.2 - Gráfico: Descarga de um Tanque Cilíndrico</h3>
+9.2 - Gráfico: Descarga de um Tanque Cilíndrico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Descarga de um Tanque Cilíndrico" src="imagens/31_imagem_descarga_tanque.png"/>
 <figcaption aria-hidden="true">Descarga de um Tanque
@@ -6472,7 +6489,7 @@ Cilíndrico</figcaption>
 - <strong>Título do Gráfico:</strong> Descarga de um Tanque Cilíndrico -
 <strong>Legenda da Linha:</strong> Altura do Líquido (h)</p>
 <hr/>
-<h3 id="resumo-5">9.2.2. Resumo</h3>
+<h3 id="resumo-5">9.2.2. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Sobre as <strong>Equações Diferenciais Ordinárias (EDOs)</strong>,
 mergulhamos na linguagem fundamental para descrever sistemas dinâmicos,
 ou seja, aqueles cujas variáveis mudam continuamente ao longo do tempo.
@@ -6496,7 +6513,7 @@ ilustrando a capacidade de Python para analisar o comportamento dinâmico
 de sistemas de engenharia.</p>
 <hr/>
 <h2 id="simulações-de-tanques-reatores-e-processos-dinâmicos">9.3.
-Simulações de Tanques, Reatores e Processos Dinâmicos</h2>
+Simulações de Tanques, Reatores e Processos Dinâmicos</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A capacidade de modelar e simular o comportamento dinâmico de
 tanques, reatores e outros processos industriais é um pilar fundamental
 da engenharia de processos e controle. Essas simulações permitem aos
@@ -6522,7 +6539,7 @@ acopladas, onde a taxa de mudança de uma variável pode depender de
 outras variáveis do sistema.</p>
 <h3 id="exercício-proposto-reator-tanque-agitado-contínuo-cstr-com-reação-de-primeira-ordem">9.3.1.
 Exercício Proposto: Reator Tanque Agitado Contínuo (CSTR) com Reação de
-Primeira Ordem</h3>
+Primeira Ordem</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Um Reator Tanque Agitado Contínuo (CSTR) é
 um tipo de reator idealizado onde a mistura é perfeita e a concentração
 no reator é uniforme e igual à concentração na corrente de saída.
@@ -6645,7 +6662,7 @@ do tempo.</li>
 <span id="cb196-81"><a aria-hidden="true" href="#cb196-81" tabindex="-1"></a><span class="co"># Para rodar a simulação, basta chamar a função:</span></span>
 <span id="cb196-82"><a aria-hidden="true" href="#cb196-82" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb196-83"><a aria-hidden="true" href="#cb196-83" tabindex="-1"></a>    simular_cstr()</span></code></pre></div>
-<h3 id="conceitos-chave-aplicados">Conceitos Chave Aplicados:</h3>
+<h3 id="conceitos-chave-aplicados">Conceitos Chave Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ol type="1">
 <li><strong>Modelagem de Processos Dinâmicos:</strong> A EDO para o CSTR
 é um modelo simplificado que descreve como a concentração de um reagente
@@ -6678,7 +6695,7 @@ Concentração inicial no reator: 0.00 mol/L
 Concentração final no reator (após 100 min): 4.99 mol/L
 Concentração de regime permanente esperada (após mudança): 4.76 mol/L</code></pre>
 <h3 id="figura-9.3---gráfico-dinâmica-da-concentração-de-a-em-um-cstr">Figura
-9.3 - Gráfico: Dinâmica da Concentração de A em um CSTR</h3>
+9.3 - Gráfico: Dinâmica da Concentração de A em um CSTR</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Dinâmica da Concentração de A em um CSTR" src="imagens/33_imagem_dinamica_cstr.png"/>
 <figcaption aria-hidden="true">Dinâmica da Concentração de A em um
@@ -6696,7 +6713,7 @@ vermelha tracejada. Exibe a concentração do reagente A na corrente que
 entra no reator ao longo do tempo, ilustrando a mudança que ocorre em
 t=20 minutos.</p>
 <hr/>
-<h3 id="resumo-6">9.3.2. Resumo</h3>
+<h3 id="resumo-6">9.3.2. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste assunto. Simulações de Tanques, Reatores e Processos Dinâmicos,
 exploramos a importância da modelagem e simulação do comportamento
 dinâmico de equipamentos e processos industriais, como tanques e
@@ -6720,7 +6737,7 @@ tempo também foi destacada como um aspecto importante para simulações
 mais realistas. </p>
 <hr/>
 <h2 id="otimização-de-funções-com-scipy.optimize">9.4. Otimização de
-Funções com scipy.optimize</h2>
+Funções com scipy.optimize</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A otimização é um processo fundamental em todas as áreas da
 engenharia. Envolve encontrar os melhores valores para as variáveis de
 um sistema de forma a maximizar ou minimizar uma determinada função
@@ -6758,7 +6775,7 @@ Para ajustar uma curva a dados experimentais, encontrando os parâmetros
 que minimizam a diferença entre os dados e o modelo.</p>
 <h2 id="exemplo-proposto-otimização-da-área-de-transferência-de-calor-em-um-trocador-de-calor-de-casco-e-tubos">9.4.1.
 Exemplo Proposto: Otimização da Área de Transferência de Calor em um
-Trocador de Calor de Casco e Tubos</h2>
+Trocador de Calor de Casco e Tubos</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em engenharia química e de processos, o
 projeto de trocadores de calor envolve otimizar vários parâmetros para
 minimizar custos (de material, bombeamento etc.) e maximizar a
@@ -6790,7 +6807,7 @@ encontrar o valor de A que minimiza a função dentro de um intervalo
 razoável. - Visualizar a função custo e o ponto de mínimo
 encontrado.</p>
 <h3 id="otimização-de-área-de-trocador">Otimização de Área de
-Trocador</h3>
+Trocador</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="OTIMIZACAO_TROCADOR_DE_CALOR" src="imagens/34_imagem_otimizacao_trocador_de_calor.png"/>
 <figcaption aria-hidden="true">OTIMIZACAO_TROCADOR_DE_CALOR</figcaption>
@@ -6857,7 +6874,7 @@ Trocador</h3>
 <span id="cb200-59"><a aria-hidden="true" href="#cb200-59" tabindex="-1"></a><span class="co"># --- Execução do Exemplo ---</span></span>
 <span id="cb200-60"><a aria-hidden="true" href="#cb200-60" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb200-61"><a aria-hidden="true" href="#cb200-61" tabindex="-1"></a>    otimizar_area_trocador_calor()</span></code></pre></div>
-<h3 id="conceitos-chave-aplicados-1">Conceitos Chave Aplicados:</h3>
+<h3 id="conceitos-chave-aplicados-1">Conceitos Chave Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ol type="1">
 <li><strong>Definição da Função Objetivo:</strong> Expressar a
 quantidade que queremos otimizar (neste caso, o custo total) como uma
@@ -6884,7 +6901,7 @@ desempenho, custo ou outros critérios importantes. </p>
 Área de transferência de calor ótima: 10.00 m^2
 Custo total mínimo correspondente: $1000.00 / ano</code></pre>
 <h3 id="figura-9.4---gráfico-otimização-da-área-de-trocador-de-calor">Figura
-9.4 - Gráfico: Otimização da Área de Trocador de Calor</h3>
+9.4 - Gráfico: Otimização da Área de Trocador de Calor</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Otimização da Área de Trocador de Calor" src="imagens/35_imagem_otimizacao_trocador_calor.png"/>
 <figcaption aria-hidden="true">Otimização da Área de Trocador de
@@ -6902,7 +6919,7 @@ numérico da área ótima (X.XX) incluído.</p>
 <hr/>
 <h3 id="exercício-proposto-ii-localização-de-dispositivo-móvel-por-triangulação-toa-e-otimização">9.4.2.
 Exercício Proposto II: Localização de Dispositivo Móvel por Triangulação
-(ToA) e Otimização</h3>
+(ToA) e Otimização</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em telecomunicações, a localização de
 dispositivos móveis (como celulares) é fundamental para serviços de
 emergência, rastreamento e otimização de rede. Um método comum é a
@@ -6943,7 +6960,7 @@ das Antenas:</strong> Quatro antenas com coordenadas fixas. -
 comparação). - <strong>Distâncias Medidas:</strong> Calculadas a partir
 da posição real e adicionando um ruído aleatório.</p>
 <h3 id="localização-de-celular-por-otimização-toa">Localização de
-Celular por Otimização (ToA):</h3>
+Celular por Otimização (ToA):</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="LOCALIZACAO_CELULAR_TOA" src="imagens/36_imagem_localizacao_celular_toa.png"/>
 <figcaption aria-hidden="true">LOCALIZACAO_CELULAR_TOA</figcaption>
@@ -7009,7 +7026,7 @@ Celular por Otimização (ToA):</h3>
 <span id="cb204-58"><a aria-hidden="true" href="#cb204-58" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
 <span id="cb204-59"><a aria-hidden="true" href="#cb204-59" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
 <span id="cb204-60"><a aria-hidden="true" href="#cb204-60" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<h3 id="conceitos-chave-aplicados-2">Conceitos Chave Aplicados:</h3>
+<h3 id="conceitos-chave-aplicados-2">Conceitos Chave Aplicados:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ol type="1">
 <li><strong>Modelagem de Distâncias:</strong> Utilizamos a fórmula da
 distância euclidiana para calcular as distâncias reais entre o
@@ -7035,7 +7052,7 @@ Posição Estimada do Dispositivo: [60.12, 39.87]
 --- Resultados da Otimização ---
 Posição Estimada do Dispositivo: [60.12, 39.87]</code></pre>
 <h3 id="figura-9.4---gráfico-localização-de-dispositivo-por-triangulação-toa">Figura
-9.4 - Gráfico: Localização de Dispositivo por Triangulação (ToA)</h3>
+9.4 - Gráfico: Localização de Dispositivo por Triangulação (ToA)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Localização de Dispositivo por Triangulação (ToA)" src="imagens/37_imagem_localizacao_celular_toa.png"/>
 <figcaption aria-hidden="true">Localização de Dispositivo por
@@ -7057,7 +7074,7 @@ no Gráfico (sem legenda explícita, mas visualmente presentes):</strong>
 de cada antena. Devido ao ruído, eles não se intersectam perfeitamente
 em um único ponto. </p>
 <hr/>
-<h3 id="resumo-7">9.4.3. Resumo</h3>
+<h3 id="resumo-7">9.4.3. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Neste assunto sobre Modelagem Matemática Simples introduzimos, uma
 habilidade essencial para traduzir desafios de engenharia em problemas
 computacionais. Começamos revisitando a resolução de equações algébricas
@@ -7094,7 +7111,7 @@ específicos. A capacidade de formular e resolver esses problemas
 computacionalmente é um diferencial fundamental para o engenheiro
 moderno.</p>
 <hr/>
-<h2 id="conclusão-9">9.5. Conclusão</h2>
+<h2 id="conclusão-9">9.5. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este módulo consolidou nossa jornada pela Modelagem Matemática,
 revelando-a como a linguagem essencial para decifrar e intervir em
 sistemas de engenharia. Aprofundamos a compreensão das equações
@@ -7121,7 +7138,7 @@ modelagem e otimização computacional é um pilar para a inovação e a
 resolução eficaz de problemas em todas as disciplinas da engenharia.</p>
 <hr/>
 <h1 id="mini-projetos-aplicados-à-engenharia">10. Mini Projetos
-Aplicados à Engenharia</h1>
+Aplicados à Engenharia</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Chegamos ao ápice da nossa jornada de aprendizado em Python aplicado
 à engenharia. Este último módulo, dedicado aos <strong>Mini Projetos
 Aplicados à Engenharia</strong>, tem como objetivo principal consolidar
@@ -7144,7 +7161,7 @@ respondam a necessidades específicas da engenharia. Este módulo é a sua
 chance de aplicar o que aprendeu e desenvolver projetos que demonstrem a
 verdadeira capacidade do Python como ferramenta de engenharia. </p>
 <h2 id="estudo-de-caso-tanque-com-entrada-e-saída">10.1. Estudo de caso:
-tanque com entrada e saída</h2>
+tanque com entrada e saída</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este estudo de caso é um problema clássico em engenharia de processos
 e controle, servindo como um excelente exemplo para integrar diversos
 conceitos de programação e modelagem matemática aprendidos nos módulos
@@ -7322,7 +7339,7 @@ Altura inicial: 0.50 m
 Altura final (após 200 s): 0.75 m
 O tanque parece ter atingido um regime permanente.</code></pre>
 <h3 id="figura-10.1---gráfico-dinâmica-da-altura-do-líquido-em-um-tanque">Figura
-10.1 - Gráfico: Dinâmica da Altura do Líquido em um Tanque</h3>
+10.1 - Gráfico: Dinâmica da Altura do Líquido em um Tanque</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Dinâmica da Altura do Líquido em um Tanque" src="imagens/39_imagem_dinamica_altura_tanque.png"/>
 <figcaption aria-hidden="true">Dinâmica da Altura do Líquido em um
@@ -7339,7 +7356,7 @@ do líquido no tanque varia ao longo do tempo. - <strong>Vazão de Entrada
 (Q_in):</strong> Representada pela linha vermelha tracejada. Indica a
 vazão de líquido que entra no tanque, contextualizando as mudanças no
 nível.</p>
-<h3 id="resumo-8">10.1.1. Resumo</h3>
+<h3 id="resumo-8">10.1.1. Resumo</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>O exercício “Estudo de caso: tanque com entrada e saída” focou na
 simulação da dinâmica do nível de líquido em um tanque cilíndrico.
 Modelamos o problema como uma <strong>Equação Diferencial Ordinária
@@ -7352,7 +7369,7 @@ a integração de conceitos de modelagem matemática, cálculo numérico e
 visualização de dados. </p>
 <hr/>
 <h2 id="balanço-de-massa-e-energia-com-dados-reais-ou-simulados">10.2.
-Balanço de massa e energia com dados reais ou simulados</h2>
+Balanço de massa e energia com dados reais ou simulados</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>A aplicação dos princípios de conservação de massa e energia é a base
 de qualquer análise e projeto em engenharia de processos. Em sistemas
 industriais, como reatores, misturadores, trocadores de calor e colunas
@@ -7371,7 +7388,7 @@ dados reais (coletados em campo) ou simulados (gerados por modelos), é
 uma habilidade crucial para o engenheiro.</p>
 <h3 id="exemplo-proposto-balanço-de-massa-em-uma-rede-de-processos-misturador-e-separador">10.2.1.
 Exemplo Proposto: Balanço de Massa em uma Rede de Processos (Misturador
-e Separador)</h3>
+e Separador)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Um engenheiro de processos está analisando
 uma pequena rede de unidades em uma planta química, composta por um
 misturador seguido por um separador. Duas correntes de entrada (Corrente
@@ -7412,7 +7429,7 @@ Separador):</strong> - Fração mássica de A (xA4): 0.95 -
 <strong>Corrente 3:</strong> m3, xA3 - <strong>Corrente 4:</strong> m4 -
 <strong>Corrente 5:</strong> m5</p>
 <h3 id="balanço-de-massa-em-rede-de-processos">Balanço de Massa em Rede
-de Processos</h3>
+de Processos</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="Balanço de Massa em Rede de Processos" src="imagens/40_imagem_balanco_massa_rede_processos.png"/>
 <figcaption aria-hidden="true">Balanço de Massa em Rede de
@@ -7555,7 +7572,7 @@ Verificação Componente A: m4*xA4 + m5*xA5 = 85.00 (Esperado: 85.00)
        4                  142.5              0.9500
        5                    7.5              0.1000</code></pre>
 <h3 id="integração-de-módulos-anteriores">Integração de Módulos
-Anteriores:</h3>
+Anteriores:</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este exercício é um excelente exemplo de integração, utilizando
 conceitos de:</p>
 <ul>
@@ -7579,7 +7596,7 @@ diversas ferramentas e conceitos de Python para resolver um problema
 fundamental em engenharia de processos. </p>
 <hr/>
 <h2 id="integração-de-módulos-anteriores-em-soluções-prática">10.3.
-Integração de módulos anteriores em soluções prática</h2>
+Integração de módulos anteriores em soluções prática</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este item representa o ponto culminante de toda a sua jornada de
 aprendizado em Python aplicado à engenharia. Até agora, exploramos
 conceitos fundamentais de programação, estruturas de controle, funções e
@@ -7604,7 +7621,7 @@ transformar dados brutos em insights acionáveis, modelos teóricos em
 simulações preditivas e problemas complexos em soluções elegantes.</p>
 <h3 id="mini-projeto-final-sistema-de-monitoramento-e-controle-de-nível-e-temperatura-de-um-reator-químico">10.3.1.
 Mini Projeto Final: Sistema de Monitoramento e Controle de Nível e
-Temperatura de um Reator Químico</h3>
+Temperatura de um Reator Químico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p><strong>Contexto:</strong> Em uma planta química, um reator é
 utilizado para uma reação exotérmica (que libera calor). É crucial
 controlar tanto o nível do líquido no reator quanto sua temperatura para
@@ -7667,7 +7684,7 @@ nível, temperatura, setpoints e saídas dos controladores.</p>
 consolidar todas as habilidades de programação e engenharia adquiridas
 ao longo da apostila.</p>
 <h3 id="tarefa-1-definir-os-parâmetros-do-reator-e-da-reação.">Tarefa 1:
-Definir os parâmetros do reator e da reação.</h3>
+Definir os parâmetros do reator e da reação.</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Nesta primeira tarefa, o objetivo é estabelecer todas as constantes e
 parâmetros físicos e operacionais que descrevem o reator, o líquido e a
 reação química. Isso inclui dimensões do reator, propriedades do fluido,
@@ -7789,7 +7806,7 @@ processo.</p>
 leitura, a depuração e a modificação do modelo em etapas futuras. </p>
 <h3 id="tarefa-2-implementar-a-função-que-descreve-o-sistema-de-edos-acopladas-dhdt-dtdt-dcadt.">Tarefa
 2: Implementar a função que descreve o sistema de EDOs acopladas (dh/dt,
-dT/dt, dCA/dt).</h3>
+dT/dt, dCA/dt).</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Nesta tarefa, o foco é traduzir os balanços de massa e energia do
 reator em um sistema de Equações Diferenciais Ordinárias (EDOs)
 acopladas. As variáveis de estado que descrevem o comportamento dinâmico
@@ -7969,7 +7986,7 @@ derivadas calculadas são impressas, mostrando que a função está operando
 corretamente.</p>
 <h3 id="tarefa-3-implementar-uma-lógica-de-controle-simples-ex-controle-onoff-ou-proporcional-para-nível-e-temperatura.">Tarefa
 3: Implementar uma lógica de controle simples (ex: controle ON/OFF ou
-proporcional para nível e temperatura).</h3>
+proporcional para nível e temperatura).</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Nesta tarefa, o objetivo é implementar uma lógica de controle simples
 para o reator químico. A lógica de controle será responsável por ajustar
 a vazão de entrada e a potência do aquecedor com base nos erros entre os
@@ -8147,7 +8164,7 @@ corretamente.</li>
 </ul>
 <h3 id="tarefa-4-simular-o-sistema-usando-odeint-e-visualizar-os-resultados.">Tarefa
 4: Simular o sistema usando <code>odeint</code> e visualizar os
-resultados.</h3>
+resultados.</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Nesta tarefa, o objetivo é simular o comportamento dinâmico do reator
 químico usando a função <code>odeint</code> do SciPy para resolver o
 sistema de EDOs acopladas. Após a simulação, os resultados serão
@@ -8452,7 +8469,7 @@ interpretação dos dados.</p>
 Simulação concluída em 150 minutos.</code></pre>
 <h3 id="figura-10.2-desempenho-dinâmico-e-controle-de-nível-temperatura-e-concentração-em-reator-químico">Figura
 10.2 – Desempenho Dinâmico e Controle de Nível, Temperatura e
-Concentração em Reator Químico</h3>
+Concentração em Reator Químico</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <figure>
 <img alt="imagens/41_imagem_desempenho_dinamico_e_controle.png" src="imagens/41_imagem_desempenho_dinamico_e_controle.png"/>
 <figcaption aria-hidden="true">imagens/41_imagem_desempenho_dinamico_e_controle.png</figcaption>
@@ -8513,7 +8530,7 @@ concentração) e as ações de controle (vazão de entrada, potência do
 aquecedor) ao longo do tempo. Os gráficos foram organizados em subplots
 para melhor visualização.</p>
 <hr/>
-<h2 id="conclusão-10">10.4. Conclusão</h2>
+<h2 id="conclusão-10">10.4. Conclusão</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Este módulo representou o ponto culminante de todo o nosso percurso
 em Python aplicado à engenharia. Dedicado aos <strong>Mini Projetos
 Aplicados à Engenharia</strong>, seu objetivo primordial foi consolidar
@@ -8539,7 +8556,7 @@ e funcionais, validando a premissa de que o domínio do Python é uma
 ferramenta indispensável para o engenheiro moderno.</p>
 <hr/>
 <h1 id="finalização-e-agradecimentos">11. Finalização e
-Agradecimentos</h1>
+Agradecimentos</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Chegamos ao final da nossa jornada pela apostila “Introdução à
 Programação Python Aplicada à Engenharia”. Este percurso foi
 cuidadosamente desenhado para equipar você, engenheiro ou estudante de
@@ -8618,13 +8635,13 @@ engenharia é digital, e você está agora equipado para liderar essa
 transformação!</p>
 <hr/>
 <h1 id="configuração-do-ambiente-python-e-vs-code">12. Configuração do
-Ambiente Python e VS Code</h1>
+Ambiente Python e VS Code</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <h2 id="configuração-rápida-do-ambiente-de-desenvolvimento">12.1.
-Configuração Rápida do Ambiente de Desenvolvimento</h2>
+Configuração Rápida do Ambiente de Desenvolvimento</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Esta seção fornece instruções concisas para configurar seu ambiente
 Python para engenharia.</p>
 <h3 id="instalação-do-python-windows-macos-linux">12.1.1. Instalação do
-Python (Windows, MacOS, Linux)</h3>
+Python (Windows, MacOS, Linux)</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <p>Para começar a programar em Python, é necessário instalar o
 interpretador Python e as bibliotecas essenciais. A seguir, apresentamos
 instruções para instalação em diferentes sistemas operacionais.</p>
@@ -8642,11 +8659,11 @@ marque “Add Python to PATH” Clique em “Install Now”</p>
 <span id="cb234-5"><a aria-hidden="true" href="#cb234-5" tabindex="-1"></a><span class="fu">sudo</span> dnf install python3 python3-pip</span></code></pre></div>
 <h3 id="instalação-de-bibliotecas-essenciais-numpy-pandas-matplotlib-scipy-seaborn">12.1.2.
 Instalação de bibliotecas essenciais: numpy, pandas, matplotlib, scipy,
-seaborn</h3>
+seaborn</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <pre><code># Instale todas as bibliotecas necessárias de uma vez
 pip install numpy pandas matplotlib scipy seaborn</code></pre>
 <h3 id="testando-a-instalação-do-python-e-das-bibliotecas">12.1.3. -
-Testando a instalação do Python e das bibliotecas</h3>
+Testando a instalação do Python e das bibliotecas</h3><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ol type="1">
 <li>Crie um novo arquivo com extensão .py</li>
 <li>Insira o código de teste:</li>
@@ -8673,7 +8690,7 @@ Testando a instalação do Python e das bibliotecas</h3>
 <p>Se o gráfico aparecer e a mensagem for exibida, sua configuração está
 pronta para os exercícios da apostila.</p>
 <h2 id="visual-studio-code-vs-code">12.2. Visual Studio Code (VS
-Code)</h2>
+Code)</h2><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ol type="1">
 <li>Baixe e instale o VS Code da página oficial</li>
 <li>Abra o VS Code e instale a extensão Python:
@@ -8690,7 +8707,7 @@ Code)</h2>
 </ul></li>
 </ol>
 <hr/>
-<h1 id="referências-bibliográficas">13. Referências Bibliográficas</h1>
+<h1 id="referências-bibliográficas">13. Referências Bibliográficas</h1><a class="sumario-link" href="#sumário">⬆️ Sumário</a>
 <ul>
 <li>BEAZLEY, D. M.; JONES, P. K. Python Cookbook. 3rd ed. Sebastopol:
 O’Reilly Media, 2013.</li>
