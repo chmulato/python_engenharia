@@ -1,3 +1,25 @@
+"""
+ajustes_apostila_html.py
+
+Este script automatiza ajustes em arquivos HTML gerados a partir da apostila de Python para Engenharia.
+Principais funções:
+- Gera automaticamente um sumário navegável (topdown) com base nos títulos (h1-h6) do documento.
+- Insere estilos CSS para visual moderno e alinhamento centralizado do conteúdo.
+- Adiciona um botão "⬆️ Sumário" após cada seção/título, facilitando a navegação do leitor.
+- Remove estilos antigos e garante que o novo CSS seja aplicado corretamente.
+- Salva o HTML ajustado em um novo arquivo de saída.
+
+Uso:
+    Execute este script no mesmo diretório do arquivo HTML de entrada.
+    O arquivo ajustado será salvo como 'python_engenharia_ajustado_final.html'.
+
+Requisitos:
+    - BeautifulSoup4 (bs4)
+    - Python 3.x
+
+Autor: Christian Vladimir Uhdre Mulato
+Apoio: Develcode – Consultoria em Tecnologia
+"""
 from bs4 import BeautifulSoup
 import os
 
