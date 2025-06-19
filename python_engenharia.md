@@ -11,6 +11,18 @@
 ### Título: Introdução à Programação Python Aplicada à Engenharia
 ### Autor: Christian Vladimir Uhdre Mulato
 
+### Prefácio
+
+A engenharia sempre foi movida pela curiosidade e pelo desejo de transformar ideias em soluções concretas. Nos dias de hoje, a programação tornou-se uma poderosa aliada desse processo, permitindo que conceitos abstratos ganhem vida de forma dinâmica e interativa.
+
+Este livro nasce do desejo de unir o rigor da engenharia à criatividade da programação, apresentando desafios e exemplos práticos de maneira lúdica e acessível. Aqui, o leitor é convidado a explorar problemas clássicos e modernos, utilizando a lógica computacional como ferramenta para desvendar mistérios, construir modelos e experimentar soluções inovadoras.
+
+Mais do que ensinar técnicas, esta obra busca despertar a curiosidade e o prazer pelo aprendizado, mostrando que a engenharia pode ser divertida e instigante quando aliada ao universo da programação. Esperamos que cada capítulo inspire novas descobertas e motive o leitor a ir além, explorando o fascinante mundo onde ciência, tecnologia e imaginação se encontram.
+
+Boa leitura e boas descobertas!
+
+***
+
 ### Sumário
 
 1. [Apresentação](#1-apresentação)
